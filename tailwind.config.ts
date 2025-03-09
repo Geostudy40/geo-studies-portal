@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,7 +62,22 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				// GeoStudy specific colors
+				geoblue: {
+					DEFAULT: '#1E3A8A',
+					50: '#f0f5ff',
+					100: '#e5edff',
+					200: '#cddbff',
+					300: '#b4c6ff',
+					400: '#8093ff',
+					500: '#2563eb',
+					600: '#1d4ed8',
+					700: '#1e40af',
+					800: '#1e3a8a',
+					900: '#172554',
+				},
+				geolight: '#f9fafb',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -89,7 +105,11 @@ export default {
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out'
-			}
+			},
+			fontFamily: {
+				montserrat: ['Montserrat', 'sans-serif'],
+				opensans: ['Open Sans', 'sans-serif'],
+			},
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
