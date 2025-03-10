@@ -28,7 +28,7 @@ const Header = () => {
       <div className="container-custom py-4">
         <div className="flex justify-between items-center">
           <Link to="/" className="text-geoblue-800 font-montserrat font-bold text-xl">
-            GeoStudy
+            GeoStudys
           </Link>
 
           {/* Mobile menu button */}

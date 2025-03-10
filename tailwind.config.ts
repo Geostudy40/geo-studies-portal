@@ -63,9 +63,9 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// GeoStudy specific colors
+				// Updated GeoStudys specific colors
 				geoblue: {
-					DEFAULT: '#1E3A8A',
+					DEFAULT: '#282c34',
 					50: '#f0f5ff',
 					100: '#e5edff',
 					200: '#cddbff',
@@ -74,8 +74,8 @@ export default {
 					500: '#2563eb',
 					600: '#1d4ed8',
 					700: '#1e40af',
-					800: '#1e3a8a',
-					900: '#172554',
+					800: '#282c34',
+					900: '#282c34',
 				},
 				geolight: '#f9fafb',
 			},
