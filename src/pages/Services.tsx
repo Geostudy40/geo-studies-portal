@@ -1,4 +1,3 @@
-
 import { Map, FileText, Cpu, Ruler, BarChart, Building, Database, Microscope } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 import ServiceCard from '@/components/ServiceCard';
@@ -8,10 +7,10 @@ const Services = () => {
   
   const coreServices = [
     { 
-      title: t('serviceGeologicalMap'), 
-      description: t('serviceGeologicalMapDesc'),
+      title: t('serviceGeologicalRisk'), 
+      description: t('serviceGeologicalRiskDesc'),
       icon: <Map size={24} />,
-      detail: "Wir analysieren geologische Karten und historische Daten, um einen ersten Überblick über die Bodenbeschaffenheit zu erhalten. Diese Analyse hilft uns, potenzielle Herausforderungen zu identifizieren und die Planung von Bohrungen zu optimieren."
+      detail: t('serviceGeologicalRiskDetail')
     },
     { 
       title: t('serviceAiStudies'), 
