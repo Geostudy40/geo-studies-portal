@@ -134,13 +134,13 @@ export const translations = {
     extendedServicesIntro: "Neben unseren geotechnischen Vorstudien bieten wir Ihnen ein breites Spektrum an erweiterten Leistungen, die Ihre Projekte von der Planung bis zur Umsetzung begleiten. Profitieren Sie von unserer Expertise in allen Phasen Ihres Bauvorhabens.",
     
     extendedServiceProjectManagement: "Projektmanagement für Baugrunduntersuchungen",
-    extendedServiceProjectManagementDesc: "Wir übernehmen die vollständige Koordination Ihrer Baugrunduntersuchungen – von der ersten Planung bis zum finalen Gutachten. Dies umfasst Zeitplanung, Kostenüberwachung, Qualitätssicherung und Kommunikation mit allen Beteiligten gemäß Eurocode 7 und DIN-Normen.",
+    extendedServiceProjectManagementDesc: "Wir übernehmen die Koordination Ihrer Baugrunduntersuchungen – von der ersten Planung bis zum finalen Gutachten. Dies umfasst Zeitplanung, Kostenüberwachung und Qualitätssicherung gemäß Eurocode 7.",
     
     extendedServiceTenderManagement: "Ausschreibungsmanagement und Vergabe",
     extendedServiceTenderManagementDesc: "Wir erstellen normgerechte Ausschreibungsunterlagen für Ihre Baugrunderkundungen, unterstützen Sie bei der Auswahl qualifizierter Anbieter und bewerten eingehende Angebote fachkundig. Dabei berücksichtigen wir sowohl technische Aspekte als auch das optimale Preis-Leistungs-Verhältnis.",
     
     extendedServiceConstruction: "Bauüberwachung und Qualitätssicherung",
-    extendedServiceConstructionDesc: "Unsere Experten überwachen die fachgerechte Durchführung aller Bohr- und Sondierarbeiten vor Ort und stellen die Einhaltung der vorgegebenen Qualitätsstandards sicher. Die kontinuierliche Kontrolle während der Erkundungsphase gewährleistet die Zuverlässigkeit der gewonnenen Daten.",
+    extendedServiceConstructionDesc: "Unsere Experten überwachen die Durchführung aller Bohr- und Sondierarbeiten und stellen die Einhaltung der Qualitätsstandards sicher. Die Kontrolle gewährleistet zuverlässige Daten.",
     
     extendedServicePlanning: "Fachplanung und Gutachtenerstellung",
     extendedServicePlanningDesc: "Auf Basis der geotechnischen Vorstudien und Baugrunderkundungen erstellen wir normkonforme Baugrundgutachten nach Eurocode 7 und den aktuellen DIN-Normen. Diese enthalten konkrete Empfehlungen für Gründungsvarianten, Erdarbeiten und geotechnische Sonderlösungen.",

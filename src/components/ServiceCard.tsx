@@ -14,7 +14,7 @@ const ServiceCard = ({ title, description, icon }: ServiceCardProps) => {
         {icon}
       </div>
       <h3 className="text-xl font-semibold text-geoblue-800 mb-3">{title}</h3>
-      <p className="text-gray-600 text-sm md:text-base flex-grow">{description}</p>
+      <p className="text-gray-600 text-sm md:text-base flex-grow leading-relaxed">{description}</p>
     </div>
   );
 };
