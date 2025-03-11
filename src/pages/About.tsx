@@ -34,8 +34,8 @@ const About = () => {
             
             <div className="rounded-lg overflow-hidden shadow-xl">
               <img 
-                src="https://images.unsplash.com/photo-1581094271901-8022df4466f9?q=80&w=2069&auto=format&fit=crop" 
-                alt="Geotechnical Engineering Mission"
+                src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2070&auto=format&fit=crop" 
+                alt="Networking and Collaboration"
                 className="w-full h-auto" 
               />
             </div>
@@ -44,7 +44,7 @@ const About = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
             <div className="order-2 lg:order-1 rounded-lg overflow-hidden shadow-xl">
               <img 
-                src="https://images.unsplash.com/photo-1581092921461-7031287a879e?q=80&w=2070&auto=format&fit=crop" 
+                src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?q=80&w=2069&auto=format&fit=crop" 
                 alt="Geotechnical Engineering Team"
                 className="w-full h-auto" 
               />
@@ -59,6 +59,16 @@ const About = () => {
               </p>
               <p className="text-gray-600 mb-4">
                 Unsere Expertise in der Implementierung von KI-gestützten Analysen ermöglicht es uns, große Mengen geologischer Daten effizient zu verarbeiten und präzise Vorhersagen zu treffen. Alle unsere Berichte entsprechen den aktuellen Eurocode- und DIN-Normen.
+              </p>
+              
+              <h3 className="text-2xl font-bold text-geoblue-700 mt-8 mb-4">
+                Unser interdisziplinäres Experten-Netzwerk
+              </h3>
+              <p className="text-gray-600 mb-4">
+                Bei GeoStudy arbeiten wir in einer modernen Netzwerkstruktur, die Fachleute aus den Bereichen Geologie, Hydrologie, Bauingenieurwesen und Datenanalyse zusammenbringt. Unsere Spezialisten verfügen über 10 bis 25 Jahre Berufserfahrung in Deutschland und anderen europäischen Ländern und haben sich durch interdisziplinäre Projektarbeit bewährt.
+              </p>
+              <p className="text-gray-600 mb-4">
+                Diese Vernetzung unter einem Dach ermöglicht es uns, die Projekte unserer Kunden besonders effizient, normgerecht und kostengünstig voranzutreiben. Die Kombination aus langjähriger Praxiserfahrung und moderner digitaler Methodik bildet die Grundlage für unsere maßgeschneiderten Lösungen.
               </p>
             </div>
           </div>
