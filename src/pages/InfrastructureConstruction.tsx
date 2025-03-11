@@ -2,7 +2,7 @@
 import { useLanguage } from '@/context/LanguageContext';
 import { Link } from 'react-router-dom';
 import { 
-  Road, 
+  Route, 
   Droplets, 
   Award, 
   Leaf, 
@@ -16,7 +16,7 @@ const InfrastructureConstruction = () => {
 
   const advantageItems = [
     {
-      icon: <Road className="h-12 w-12 text-geoblue-800" />,
+      icon: <Route className="h-12 w-12 text-geoblue-800" />,
       title: language === 'de' ? "Umfassende Risikobewertung für lineare Bauwerke" : "Comprehensive Risk Assessment for Linear Structures",
       description: language === 'de' 
         ? "Analyse von Baugrundverhältnissen über lange Strecken mit Identifikation kritischer Bereiche. Bewertung von Streckenverläufen hinsichtlich geologischer Risiken wie Störungszonen, Rutschungen oder Setzungsbereiche. Früherkennung von Bereichen mit erhöhtem Erkundungsbedarf."
