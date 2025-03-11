@@ -9,7 +9,7 @@ const Sectors = () => {
   const sectors = [
     { 
       title: t('sectorResidential'), 
-      path: '/sectors/residential',
+      path: '/residential-construction',
       icon: <Building2 className="w-12 h-12 text-geoblue-800" />,
       description: "Optimierte Baugrunduntersuchungen für Wohngebäude, Hochhäuser und Gewerbeobjekte."
     },
