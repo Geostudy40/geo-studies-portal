@@ -1,4 +1,3 @@
-
 import { useLanguage } from '@/context/LanguageContext';
 import { Link } from 'react-router-dom';
 import { Building2, Route, Factory, Droplets, Wind } from 'lucide-react';
@@ -51,6 +50,15 @@ const Sectors = () => {
 
   return (
     <div className="bg-[#E9ECF5] min-h-screen">
+      <section className="bg-geoblue-800 text-white py-20">
+        <div className="container-custom">
+          <div className="text-center">
+            <h1 className="heading-primary-light">{t('sectorsTitle')}</h1>
+            <p className="text-xl max-w-3xl mx-auto">{t('sectorsSubtitle')}</p>
+          </div>
+        </div>
+      </section>
+
       <div className="container-custom py-16 md:py-24">
         <div className="text-center mb-16">
           <h1 className="text-3xl md:text-4xl font-bold text-geoblue-800 mb-6">
