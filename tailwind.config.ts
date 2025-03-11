@@ -77,7 +77,7 @@ export default {
 					800: '#282c34',
 					900: '#282c34',
 				},
-				geolight: '#f9fafb',
+				geolight: '#E9ECF5', // Updated from #f9fafb to #E9ECF5
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

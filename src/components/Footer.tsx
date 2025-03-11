@@ -16,12 +16,12 @@ const Footer = () => {
               GeoStudys
             </Link>
             <p className="text-gray-300 mt-4 max-w-md">
-              {t('footerDescription')}
+              {t('footer.description')}
             </p>
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold mb-4">{t('navigation')}</h3>
+            <h3 className="text-lg font-semibold mb-4">{t('footer.navigation')}</h3>
             <ul className="space-y-2">
               <li><Link to="/" className="text-gray-300 hover:text-white transition-colors">{t('home')}</Link></li>
               <li><Link to="/about" className="text-gray-300 hover:text-white transition-colors">{t('about')}</Link></li>
@@ -45,7 +45,7 @@ const Footer = () => {
                   onClick={(e) => e.preventDefault()}
                 >
                   <Linkedin className="w-5 h-5 mr-2" />
-                  {t('followLinkedIn')}
+                  {t('footer.followLinkedIn')}
                 </a>
               </li>
             </ul>
@@ -54,17 +54,17 @@ const Footer = () => {
 
         <div className="border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm">
-            © {currentYear} GeoStudys. {t('footerRights')}
+            © {currentYear} GeoStudys. {t('footer.rights')}
           </p>
           <div className="mt-4 md:mt-0 flex flex-wrap gap-4">
             <Link to="/imprint" className="text-gray-400 hover:text-white text-sm transition-colors">
-              {t('footerImprint')}
+              {t('footer.imprint')}
             </Link>
             <Link to="/privacy" className="text-gray-400 hover:text-white text-sm transition-colors">
-              {t('footerPrivacy')}
+              {t('footer.privacy')}
             </Link>
             <Link to="/terms" className="text-gray-400 hover:text-white text-sm transition-colors">
-              {t('footerTerms')}
+              {t('footer.terms')}
             </Link>
           </div>
         </div>
