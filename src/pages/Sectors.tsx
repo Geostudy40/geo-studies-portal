@@ -25,7 +25,7 @@ const Sectors = () => {
     },
     { 
       title: t('sectorIndustrial'), 
-      path: '/sectors/industrial',
+      path: '/industrial-construction',
       icon: <Factory className="w-12 h-12 text-geoblue-800" />,
       description: language === 'de' ?
         "Spezialisierte Untersuchungen für Industriebauten, Logistikzentren und Produktionsanlagen." :
