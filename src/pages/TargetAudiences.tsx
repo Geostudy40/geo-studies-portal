@@ -1,5 +1,5 @@
 
-import { Building, PenTool, Landmark, BarChart4 } from 'lucide-react';
+import { Building, PenTool, Landmark, BarChart4, Clock, Coins, Network } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 import TargetAudienceCard from '@/components/TargetAudienceCard';
 import { Button } from '@/components/ui/button';
@@ -56,6 +56,24 @@ const TargetAudiences = () => {
         t('investorBenefit4')
       ],
       scenario: t('investorScenario')
+    }
+  ];
+
+  const addedValues = [
+    {
+      title: t('valueTimeSavings'),
+      description: t('valueTimeSavingsDesc'),
+      icon: <Clock size={36} className="text-geoblue-800" />
+    },
+    {
+      title: t('valueCostOptimization'),
+      description: t('valueCostOptimizationDesc'),
+      icon: <Coins size={36} className="text-geoblue-800" />
+    },
+    {
+      title: t('valueExpertise'),
+      description: t('valueExpertiseDesc'),
+      icon: <Network size={36} className="text-geoblue-800" />
     }
   ];
 
@@ -134,58 +152,32 @@ const TargetAudiences = () => {
         </div>
       </section>
       
-      {/* Testimonials */}
+      {/* Added Value Section (replacing Testimonials) */}
       <section className="py-16 bg-geolight">
         <div className="container-custom">
-          <h2 className="text-3xl font-bold text-geoblue-800 mb-12 text-center">
-            {t('clientTestimonials')}
+          <h2 className="text-3xl font-bold text-geoblue-800 mb-6 text-center">
+            {t('addedValueTitle')}
           </h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto text-center mb-12">
+            {t('addedValueSubtitle')}
+          </p>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white p-6 rounded-lg shadow-md border border-gray-100">
-              <div className="flex items-center mb-4">
-                <div className="w-12 h-12 rounded-full bg-geoblue-100 flex items-center justify-center text-geoblue-800 font-bold text-xl mr-4">
-                  B
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {addedValues.map((value, index) => (
+              <div key={index} className="bg-white p-6 rounded-lg shadow-md border border-gray-100 transition-all duration-300 hover:shadow-lg hover:translate-y-[-5px]">
+                <div className="flex justify-center mb-6">
+                  <div className="w-16 h-16 rounded-full bg-geoblue-100 flex items-center justify-center">
+                    {value.icon}
+                  </div>
                 </div>
-                <div>
-                  <h3 className="font-semibold text-geoblue-800">{t('testimonial1Name')}</h3>
-                  <p className="text-gray-500 text-sm">{t('testimonial1Company')}</p>
-                </div>
+                <h3 className="font-semibold text-geoblue-800 text-xl mb-4 text-center">
+                  {value.title}
+                </h3>
+                <p className="text-gray-600">
+                  {value.description}
+                </p>
               </div>
-              <p className="text-gray-600 italic">
-                {t('testimonial1Text')}
-              </p>
-            </div>
-            
-            <div className="bg-white p-6 rounded-lg shadow-md border border-gray-100">
-              <div className="flex items-center mb-4">
-                <div className="w-12 h-12 rounded-full bg-geoblue-100 flex items-center justify-center text-geoblue-800 font-bold text-xl mr-4">
-                  P
-                </div>
-                <div>
-                  <h3 className="font-semibold text-geoblue-800">{t('testimonial2Name')}</h3>
-                  <p className="text-gray-500 text-sm">{t('testimonial2Company')}</p>
-                </div>
-              </div>
-              <p className="text-gray-600 italic">
-                {t('testimonial2Text')}
-              </p>
-            </div>
-            
-            <div className="bg-white p-6 rounded-lg shadow-md border border-gray-100">
-              <div className="flex items-center mb-4">
-                <div className="w-12 h-12 rounded-full bg-geoblue-100 flex items-center justify-center text-geoblue-800 font-bold text-xl mr-4">
-                  I
-                </div>
-                <div>
-                  <h3 className="font-semibold text-geoblue-800">{t('testimonial3Name')}</h3>
-                  <p className="text-gray-500 text-sm">{t('testimonial3Company')}</p>
-                </div>
-              </div>
-              <p className="text-gray-600 italic">
-                {t('testimonial3Text')}
-              </p>
-            </div>
+            ))}
           </div>
         </div>
       </section>

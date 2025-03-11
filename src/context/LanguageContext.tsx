@@ -1,4 +1,3 @@
-
 import React, { createContext, useState, useContext, ReactNode } from 'react';
 
 export const translations = {
@@ -62,7 +61,16 @@ export const translations = {
     howWeCanHelp: "Wie wir Ihnen helfen können",
     typicalScenario: "Typisches Szenario",
     tailoredStudies: "Unsere maßgeschneiderten geotechnischen Vorstudien sind speziell auf die Bedürfnisse von {audience} ausgerichtet. Wir liefern präzise, relevante Daten und Analysen, die direkt in Ihre Entscheidungsprozesse integriert werden können.",
-    clientTestimonials: "Was unsere Kunden sagen",
+    
+    // Added Value Section (replacing Testimonials)
+    addedValueTitle: "Mehrwert für Ihre Projekte",
+    addedValueSubtitle: "Unsere geotechnischen Vorstudien bieten Ihnen entscheidende Vorteile für den Erfolg Ihrer Bauvorhaben:",
+    valueTimeSavings: "Zeitgewinn durch moderne Technologie",
+    valueTimeSavingsDesc: "Unsere KI-gestützte Analyse umfangreicher Datenbanken beschleunigt den Planungsprozess erheblich. Sie erhalten präzise Ergebnisse in einem Bruchteil der Zeit, die konventionelle Methoden benötigen, und können Ihr Projekt zügiger vorantreiben.",
+    valueCostOptimization: "Kostenoptimierung durch gezielte Erkundung",
+    valueCostOptimizationDesc: "Mit unseren Vorstudien reduzieren Sie die Anzahl notwendiger Bohrungen und Sondierungen auf ein optimales Maß. Gleichzeitig minimieren Sie das Risiko unerwarteter Mehrkosten während der Bauphase durch frühzeitige Kenntnis kritischer Bodenverhältnisse.",
+    valueExpertise: "Fachliche Kompetenz durch interdisziplinäres Netzwerk",
+    valueExpertiseDesc: "Wir verbinden moderne geotechnische Analysemethoden mit dem Fachwissen eines Netzwerks von Spezialisten verschiedener Disziplinen. Diese Kombination gewährleistet Ihnen normkonforme, praxistaugliche Lösungen für jede geotechnische Herausforderung.",
     
     // Construction companies benefits
     constructionBenefit1: "Reduzierung von Risiken und unerwarteten Kosten",
@@ -92,18 +100,7 @@ export const translations = {
     investorBenefit4: "Vermeidung kostenintensiver Überraschungen während der Projektentwicklung",
     investorScenario: "Ein Investor konnte dank unserer frühzeitigen geotechnischen Risikoanalyse eine fundierte Entscheidung über den Kauf eines Grundstücks treffen. Die identifizierten Baugrundrisiken wurden in die Kaufpreisverhandlung einbezogen, was zu einer realistischen Bewertung der zu erwartenden Projektkosten führte und später kostenintensive Überraschungen verhinderte.",
     
-    // Testimonials
-    testimonial1Name: "Bauunternehmen GmbH",
-    testimonial1Company: "Wohnungsbau",
-    testimonial1Text: "Die KI-gestützten Vorstudien von GeoStudy haben uns geholfen, den Umfang der Bohrungen zu reduzieren und gleichzeitig ein besseres Verständnis der Bodenverhältnisse zu erhalten.",
-    
-    testimonial2Name: "Planungsbüro Mustermann",
-    testimonial2Company: "Architektur",
-    testimonial2Text: "Die detaillierten geotechnischen Berichte ermöglichten es uns, effiziente und sichere Fundamentlösungen zu entwerfen, die zu erheblichen Kosteneinsparungen führten.",
-    
-    testimonial3Name: "Invest Immo AG",
-    testimonial3Company: "Immobilieninvestment",
-    testimonial3Text: "Die frühzeitige geotechnische Risikoidentifikation hat uns vor einer kostspieligen Fehlinvestition bewahrt. Der Mehrwert dieser Dienstleistung kann nicht hoch genug eingeschätzt werden.",
+    contactForConsultation: "Kontaktieren Sie uns für eine Beratung",
     
     // Projects
     projectsTitle: "Projekte / Referenzen",
@@ -119,7 +116,6 @@ export const translations = {
     messageLabel: "Nachricht",
     fileUploadLabel: "Dateien hochladen (Pläne, PDFs, CAD)",
     sendButton: "Nachricht senden",
-    contactForConsultation: "Kontaktieren Sie uns für eine Beratung",
     
     // Footer
     footerRights: "Alle Rechte vorbehalten",
@@ -191,7 +187,16 @@ export const translations = {
     howWeCanHelp: "How We Can Help You",
     typicalScenario: "Typical Scenario",
     tailoredStudies: "Our tailored geotechnical preliminary studies are specifically designed for the needs of {audience}. We provide precise, relevant data and analyses that can be directly integrated into your decision-making processes.",
-    clientTestimonials: "What Our Clients Say",
+    
+    // Added Value Section (replacing Testimonials)
+    addedValueTitle: "Added Value for Your Projects",
+    addedValueSubtitle: "Our geotechnical preliminary studies offer you decisive advantages for the success of your construction projects:",
+    valueTimeSavings: "Time Savings through Modern Technology",
+    valueTimeSavingsDesc: "Our AI-supported analysis of extensive databases significantly accelerates the planning process. You receive precise results in a fraction of the time conventional methods require, allowing you to advance your project more quickly.",
+    valueCostOptimization: "Cost Optimization through Targeted Exploration",
+    valueCostOptimizationDesc: "With our preliminary studies, you reduce the number of necessary drillings and soundings to an optimal level. At the same time, you minimize the risk of unexpected additional costs during the construction phase through early knowledge of critical soil conditions.",
+    valueExpertise: "Professional Expertise through Interdisciplinary Network",
+    valueExpertiseDesc: "We combine modern geotechnical analysis methods with the expertise of a network of specialists from various disciplines. This combination guarantees you standard-compliant, practical solutions for any geotechnical challenge.",
     
     // Construction companies benefits
     constructionBenefit1: "Reduction of risks and unexpected costs",
@@ -221,18 +226,7 @@ export const translations = {
     investorBenefit4: "Avoidance of cost-intensive surprises during project development",
     investorScenario: "An investor was able to make a well-informed decision about purchasing a property thanks to our early geotechnical risk analysis. The identified ground-related risks were included in the purchase price negotiation, leading to a realistic assessment of the expected project costs and preventing cost-intensive surprises later.",
     
-    // Testimonials
-    testimonial1Name: "Construction Company Ltd",
-    testimonial1Company: "Residential Construction",
-    testimonial1Text: "The AI-supported preliminary studies from GeoStudy helped us reduce the scope of drillings while gaining a better understanding of soil conditions.",
-    
-    testimonial2Name: "Planning Office Sample",
-    testimonial2Company: "Architecture",
-    testimonial2Text: "The detailed geotechnical reports enabled us to design efficient and safe foundation solutions that led to significant cost savings.",
-    
-    testimonial3Name: "Invest Real Estate AG",
-    testimonial3Company: "Real Estate Investment",
-    testimonial3Text: "The early geotechnical risk identification saved us from a costly misinvestment. The added value of this service cannot be rated highly enough.",
+    contactForConsultation: "Contact us for consultation",
     
     // Projects
     projectsTitle: "Projects / References",
@@ -248,7 +242,6 @@ export const translations = {
     messageLabel: "Message",
     fileUploadLabel: "Upload files (plans, PDFs, CAD)",
     sendButton: "Send message",
-    contactForConsultation: "Contact us for consultation",
     
     // Footer
     footerRights: "All rights reserved",
@@ -294,3 +287,4 @@ export const useLanguage = () => {
   }
   return context;
 };
+
