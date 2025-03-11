@@ -134,7 +134,7 @@ export const translations = {
     extendedServicesIntro: "Neben unseren geotechnischen Vorstudien bieten wir Ihnen ein breites Spektrum an erweiterten Leistungen, die Ihre Projekte von der Planung bis zur Umsetzung begleiten. Profitieren Sie von unserer Expertise in allen Phasen Ihres Bauvorhabens.",
     
     extendedServiceProjectManagement: "Projektmanagement für Baugrunduntersuchungen",
-    extendedServiceProjectManagementDesc: "Wir übernehmen die vollständige Koordination Ihrer Baugrunduntersuchungen – von der ersten Planung bis zum finalen Gutachten. Dies umfasst die Zeitplanung, Kostenüberwachung, Qualitätssicherung und Kommunikation mit allen Beteiligten gemäß Eurocode 7 und DIN-Normen.",
+    extendedServiceProjectManagementDesc: "Wir übernehmen die vollständige Koordination Ihrer Baugrunduntersuchungen – von der ersten Planung bis zum finalen Gutachten. Dies umfasst Zeitplanung, Kostenüberwachung, Qualitätssicherung und Kommunikation mit allen Beteiligten gemäß Eurocode 7 und DIN-Normen.",
     
     extendedServiceTenderManagement: "Ausschreibungsmanagement und Vergabe",
     extendedServiceTenderManagementDesc: "Wir erstellen normgerechte Ausschreibungsunterlagen für Ihre Baugrunderkundungen, unterstützen Sie bei der Auswahl qualifizierter Anbieter und bewerten eingehende Angebote fachkundig. Dabei berücksichtigen wir sowohl technische Aspekte als auch das optimale Preis-Leistungs-Verhältnis.",
