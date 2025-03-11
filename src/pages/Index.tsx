@@ -74,9 +74,17 @@ const Index = () => {
               <h2 className="text-3xl md:text-4xl font-bold text-geoblue-800 mb-6">
                 {t('aboutTitle')}
               </h2>
-              <p className="text-gray-600 mb-8">
-                {t('aboutContent')}
-              </p>
+              <div className="text-gray-600 space-y-4 mb-8">
+                <p>
+                  Als erfahrene Geologen kombinieren wir traditionelles Fachwissen mit innovativen KI-Technologien, um präzise und kosteneffiziente geotechnische Vorstudien durchzuführen.
+                </p>
+                <p>
+                  Unser interdisziplinäres Experten-Netzwerk vereint Fachleute aus den Bereichen Geologie, Hydrologie, Bauingenieurwesen und Datenanalyse mit 10-25 Jahren Berufserfahrung in Deutschland und anderen europäischen Ländern. Diese moderne Netzwerkstruktur ermöglicht es uns, die Projekte unserer Kunden besonders effizient, normgerecht und kostengünstig voranzutreiben.
+                </p>
+                <p>
+                  Unsere Expertise ermöglicht es uns, potenzielle Risiken frühzeitig zu identifizieren und Lösungen vorzuschlagen, die Zeit und Kosten sparen.
+                </p>
+              </div>
               <Link to="/about" className="btn-primary">
                 Mehr erfahren
               </Link>
