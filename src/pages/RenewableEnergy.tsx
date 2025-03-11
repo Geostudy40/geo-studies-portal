@@ -1,7 +1,7 @@
 
 import { useLanguage } from '@/context/LanguageContext';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, Wind, Shield, Droplet, FileText, cpu } from 'lucide-react';
+import { ArrowLeft, Wind, Shield, Droplet, FileText, Cpu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const RenewableEnergy = () => {
@@ -74,7 +74,7 @@ const RenewableEnergy = () => {
       title: isGerman 
         ? "KI-gestützte Baubarkeitsanalyse und Erkundungsplanung" 
         : "AI-supported Constructability Analysis and Exploration Planning",
-      icon: <cpu className="w-12 h-12 text-geoblue-800" />,
+      icon: <Cpu className="w-12 h-12 text-geoblue-800" />,
       description: isGerman
         ? "Einsatz moderner KI-Algorithmen zur Analyse umfangreicher geologischer Datenbanken und historischer Bohrprofile. Präzise Einschätzung der Bohrtiefen und erforderlichen Erkundungsmaßnahmen für Erdwärmesonden. Optimierung des Erkundungsprogramms für großflächige Anlagen bei gleichzeitiger Reduzierung der Erkundungskosten."
         : "Use of modern AI algorithms to analyze extensive geological databases and historical drilling profiles. Precise estimation of drilling depths and required exploration measures for geothermal probes. Optimization of the exploration program for large-scale facilities while reducing exploration costs."
