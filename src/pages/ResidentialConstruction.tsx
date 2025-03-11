@@ -6,7 +6,8 @@ import {
   EuroIcon, 
   FileCheck, 
   Cpu, 
-  FileText 
+  FileText,
+  ArrowLeft
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -70,93 +71,96 @@ const ResidentialConstruction = () => {
   ];
 
   return (
-    <div className="container-custom py-16 md:py-24">
-      <div className="max-w-4xl mx-auto">
-        <div className="mb-8">
-          <Link 
-            to="/sectors" 
-            className="text-geoblue-800 hover:text-geoblue-600 flex items-center gap-2"
-          >
-            ← {language === 'de' ? 'Zurück zu Fachgebiete' : 'Back to Sectors'}
-          </Link>
-        </div>
-        
-        <h1 className="text-3xl md:text-4xl font-bold text-geoblue-800 mb-6">
-          {language === 'de' ? 'Geotechnische Vorstudien für Wohnungs- und Hochbau' : 'Geotechnical Preliminary Studies for Residential and Building Construction'}
-        </h1>
-        
-        <p className="text-xl text-gray-700 mb-12 font-montserrat">
-          {language === 'de' 
-            ? 'Unsere KI-gestützte geotechnische Vorstudie für Wohnungsbauprojekte bietet Ihnen eine fundierte Grundlage für Ihre Investition und Planungen. Von Einfamilienhäusern bis zu komplexen Wohnanlagen – wir liefern präzise Daten für sichere Entscheidungen und optimierte Baugrunderkundungen.'
-            : 'Our AI-supported geotechnical preliminary study for residential construction projects provides you with a solid foundation for your investment and planning. From single-family homes to complex residential complexes – we deliver precise data for secure decisions and optimized ground investigations.'}
-        </p>
-        
-        <h2 className="text-2xl md:text-3xl font-semibold text-geoblue-800 mb-8">
-          {language === 'de' ? 'Vorteile unserer Vorstudien im Wohnungsbau' : 'Benefits of our Preliminary Studies in Residential Construction'}
-        </h2>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-          {advantageItems.map((item, index) => (
-            <div key={index} className="bg-white p-6 rounded-lg shadow-md border border-gray-100 hover:border-geoblue-800 transition-all duration-300">
-              <div className="flex flex-col md:flex-row items-center md:items-start gap-4">
-                <div className="shrink-0">
-                  {item.icon}
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold text-geoblue-800 mb-2 text-center md:text-left">
-                    {item.title}
-                  </h3>
-                  <p className="text-gray-600">
-                    {item.description}
-                  </p>
+    <div className="bg-[#E9ECF5] min-h-screen">
+      <div className="container-custom py-16 md:py-24">
+        <div className="max-w-4xl mx-auto">
+          <h1 className="text-3xl md:text-4xl font-bold text-geoblue-800 mb-6">
+            {language === 'de' ? 'Geotechnische Vorstudien für Wohnungs- und Hochbau' : 'Geotechnical Preliminary Studies for Residential and Building Construction'}
+          </h1>
+          
+          <div className="mb-8">
+            <Link 
+              to="/sectors" 
+              className="text-geoblue-800 hover:text-geoblue-600 inline-flex items-center gap-2 px-4 py-2 rounded-md bg-white shadow-sm hover:shadow-md transition-all duration-300"
+            >
+              <ArrowLeft className="h-4 w-4" />
+              {language === 'de' ? 'Zurück zu Fachgebiete' : 'Back to Sectors'}
+            </Link>
+          </div>
+          
+          <p className="text-xl text-gray-700 mb-12 font-montserrat">
+            {language === 'de' 
+              ? 'Unsere KI-gestützte geotechnische Vorstudie für Wohnungsbauprojekte bietet Ihnen eine fundierte Grundlage für Ihre Investition und Planungen. Von Einfamilienhäusern bis zu komplexen Wohnanlagen – wir liefern präzise Daten für sichere Entscheidungen und optimierte Baugrunderkundungen.'
+              : 'Our AI-supported geotechnical preliminary study for residential construction projects provides you with a solid foundation for your investment and planning. From single-family homes to complex residential complexes – we deliver precise data for secure decisions and optimized ground investigations.'}
+          </p>
+          
+          <h2 className="text-2xl md:text-3xl font-semibold text-geoblue-800 mb-8">
+            {language === 'de' ? 'Vorteile unserer Vorstudien im Wohnungsbau' : 'Benefits of our Preliminary Studies in Residential Construction'}
+          </h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+            {advantageItems.map((item, index) => (
+              <div key={index} className="bg-white p-6 rounded-lg shadow-md border border-gray-100 hover:border-geoblue-800 transition-all duration-300">
+                <div className="flex flex-col md:flex-row items-center md:items-start gap-4">
+                  <div className="shrink-0">
+                    {item.icon}
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold text-geoblue-800 mb-2 text-center md:text-left">
+                      {item.title}
+                    </h3>
+                    <p className="text-gray-600">
+                      {item.description}
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
-        
-        <h2 className="text-2xl md:text-3xl font-semibold text-geoblue-800 mb-8">
-          {language === 'de' ? 'Einblicke in unsere Projekte' : 'Insights into our Projects'}
-        </h2>
-        
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-          {images.map((image, index) => (
-            <div key={index} className="bg-white rounded-lg overflow-hidden shadow-md">
-              <img 
-                src={image.src} 
-                alt={image.alt} 
-                className="w-full h-56 object-cover"
-              />
-              <p className="p-4 text-sm text-gray-600 italic">
-                {image.caption}
-              </p>
-            </div>
-          ))}
-        </div>
-        
-        <div className="bg-geoblue-50 rounded-lg p-8 mb-16">
-          <h2 className="text-2xl font-semibold text-geoblue-800 mb-4">
-            {language === 'de' ? 'Fallbeispiel: Wohnanlage mit herausforderndem Baugrund' : 'Case Study: Residential Complex with Challenging Ground'}
+            ))}
+          </div>
+          
+          <h2 className="text-2xl md:text-3xl font-semibold text-geoblue-800 mb-8">
+            {language === 'de' ? 'Einblicke in unsere Projekte' : 'Insights into our Projects'}
           </h2>
-          <p className="text-gray-700 mb-4">
-            {language === 'de' 
-              ? 'Bei einem Wohnungsbauprojekt in München sollten vier Mehrfamilienhäuser auf einem Grundstück mit stark heterogenem Baugrund errichtet werden. Unsere geotechnische Vorstudie identifizierte einen bisher unbekannten ehemaligen Bachverlauf und eine Torflinse, die punktuell zu erheblichen Setzungsproblemen geführt hätten.'
-              : 'In a residential construction project in Munich, four apartment buildings were to be built on a plot with highly heterogeneous ground. Our geotechnical preliminary study identified a previously unknown former stream course and a peat lens, which would have led to significant settlement problems in specific areas.'}
-          </p>
-          <p className="text-gray-700">
-            {language === 'de'
-              ? 'Durch die Anpassung der Gebäudeposition und eine gezielte Tiefgründung im betroffenen Bereich konnten Mehrkosten von über 200.000 € vermieden werden. Die Bauzeit verkürzte sich um 3 Wochen, da keine nachträglichen Planungsänderungen erforderlich waren.'
-              : 'By adjusting the building position and implementing targeted deep foundation in the affected area, additional costs of over €200,000 were avoided. The construction time was reduced by 3 weeks, as no subsequent planning changes were required.'}
-          </p>
-        </div>
-        
-        <div className="flex justify-center mb-16">
-          <Button 
-            className="bg-geoblue-800 hover:bg-geoblue-700 text-white text-lg py-6 px-8" 
-            onClick={() => window.location.href='/contact'}
-          >
-            {language === 'de' ? 'Jetzt unverbindliches Angebot anfordern' : 'Request a non-binding offer now'}
-          </Button>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+            {images.map((image, index) => (
+              <div key={index} className="bg-white rounded-lg overflow-hidden shadow-md">
+                <img 
+                  src={image.src} 
+                  alt={image.alt} 
+                  className="w-full h-56 object-cover"
+                />
+                <p className="p-4 text-sm text-gray-600 italic">
+                  {image.caption}
+                </p>
+              </div>
+            ))}
+          </div>
+          
+          <div className="bg-white rounded-lg p-8 mb-16 shadow-md">
+            <h2 className="text-2xl font-semibold text-geoblue-800 mb-4">
+              {language === 'de' ? 'Fallbeispiel: Wohnanlage mit herausforderndem Baugrund' : 'Case Study: Residential Complex with Challenging Ground'}
+            </h2>
+            <p className="text-gray-700 mb-4">
+              {language === 'de' 
+                ? 'Bei einem Wohnungsbauprojekt in München sollten vier Mehrfamilienhäuser auf einem Grundstück mit stark heterogenem Baugrund errichtet werden. Unsere geotechnische Vorstudie identifizierte einen bisher unbekannten ehemaligen Bachverlauf und eine Torflinse, die punktuell zu erheblichen Setzungsproblemen geführt hätten.'
+                : 'In a residential construction project in Munich, four apartment buildings were to be built on a plot with highly heterogeneous ground. Our geotechnical preliminary study identified a previously unknown former stream course and a peat lens, which would have led to significant settlement problems in specific areas.'}
+            </p>
+            <p className="text-gray-700">
+              {language === 'de'
+                ? 'Durch die Anpassung der Gebäudeposition und eine gezielte Tiefgründung im betroffenen Bereich konnten Mehrkosten von über 200.000 € vermieden werden. Die Bauzeit verkürzte sich um 3 Wochen, da keine nachträglichen Planungsänderungen erforderlich waren.'
+                : 'By adjusting the building position and implementing targeted deep foundation in the affected area, additional costs of over €200,000 were avoided. The construction time was reduced by 3 weeks, as no subsequent planning changes were required.'}
+            </p>
+          </div>
+          
+          <div className="flex justify-center mb-16">
+            <Button 
+              className="bg-geoblue-800 hover:bg-geoblue-700 text-white text-lg py-6 px-8" 
+              onClick={() => window.location.href='/contact'}
+            >
+              {language === 'de' ? 'Jetzt unverbindliches Angebot anfordern' : 'Request a non-binding offer now'}
+            </Button>
+          </div>
         </div>
       </div>
     </div>

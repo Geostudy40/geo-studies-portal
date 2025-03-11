@@ -1,6 +1,7 @@
 
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { useLanguage } from '@/context/LanguageContext';
+import { ArrowLeft } from 'lucide-react';
 
 const SectorDetail = () => {
   const { sectorId } = useParams<{ sectorId: string }>();
@@ -138,50 +139,62 @@ const SectorDetail = () => {
   const content = sectorContent[currentSector];
 
   if (!content) {
-    return <div className="container-custom py-16">Content not found</div>;
+    return <div className="bg-[#E9ECF5] min-h-screen container-custom py-16">Content not found</div>;
   }
 
   return (
-    <div className="container-custom py-16 md:py-24">
-      <div className="max-w-4xl mx-auto">
-        <h1 className="text-3xl md:text-4xl font-bold text-geoblue-800 mb-8">
-          {content.title}
-        </h1>
+    <div className="bg-[#E9ECF5] min-h-screen">
+      <div className="container-custom py-16 md:py-24">
+        <div className="max-w-4xl mx-auto">
+          <h1 className="text-3xl md:text-4xl font-bold text-geoblue-800 mb-8">
+            {content.title}
+          </h1>
 
-        <div className="rounded-lg overflow-hidden shadow-xl mb-10">
-          <img 
-            src={content.image} 
-            alt={content.title}
-            className="w-full h-auto object-cover object-center" 
-          />
-        </div>
+          <div className="mb-8">
+            <Link 
+              to="/sectors" 
+              className="text-geoblue-800 hover:text-geoblue-600 inline-flex items-center gap-2 px-4 py-2 rounded-md bg-white shadow-sm hover:shadow-md transition-all duration-300"
+            >
+              <ArrowLeft className="h-4 w-4" />
+              {language === 'de' ? 'Zurück zu Fachgebiete' : 'Back to Sectors'}
+            </Link>
+          </div>
 
-        <p className="text-xl text-gray-700 mb-8 font-montserrat">
-          {content.intro}
-        </p>
+          <div className="rounded-lg overflow-hidden shadow-xl mb-10 bg-white">
+            <img 
+              src={content.image} 
+              alt={content.title}
+              className="w-full h-auto object-cover object-center" 
+            />
+          </div>
 
-        <div className="bg-geoblue-50 rounded-lg p-6 mb-10">
-          <h3 className="text-xl font-semibold text-geoblue-800 mb-4">
-            {language === 'de' ? 'Vorteile für Ihre Branche' : 'Benefits for Your Sector'}
-          </h3>
-          <ul className="space-y-3">
-            {content.benefits.map((benefit, index) => (
-              <li key={index} className="flex items-start">
-                <span className="text-geoblue-800 mr-2">•</span>
-                <span>{benefit}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
+          <p className="text-xl text-gray-700 mb-8 font-montserrat">
+            {content.intro}
+          </p>
 
-        <div className="prose prose-lg max-w-none">
-          <p>{content.description}</p>
-        </div>
+          <div className="bg-white rounded-lg p-6 mb-10 shadow-md">
+            <h3 className="text-xl font-semibold text-geoblue-800 mb-4">
+              {language === 'de' ? 'Vorteile für Ihre Branche' : 'Benefits for Your Sector'}
+            </h3>
+            <ul className="space-y-3">
+              {content.benefits.map((benefit, index) => (
+                <li key={index} className="flex items-start">
+                  <span className="text-geoblue-800 mr-2">•</span>
+                  <span>{benefit}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-        <div className="mt-12 flex justify-center">
-          <a href="/contact" className="btn-primary">
-            {language === 'de' ? 'Beratungsgespräch vereinbaren' : 'Schedule a consultation'}
-          </a>
+          <div className="prose prose-lg max-w-none bg-white p-6 rounded-lg shadow-md">
+            <p>{content.description}</p>
+          </div>
+
+          <div className="mt-12 flex justify-center">
+            <a href="/contact" className="btn-primary">
+              {language === 'de' ? 'Beratungsgespräch vereinbaren' : 'Schedule a consultation'}
+            </a>
+          </div>
         </div>
       </div>
     </div>
