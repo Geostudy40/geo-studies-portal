@@ -1,4 +1,3 @@
-
 import React, { createContext, useState, useContext, ReactNode } from 'react';
 
 // Define all text content in both languages
@@ -8,9 +7,21 @@ export const translations = {
     home: "Home",
     about: "Über uns",
     services: "Leistungen",
+    projectSectors: "Projektbranchen",
     targetAudiences: "Zielgruppen",
     projects: "Projekte / Referenzen",
     contact: "Kontakt",
+    
+    // Project Sectors
+    projectSectorsTitle: "Projektbranchen",
+    projectSectorsSubtitle: "Unsere geotechnischen Vorstudien sind speziell auf die Anforderungen verschiedener Bauvorhaben zugeschnitten. Wählen Sie Ihre Branche, um mehr über die spezifischen Vorteile und Leistungen zu erfahren, die wir für Ihr Projekt bieten können.",
+    
+    // Project Sector Categories
+    sectorResidential: "Wohnungs- und Hochbau",
+    sectorInfrastructure: "Infrastruktur und Verkehrsbau",
+    sectorIndustrial: "Industrieanlagen und Logistik",
+    sectorWater: "Wasserbau und Wasserwirtschaft",
+    sectorRenewable: "Erneuerbare Energien",
     
     // Hero
     heroTitle: "Geotechnische Vorstudien für fundierte Entscheidungen",
@@ -71,9 +82,21 @@ export const translations = {
     home: "Home",
     about: "About Us",
     services: "Services",
+    projectSectors: "Project Sectors",
     targetAudiences: "Target Audiences",
     projects: "Projects / References",
     contact: "Contact",
+    
+    // Project Sectors
+    projectSectorsTitle: "Project Sectors",
+    projectSectorsSubtitle: "Our geotechnical preliminary studies are tailored to the requirements of various construction projects. Choose your sector to learn more about the specific benefits and services we can offer for your project.",
+    
+    // Project Sector Categories
+    sectorResidential: "Residential and Building Construction",
+    sectorInfrastructure: "Infrastructure and Transportation",
+    sectorIndustrial: "Industrial Facilities and Logistics",
+    sectorWater: "Hydraulic Engineering and Water Management",
+    sectorRenewable: "Renewable Energy",
     
     // Hero
     heroTitle: "Geotechnical Preliminary Studies for Informed Decisions",
