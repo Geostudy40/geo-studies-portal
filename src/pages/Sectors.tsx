@@ -33,7 +33,7 @@ const Sectors = () => {
     },
     { 
       title: t('sectorWater'), 
-      path: '/sectors/water',
+      path: '/water-construction',
       icon: <Droplets className="w-12 h-12 text-geoblue-800" />,
       description: language === 'de' ?
         "Geotechnische Vorstudien für Wasserbauwerke, Häfen, Deiche und wasserwirtschaftliche Anlagen." :
