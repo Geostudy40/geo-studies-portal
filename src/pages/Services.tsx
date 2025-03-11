@@ -64,7 +64,7 @@ const Services = () => {
       <section className="bg-geoblue-800 text-white py-20">
         <div className="container-custom">
           <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">{t('servicesTitle')}</h1>
+            <h1 className="heading-primary-light">{t('servicesTitle')}</h1>
             <p className="text-xl max-w-3xl mx-auto">{t('servicesSubtitle')}</p>
           </div>
         </div>
@@ -73,7 +73,7 @@ const Services = () => {
       {/* Core Services Section */}
       <section className="py-16 bg-white">
         <div className="container-custom">
-          <h2 className="text-3xl font-bold text-geoblue-800 mb-12 text-center">
+          <h2 className="section-heading">
             Unsere Kernleistungen
           </h2>
           
@@ -85,13 +85,13 @@ const Services = () => {
                     <div className="flex items-center justify-center w-16 h-16 rounded-full bg-geoblue-100 text-geoblue-800 mb-6">
                       {service.icon}
                     </div>
-                    <h3 className="text-2xl font-semibold text-geoblue-800 mb-4">{service.title}</h3>
+                    <h3 className="heading-secondary">{service.title}</h3>
                     <p className="text-gray-600 mb-4">{service.description}</p>
                   </div>
                 </div>
                 
                 <div className={`lg:col-span-7 ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
-                  <h3 className="text-xl font-semibold text-geoblue-800 mb-4">Detaillierte Beschreibung</h3>
+                  <h3 className="heading-secondary">Detaillierte Beschreibung</h3>
                   <p className="text-gray-600 mb-4 whitespace-pre-line">{service.detail}</p>
                   <div className="bg-geoblue-50 border-l-4 border-geoblue-800 p-4 mb-6">
                     <p className="text-gray-700 italic">
@@ -116,7 +116,7 @@ const Services = () => {
       {/* Additional Services Section */}
       <section className="py-16 bg-geolight">
         <div className="container-custom">
-          <h2 className="text-3xl font-bold text-geoblue-800 mb-12 text-center">
+          <h2 className="section-heading">
             Zusätzliche Dienstleistungen
           </h2>
           
@@ -136,7 +136,7 @@ const Services = () => {
       {/* Service Process Section */}
       <section className="py-16 bg-white">
         <div className="container-custom">
-          <h2 className="text-3xl font-bold text-geoblue-800 mb-12 text-center">
+          <h2 className="section-heading">
             Unser Prozess
           </h2>
           
