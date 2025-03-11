@@ -22,7 +22,7 @@ const Hero = ({ backgroundImage }: HeroProps) => {
       
       <div className="container-custom relative h-full flex items-center">
         <div className="max-w-3xl">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
+          <h1 className="heading-primary-light">
             {t('heroTitle')}
           </h1>
           

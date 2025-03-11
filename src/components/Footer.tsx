@@ -1,4 +1,3 @@
-
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/context/LanguageContext';
 import { Linkedin } from 'lucide-react';
@@ -22,7 +21,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold mb-4">{t('footer.navigation')}</h3>
+            <h3 className="text-lg font-semibold mb-4 text-white">{t('footer.navigation')}</h3>
             <ul className="space-y-2">
               <li><Link to="/" className="text-gray-300 hover:text-white transition-colors">{t('home')}</Link></li>
               <li><Link to="/about" className="text-gray-300 hover:text-white transition-colors">{t('about')}</Link></li>
@@ -34,7 +33,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold mb-4">{t('contact')}</h3>
+            <h3 className="text-lg font-semibold mb-4 text-white">{t('contact')}</h3>
             <ul className="space-y-2">
               <li className="text-gray-300">Email: {COMPANY_INFO.contact.email}</li>
               <li className="text-gray-300">Tel: {COMPANY_INFO.contact.phone}</li>
