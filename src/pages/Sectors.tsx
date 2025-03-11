@@ -4,38 +4,48 @@ import { Link } from 'react-router-dom';
 import { Building2, Route, Factory, Droplets, Wind } from 'lucide-react';
 
 const Sectors = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   const sectors = [
     { 
       title: t('sectorResidential'), 
       path: '/residential-construction',
       icon: <Building2 className="w-12 h-12 text-geoblue-800" />,
-      description: "Optimierte Baugrunduntersuchungen für Wohngebäude, Hochhäuser und Gewerbeobjekte."
+      description: language === 'de' ? 
+        "Optimierte Baugrunduntersuchungen für Wohngebäude, Hochhäuser und Gewerbeobjekte." :
+        "Optimized ground investigations for residential buildings, high-rises, and commercial properties."
     },
     { 
       title: t('sectorInfrastructure'), 
       path: '/sectors/infrastructure',
       icon: <Route className="w-12 h-12 text-geoblue-800" />,
-      description: "Geotechnische Analysen für Straßen, Brücken, Tunnel und andere Infrastrukturprojekte."
+      description: language === 'de' ?
+        "Geotechnische Analysen für Straßen, Brücken, Tunnel und andere Infrastrukturprojekte." :
+        "Geotechnical analyses for roads, bridges, tunnels, and other infrastructure projects."
     },
     { 
       title: t('sectorIndustrial'), 
       path: '/sectors/industrial',
       icon: <Factory className="w-12 h-12 text-geoblue-800" />,
-      description: "Spezialisierte Untersuchungen für Industriebauten, Logistikzentren und Produktionsanlagen."
+      description: language === 'de' ?
+        "Spezialisierte Untersuchungen für Industriebauten, Logistikzentren und Produktionsanlagen." :
+        "Specialized investigations for industrial buildings, logistics centers, and production facilities."
     },
     { 
       title: t('sectorWater'), 
       path: '/sectors/water',
       icon: <Droplets className="w-12 h-12 text-geoblue-800" />,
-      description: "Geotechnische Vorstudien für Wasserbauwerke, Häfen, Deiche und wasserwirtschaftliche Anlagen."
+      description: language === 'de' ?
+        "Geotechnische Vorstudien für Wasserbauwerke, Häfen, Deiche und wasserwirtschaftliche Anlagen." :
+        "Geotechnical preliminary studies for hydraulic structures, ports, dikes, and water management facilities."
     },
     { 
       title: t('sectorRenewable'), 
       path: '/sectors/renewable',
       icon: <Wind className="w-12 h-12 text-geoblue-800" />,
-      description: "Standortanalysen für Windparks, Solaranlagen und andere erneuerbare Energieprojekte."
+      description: language === 'de' ?
+        "Standortanalysen für Windparks, Solaranlagen und andere erneuerbare Energieprojekte." :
+        "Site analyses for wind farms, solar plants, and other renewable energy projects."
     }
   ];
 
@@ -69,7 +79,7 @@ const Sectors = () => {
                   {sector.description}
                 </p>
                 <span className="text-geoblue-800 font-medium">
-                  Mehr erfahren →
+                  {language === 'de' ? 'Mehr erfahren →' : 'Learn more →'}
                 </span>
               </div>
             </Link>

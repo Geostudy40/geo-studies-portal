@@ -20,28 +20,28 @@ const ResidentialConstruction = () => {
       title: language === 'de' ? "Frühzeitige Risikominimierung" : "Early Risk Minimization",
       description: language === 'de' 
         ? "Identifikation kritischer Bodenschichten (organische Einschlüsse, weiche Bereiche) bereits vor Planungsbeginn. Erkennung von Grundwasserproblemen und Prognose potenzieller Setzungsunterschiede bei heterogenem Baugrund."
-        : "Identification of critical soil layers (organic inclusions, soft areas) before planning begins. Detection of groundwater problems and prediction of potential settlement differences in heterogeneous building ground."
+        : "Identification of critical soil layers (organic inclusions, soft areas) before planning begins. Detection of groundwater problems and prediction of potential differential settlements in heterogeneous subsoil."
     },
     {
       icon: <EuroIcon className="h-12 w-12 text-geoblue-800" />,
       title: language === 'de' ? "Erhebliche Kosteneinsparungen" : "Significant Cost Savings",
       description: language === 'de' 
         ? "Optimierung der Anzahl, Tiefe und Position von Baugrunderkundungen. Minimierung unvorhergesehener Mehrkosten während der Bauphase und Vermeidung kostspieliger Planungsänderungen durch frühzeitige Kenntnis des Baugrunds."
-        : "Optimization of the number, depth, and position of ground investigations. Minimization of unforeseen additional costs during the construction phase and avoidance of costly planning changes through early knowledge of the building ground."
+        : "Optimization of the number, depth, and position of ground investigations. Minimization of unforeseen additional costs during the construction phase and avoidance of expensive planning changes through early knowledge of the subsoil."
     },
     {
       icon: <FileCheck className="h-12 w-12 text-geoblue-800" />,
       title: language === 'de' ? "Fundierte Entscheidungsgrundlage" : "Well-founded Decision Basis",
       description: language === 'de' 
         ? "Unterstützung bei der Gründungswahl (Flach-/Tiefgründung, Pfahlgründung). Empfehlung geeigneter Bauverfahren und Bauzeiten. Sichere Dimensionierung von Kellern und Abdichtungssystemen."
-        : "Support in foundation selection (shallow/deep foundation, pile foundation). Recommendation of suitable construction methods and construction times. Secure dimensioning of cellars and sealing systems."
+        : "Support in foundation selection (shallow/deep foundation, pile foundation). Recommendation of suitable construction methods and construction times. Secure dimensioning of basements and sealing systems."
     },
     {
       icon: <Cpu className="h-12 w-12 text-geoblue-800" />,
-      title: language === 'de' ? "Effizienzsteigerung durch KI-Datenanalyse" : "Efficiency Increase through AI Data Analysis",
+      title: language === 'de' ? "Effizienzsteigerung durch KI-Datenanalyse" : "Increased Efficiency through AI Data Analysis",
       description: language === 'de' 
         ? "Auswertung sämtlicher verfügbarer Bohrdatenbanken im Umkreis. Erstellung präziser Baugrundmodelle auf Basis regionaler geologischer Daten. Reduktion von Unsicherheiten durch statistische Auswertung aller verfügbaren Daten."
-        : "Evaluation of all available drilling databases in the area. Creation of precise ground models based on regional geological data. Reduction of uncertainties through statistical evaluation of all available data."
+        : "Evaluation of all available drilling databases in the area. Creation of precise subsoil models based on regional geological data. Reduction of uncertainties through statistical analysis of all available data."
     },
     {
       icon: <FileText className="h-12 w-12 text-geoblue-800" />,
@@ -84,7 +84,7 @@ const ResidentialConstruction = () => {
               className="text-geoblue-800 hover:text-geoblue-600 inline-flex items-center gap-2 px-4 py-2 rounded-md bg-white shadow-sm hover:shadow-md transition-all duration-300"
             >
               <ArrowLeft className="h-4 w-4" />
-              {language === 'de' ? 'Zurück zu Fachgebiete' : 'Back to Sectors'}
+              {language === 'de' ? 'Zurück zu Fachgebiete' : 'Back to Fields of Expertise'}
             </Link>
           </div>
           
@@ -139,7 +139,7 @@ const ResidentialConstruction = () => {
           
           <div className="bg-white rounded-lg p-8 mb-16 shadow-md">
             <h2 className="text-2xl font-semibold text-geoblue-800 mb-4">
-              {language === 'de' ? 'Fallbeispiel: Wohnanlage mit herausforderndem Baugrund' : 'Case Study: Residential Complex with Challenging Ground'}
+              {language === 'de' ? 'Fallbeispiel: Wohnanlage mit herausforderndem Baugrund' : 'Case Study: Residential Complex with Challenging Ground Conditions'}
             </h2>
             <p className="text-gray-700 mb-4">
               {language === 'de' 
@@ -158,7 +158,7 @@ const ResidentialConstruction = () => {
               className="bg-geoblue-800 hover:bg-geoblue-700 text-white text-lg py-6 px-8" 
               onClick={() => window.location.href='/contact'}
             >
-              {language === 'de' ? 'Jetzt unverbindliches Angebot anfordern' : 'Request a non-binding offer now'}
+              {language === 'de' ? 'Jetzt unverbindliches Angebot anfordern' : 'Request a Non-binding Offer Now'}
             </Button>
           </div>
         </div>

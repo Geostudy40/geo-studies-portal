@@ -1,4 +1,3 @@
-
 import { useParams, Link } from 'react-router-dom';
 import { useLanguage } from '@/context/LanguageContext';
 import { ArrowLeft } from 'lucide-react';
@@ -156,7 +155,7 @@ const SectorDetail = () => {
               className="text-geoblue-800 hover:text-geoblue-600 inline-flex items-center gap-2 px-4 py-2 rounded-md bg-white shadow-sm hover:shadow-md transition-all duration-300"
             >
               <ArrowLeft className="h-4 w-4" />
-              {language === 'de' ? 'Zurück zu Fachgebiete' : 'Back to Sectors'}
+              {language === 'de' ? 'Zurück zu Fachgebiete' : 'Back to Fields of Expertise'}
             </Link>
           </div>
 

@@ -83,13 +83,13 @@ export const translations = {
     home: "Home",
     about: "About Us",
     services: "Services",
-    sectors: "Specializations",
+    sectors: "Fields of Expertise",
     targetAudiences: "Target Audiences",
     projects: "Projects / References",
     contact: "Contact",
     
     // Sectors
-    sectorsTitle: "Specializations",
+    sectorsTitle: "Fields of Expertise",
     sectorsSubtitle: "Our geotechnical preliminary studies are tailored to the requirements of various construction projects. Choose your sector to learn more about the specific benefits and services we can offer for your project.",
     
     // Sector Categories
