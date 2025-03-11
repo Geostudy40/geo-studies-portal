@@ -4,7 +4,7 @@ import { MapPin, Phone, Mail } from 'lucide-react';
 import { COMPANY_INFO } from '@/constants/companyInfo';
 
 const Contact = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   return (
     <div className="py-12 md:py-20 bg-[#E9ECF5]">
@@ -22,7 +22,9 @@ const Contact = () => {
           {/* Contact Information */}
           <div className="bg-white p-8 rounded-lg shadow-lg">
             <h2 className="text-2xl font-semibold text-geoblue-800 mb-6">{COMPANY_INFO.name}</h2>
-            <p className="text-gray-600 mb-4">{COMPANY_INFO.subtitle}</p>
+            <p className="text-gray-600 mb-4">
+              {language === 'en' ? 'Engineering Office for Geological Preliminary Studies' : COMPANY_INFO.subtitle}
+            </p>
             
             <div className="space-y-6">
               <div className="flex items-start">
@@ -30,7 +32,7 @@ const Contact = () => {
                   <MapPin size={20} />
                 </div>
                 <div className="ml-4">
-                  <h3 className="text-lg font-medium text-gray-900">Adresse</h3>
+                  <h3 className="text-lg font-medium text-gray-900">{language === 'en' ? 'Address' : 'Adresse'}</h3>
                   <p className="mt-1 text-gray-600">
                     {COMPANY_INFO.address.street}<br />
                     {COMPANY_INFO.address.postcode} {COMPANY_INFO.address.city}<br />
@@ -44,7 +46,7 @@ const Contact = () => {
                   <Phone size={20} />
                 </div>
                 <div className="ml-4">
-                  <h3 className="text-lg font-medium text-gray-900">Telefon</h3>
+                  <h3 className="text-lg font-medium text-gray-900">{language === 'en' ? 'Phone' : 'Telefon'}</h3>
                   <p className="mt-1 text-gray-600">{COMPANY_INFO.contact.phone}</p>
                 </div>
               </div>
@@ -54,7 +56,7 @@ const Contact = () => {
                   <Mail size={20} />
                 </div>
                 <div className="ml-4">
-                  <h3 className="text-lg font-medium text-gray-900">E-Mail</h3>
+                  <h3 className="text-lg font-medium text-gray-900">{language === 'en' ? 'Email' : 'E-Mail'}</h3>
                   <p className="mt-1 text-gray-600">{COMPANY_INFO.contact.email}</p>
                 </div>
               </div>
@@ -76,7 +78,9 @@ const Contact = () => {
           
           {/* Contact Form */}
           <div className="bg-white p-8 rounded-lg shadow-md">
-            <h2 className="text-2xl font-semibold text-geoblue-800 mb-6">Nachricht senden</h2>
+            <h2 className="text-2xl font-semibold text-geoblue-800 mb-6">
+              {language === 'en' ? 'Send Message' : 'Nachricht senden'}
+            </h2>
             
             <form className="space-y-6">
               <div>
@@ -124,7 +128,7 @@ const Contact = () => {
                   className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-geoblue-500 focus:border-geoblue-500 text-sm text-gray-500"
                 />
                 <p className="mt-1 text-sm text-gray-500">
-                  Max. Dateigröße: 10MB pro Datei
+                  {language === 'en' ? 'Max. file size: 10MB per file' : 'Max. Dateigröße: 10MB pro Datei'}
                 </p>
               </div>
               

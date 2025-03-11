@@ -153,7 +153,7 @@ export const translations: Record<'de' | 'en', Record<TranslationKeys, string>> 
     projectsSubtitle: "Unsere erfolgreichen Fallstudien",
     viewDetails: "Details anzeigen",
     
-    // Contact
+    // Contact page-specific translations for German
     contactTitle: "Kontakt",
     contactSubtitle: "Sprechen Sie mit uns über Ihr Projekt",
     nameLabel: "Name",
@@ -302,7 +302,7 @@ export const translations: Record<'de' | 'en', Record<TranslationKeys, string>> 
     projectsSubtitle: "Our Successful Case Studies",
     viewDetails: "View details",
     
-    // Contact
+    // Contact page-specific translations for English
     contactTitle: "Contact",
     contactSubtitle: "Talk to us about your project",
     nameLabel: "Name",
