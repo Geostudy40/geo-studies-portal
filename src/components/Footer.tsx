@@ -2,6 +2,7 @@
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/context/LanguageContext';
 import { Linkedin } from 'lucide-react';
+import { COMPANY_INFO } from '@/constants/companyInfo';
 
 const Footer = () => {
   const { t } = useLanguage();
@@ -13,7 +14,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-2">
             <Link to="/" className="text-white font-montserrat font-bold text-xl mb-4 inline-block">
-              GeoStudys
+              {COMPANY_INFO.name}
             </Link>
             <p className="text-gray-300 mt-4 max-w-md">
               {t('footer.description')}
@@ -35,14 +36,17 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">{t('contact')}</h3>
             <ul className="space-y-2">
-              <li className="text-gray-300">Email: info@geostudys.de</li>
-              <li className="text-gray-300">Tel: +49 123 456789</li>
-              <li className="text-gray-300">Musterstraße 1, 12345 Berlin</li>
+              <li className="text-gray-300">Email: {COMPANY_INFO.contact.email}</li>
+              <li className="text-gray-300">Tel: {COMPANY_INFO.contact.phone}</li>
+              <li className="text-gray-300">
+                {COMPANY_INFO.address.street}, {COMPANY_INFO.address.postcode} {COMPANY_INFO.address.city}
+              </li>
               <li className="mt-4">
                 <a 
-                  href="#" 
+                  href="https://www.linkedin.com/company/geostudys"
+                  target="_blank"
+                  rel="noopener noreferrer" 
                   className="inline-flex items-center text-gray-300 hover:text-white transition-colors"
-                  onClick={(e) => e.preventDefault()}
                 >
                   <Linkedin className="w-5 h-5 mr-2" />
                   {t('footer.followLinkedIn')}
@@ -54,7 +58,7 @@ const Footer = () => {
 
         <div className="border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm">
-            © {currentYear} GeoStudys. {t('footer.rights')}
+            © {currentYear} {COMPANY_INFO.name}. {t('footer.rights')}
           </p>
           <div className="mt-4 md:mt-0 flex flex-wrap gap-4">
             <Link to="/imprint" className="text-gray-400 hover:text-white text-sm transition-colors">

@@ -1,9 +1,9 @@
-
 import { Map, FileText, Cpu, Ruler } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/context/LanguageContext';
 import Hero from '@/components/Hero';
 import ServiceCard from '@/components/ServiceCard';
+import LegalNotice from '@/components/LegalNotice';
 
 const Index = () => {
   const { t } = useLanguage();
@@ -36,7 +36,7 @@ const Index = () => {
       <Hero />
       
       {/* Services Section */}
-      <section className="py-20 bg-geolight">
+      <section className="py-20 bg-[#E9ECF5]">
         <div className="container-custom">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-geoblue-800 mb-4">
@@ -63,6 +63,8 @@ const Index = () => {
               Alle Leistungen anzeigen
             </Link>
           </div>
+          
+          <LegalNotice />
         </div>
       </section>
       
