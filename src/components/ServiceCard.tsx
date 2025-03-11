@@ -14,7 +14,7 @@ const ServiceCard = ({ title, description, icon }: ServiceCardProps) => {
         {icon}
       </div>
       <h3 
-        className="text-xl font-semibold text-geoblue-800 mb-3"
+        className="text-xl font-semibold text-geoblue-800 mb-3 hyphens-auto break-words"
         dangerouslySetInnerHTML={{ __html: title }}
       />
       <p 

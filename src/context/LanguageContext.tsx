@@ -136,14 +136,14 @@ export const translations = {
     extendedServiceProjectManagement: "Projektmanagement für<br>Baugrunderkundungen",
     extendedServiceProjectManagementDesc: "Wir übernehmen die Koordination Ihrer<br>Baugrunderkundungen – von der Planung bis<br>zum Gutachten. Dies umfasst Zeitplanung,<br>Kostenüberwachung und Qualitätssicherung<br>gemäß Eurocode 7.",
     
-    extendedServiceTenderManagement: "Ausschreibungsmanagement<br>und Vergabe",
+    extendedServiceTenderManagement: "Ausschreibungs&shy;management<br>und Vergabe",
     extendedServiceTenderManagementDesc: "Wir erstellen normgerechte Ausschreibungsunterlagen für Ihre Baugrunderkundungen, unterstützen Sie bei der Auswahl qualifizierter Anbieter und bewerten eingehende Angebote fachkundig. Dabei berücksichtigen wir sowohl technische Aspekte als auch das optimale Preis-Leistungs-Verhältnis.",
     
     extendedServiceConstruction: "Bauüberwachung und<br>Qualitätssicherung",
     extendedServiceConstructionDesc: "Unsere Experten überwachen die<br>Durchführung aller Bohr- und Sondierarbeiten<br>und stellen die Einhaltung der<br>Qualitätsstandards sicher. Die Kontrolle<br>gewährleistet zuverlässige Daten.",
     
     extendedServicePlanning: "Fachplanung und<br>Gutachtenerstellung",
-    extendedServicePlanningDesc: "Auf Basis der geotechnischen Vorstudien und Baugrunderkundungen erstellen wir normkonforme Baugrundgutachten nach Eurocode 7 und den aktuellen DIN-Normen. Diese enthalten konkrete Empfehlungen für Gründungsvarianten, Erdarbeiten und geotechnische Sonderlösungen.",
+    extendedServicePlanningDesc: "Basierend auf den geotechnischen Vorstudien und Baugrunderkundungen erstellen wir normkonforme Baugrundgutachten nach Eurocode 7 und den aktuellen DIN-Normen. Diese enthalten konkrete Empfehlungen für Gründungsvarianten, Erdarbeiten und geotechnische Sonderlösungen.",
     
     extendedServicesCta: "Kontaktieren Sie uns für Details",
   },
@@ -273,16 +273,16 @@ export const translations = {
     serviceGeologicalRisk: "Geological and Environmental Risk Assessment",
     serviceGeologicalRiskDesc: "Comprehensive analysis of geological, hydrological, and environmental factors through deep research from multiple data sources. We combine historical maps, borehole profiles, remote sensing data, and official environmental cadastres for a well-founded risk assessment of your site.",
     serviceGeologicalRiskDetail: "Our geological and environmental risk assessment forms the foundation of every geotechnical preliminary study and includes:\n\n- Systematic evaluation of geological maps of various scales and epochs\n- Deep research in official and private drilling databases in the vicinity of the project site\n- Analysis of current and historical satellite images to detect surface changes\n- Evaluation of digital terrain models (DTM) to identify morphological features\n- Conducting a hydrological groundwater analysis with determination of groundwater levels and fluctuations\n- Review of existing environmental cadastres to identify potential contaminated sites\n- Assessment of historical land uses with a focus on possible ground-related risks\n- Integration of all data in a georeferenced digital model\n- Initial assessment of the site's susceptibility to erosion and flooding\n\nThrough the use of our specialized AI algorithms, we can identify and evaluate relevant information for your specific location even in databases with millions of entries. This method provides us with a significantly broader data foundation than conventional approaches and enables a more precise initial assessment of the subsoil – often without requiring cost-intensive on-site investigations at this stage.",
-    
+
     // Extended Services
     extendedServicesTitle: "Extended Services",
     extendedServicesSubtitle: "Comprehensive Support for Your Geotechnical Projects",
     extendedServicesIntro: "In addition to our geotechnical preliminary studies, we offer you a wide range of extended services that accompany your projects from planning to implementation. Benefit from our expertise in all phases of your construction project.",
     
     extendedServiceProjectManagement: "Project Management for<br>Ground Investigations",
-    extendedServiceProjectManagementDesc: "We take over the coordination of your<br>ground investigations – from initial planning<br>to the final report. This includes time<br>scheduling, cost monitoring and quality<br>assurance in accordance with Eurocode 7.",
+    extendedServiceProjectManagementDesc: "We take over the coordination of your<br>ground investigations – from initial planning<br>to the final report. This includes time<br>scheduling, cost monitoring and quality<br>assurance according to Eurocode 7.",
     
-    extendedServiceTenderManagement: "Tender Management and<br>Contract Award",
+    extendedServiceTenderManagement: "Tender Manage&shy;ment<br>and Contract Award",
     extendedServiceTenderManagementDesc: "We create standard-compliant tender documents for your ground investigations, support you in selecting qualified providers, and expertly evaluate incoming offers. We consider both technical aspects and the optimal price-performance ratio.",
     
     extendedServiceConstruction: "Construction Supervision<br>and Quality Assurance",
