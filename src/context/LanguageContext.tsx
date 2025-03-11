@@ -27,9 +27,10 @@ type TranslationKeys =
   | 'investorBenefit1' | 'investorBenefit2' | 'investorBenefit3' | 'investorBenefit4' 
   | 'investorScenario' | 'contactForConsultation' | 'projectsTitle' | 'projectsSubtitle' 
   | 'viewDetails' | 'contactTitle' | 'contactSubtitle' | 'nameLabel' | 'emailLabel' 
-  | 'phoneLabel' | 'messageLabel' | 'fileUploadLabel' | 'sendButton' | 'footerRights' 
-  | 'footerPrivacy' | 'footerTerms' | 'extendedServicesTitle' | 'extendedServicesSubtitle' 
-  | 'extendedServicesIntro' | 'extendedServiceProjectManagement' 
+  | 'phoneLabel' | 'messageLabel' | 'fileUploadLabel' | 'sendButton' 
+  | 'footer.rights' | 'footer.privacy' | 'footer.terms' | 'footer.imprint' 
+  | 'footer.description' | 'footer.navigation' | 'footer.followLinkedIn' | 'extendedServicesTitle' 
+  | 'extendedServicesSubtitle' | 'extendedServicesIntro' | 'extendedServiceProjectManagement' 
   | 'extendedServiceProjectManagementDesc' | 'extendedServiceTenderManagement' 
   | 'extendedServiceTenderManagementDesc' | 'extendedServiceConstruction' 
   | 'extendedServiceConstructionDesc' | 'extendedServicePlanning' 
@@ -163,13 +164,27 @@ export const translations: Record<'de' | 'en', Record<TranslationKeys, string>> 
     sendButton: "Nachricht senden",
     
     // Footer
-    navigation: "Navigation",
-    footerDescription: "Spezialisiert auf geotechnische Vorstudien mit modernsten Methoden und KI-Unterstützung für eine fundierte Entscheidungsfindung bei Bauprojekten.",
-    footerImprint: "Impressum",
-    footerPrivacy: "Datenschutz",
-    footerTerms: "AGB",
-    footerRights: "Alle Rechte vorbehalten",
-    followLinkedIn: "Folgen Sie uns auf LinkedIn",
+    'footer.navigation': "Navigation",
+    'footer.description': "Spezialisiert auf geotechnische Vorstudien mit modernsten Methoden und KI-Unterstützung für eine fundierte Entscheidungsfindung bei Bauprojekten.",
+    'footer.imprint': "Impressum",
+    'footer.privacy': "Datenschutz",
+    'footer.terms': "AGB",
+    'footer.rights': "Alle Rechte vorbehalten",
+    'footer.followLinkedIn': "Folgen Sie uns auf LinkedIn",
+    
+    // Extended Services
+    extendedServicesTitle: "Erweiterte Leistungen",
+    extendedServicesSubtitle: "Über die geotechnische Vorstudie hinaus",
+    extendedServicesIntro: "Neben unseren Kernleistungen im Bereich der geotechnischen Vorstudien bieten wir Ihnen auch erweiterte Dienstleistungen an, die Ihr Projekt vom Konzept bis zur Fertigstellung begleiten können:",
+    extendedServiceProjectManagement: "Projektsteuerung",
+    extendedServiceProjectManagementDesc: "Professionelle Koordination und Überwachung aller geotechnischen Aspekte Ihres Bauprojekts, einschließlich Qualitätssicherung und Terminplanung.",
+    extendedServiceTenderManagement: "Ausschreibungsmanagement",
+    extendedServiceTenderManagementDesc: "Erstellung technisch präziser Ausschreibungsunterlagen für geotechnische Erkundungen und Gutachten sowie Unterstützung bei der Angebotsbewertung.",
+    extendedServiceConstruction: "Baubegleitung",
+    extendedServiceConstructionDesc: "Fachliche Begleitung der Bauausführung mit Fokus auf geotechnische Aspekte, regelmäßige Baustellenbesuche und Dokumentation kritischer Bauphasen.",
+    extendedServicePlanning: "Fachplanung",
+    extendedServicePlanningDesc: "Spezialisierte Planungsleistungen für geotechnische Herausforderungen wie Baugruben, Gründungen und Bodenverbesserungsmaßnahmen.",
+    extendedServicesCta: "Kontaktieren Sie uns für ein individuelles Angebot",
   },
   en: {
     // Navigation
@@ -298,13 +313,27 @@ export const translations: Record<'de' | 'en', Record<TranslationKeys, string>> 
     sendButton: "Send message",
     
     // Footer
-    navigation: "Navigation",
-    footerDescription: "Specialized in geotechnical preliminary studies using state-of-the-art methods and AI support for well-founded decision-making in construction projects.",
-    footerImprint: "Legal Notice",
-    footerPrivacy: "Privacy Policy",
-    footerTerms: "Terms & Conditions",
-    footerRights: "All rights reserved",
-    followLinkedIn: "Follow us on LinkedIn",
+    'footer.navigation': "Navigation",
+    'footer.description': "Specialized in geotechnical preliminary studies using state-of-the-art methods and AI support for well-founded decision-making in construction projects.",
+    'footer.imprint': "Legal Notice",
+    'footer.privacy': "Privacy Policy",
+    'footer.terms': "Terms & Conditions",
+    'footer.rights': "All rights reserved",
+    'footer.followLinkedIn': "Follow us on LinkedIn",
+    
+    // Extended Services
+    extendedServicesTitle: "Extended Services",
+    extendedServicesSubtitle: "Beyond Geotechnical Preliminary Studies",
+    extendedServicesIntro: "In addition to our core services in the field of geotechnical preliminary studies, we also offer extended services that can accompany your project from concept to completion:",
+    extendedServiceProjectManagement: "Project Management",
+    extendedServiceProjectManagementDesc: "Professional coordination and monitoring of all geotechnical aspects of your construction project, including quality assurance and scheduling.",
+    extendedServiceTenderManagement: "Tender Management",
+    extendedServiceTenderManagementDesc: "Creation of technically precise tender documents for geotechnical investigations and reports, as well as support in the evaluation of offers.",
+    extendedServiceConstruction: "Construction Support",
+    extendedServiceConstructionDesc: "Technical support during construction with a focus on geotechnical aspects, regular site visits, and documentation of critical construction phases.",
+    extendedServicePlanning: "Specialized Planning",
+    extendedServicePlanningDesc: "Specialized planning services for geotechnical challenges such as excavation pits, foundations, and soil improvement measures.",
+    extendedServicesCta: "Contact us for a customized offer",
   }
 };
 
