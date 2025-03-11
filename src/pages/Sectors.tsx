@@ -1,7 +1,6 @@
-
 import { useLanguage } from '@/context/LanguageContext';
 import { Link } from 'react-router-dom';
-import { Building2, Road, Factory, Droplets, Wind } from 'lucide-react';
+import { Building2, Route, Factory, Droplets, Wind } from 'lucide-react';
 
 const Sectors = () => {
   const { t } = useLanguage();
@@ -16,7 +15,7 @@ const Sectors = () => {
     { 
       title: t('sectorInfrastructure'), 
       path: '/sectors/infrastructure',
-      icon: <Road className="w-12 h-12 text-geoblue-800" />,
+      icon: <Route className="w-12 h-12 text-geoblue-800" />,
       description: "Geotechnische Analysen für Straßen, Brücken, Tunnel und andere Infrastrukturprojekte."
     },
     { 
