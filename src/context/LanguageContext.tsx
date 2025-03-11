@@ -35,97 +35,17 @@ export const translations = {
     serviceGeologicalMapDesc: "Detaillierte Analyse geologischer Karten für ein besseres Verständnis der Bodenbeschaffenheit.",
     serviceAiStudies: "KI-gestützte Vorstudien",
     serviceAiStudiesDesc: "Modernste KI-Technologie für präzise und kosteneffiziente geotechnische Analysen.",
+    serviceAiStudiesDescUpdated: "Modernste KI-Technologie für präzise, kosteneffiziente geotechnische Analysen und fundierte Entscheidungsgrundlagen.",
     serviceDrillingOpt: "Optimierung von Bohrungen",
     serviceDrillingOptDesc: "Strategische Platzierung von Bohrungen und CPT-Tests für maximale Informationsgewinnung.",
+    serviceDrillingOptimized: "Optimierte Baugrunderkundungsplanung",
+    serviceDrillingOptimizedDesc: "Strategische Platzierung von Bohrungen, CPT-Tests und Laboruntersuchungen für maximale Informationsgewinnung bei optimierten Kosten.",
     serviceReports: "Normkonforme Berichte",
     serviceReportsDesc: "Eurocode- und DIN-konforme Berichte, die allen regulatorischen Anforderungen entsprechen.",
-    
-    // About
-    aboutTitle: "Über uns",
-    aboutSubtitle: "Erfahrung und Innovation in der Geotechnik",
-    aboutContent: "Als erfahrene Geologen kombinieren wir traditionelles Fachwissen mit innovativen KI-Technologien, um präzise und kosteneffiziente geotechnische Vorstudien durchzuführen. Unsere Expertise ermöglicht es uns, potenzielle Risiken frühzeitig zu identifizieren und Lösungen vorzuschlagen, die Zeit und Kosten sparen.",
-    
-    // Target Audiences
-    targetTitle: "Zielgruppen",
-    targetSubtitle: "Maßgeschneiderte Lösungen für verschiedene Branchen",
-    targetConstructionCompanies: "Bauunternehmen",
-    targetConstructionCompaniesDesc: "Reduzieren Sie Risiken und optimieren Sie Ihre Bauvorhaben mit unseren detaillierten geotechnischen Analysen.",
-    targetPlanningOffices: "Planungsbüros",
-    targetPlanningOfficesDesc: "Integrieren Sie präzise geotechnische Daten in Ihre Planungsprozesse für fundierte Entscheidungen.",
-    targetMunicipalities: "Kommunen",
-    targetMunicipalitiesDesc: "Unterstützung bei öffentlichen Infrastrukturprojekten durch zuverlässige geotechnische Bewertungen.",
-    targetInvestors: "Investoren",
-    targetInvestorsDesc: "Minimieren Sie Investitionsrisiken durch frühzeitige Erkennung potenzieller geotechnischer Herausforderungen.",
-    
-    // Target Audience Benefits
-    yourBenefits: "Ihre Vorteile",
-    howWeCanHelp: "Wie wir Ihnen helfen können",
-    typicalScenario: "Typisches Szenario",
-    tailoredStudies: "Unsere maßgeschneiderten geotechnischen Vorstudien sind speziell auf die Bedürfnisse von {audience} ausgerichtet. Wir liefern präzise, relevante Daten und Analysen, die direkt in Ihre Entscheidungsprozesse integriert werden können.",
-    
-    // Added Value Section (replacing Testimonials)
-    addedValueTitle: "Mehrwert für Ihre Projekte",
-    addedValueSubtitle: "Unsere geotechnischen Vorstudien bieten Ihnen entscheidende Vorteile für den Erfolg Ihrer Bauvorhaben:",
-    valueTimeSavings: "Zeitgewinn durch moderne Technologie",
-    valueTimeSavingsDesc: "Unsere KI-gestützte Analyse umfangreicher Datenbanken beschleunigt den Planungsprozess erheblich. Sie erhalten präzise Ergebnisse in einem Bruchteil der Zeit, die konventionelle Methoden benötigen, und können Ihr Projekt zügiger vorantreiben.",
-    valueCostOptimization: "Kostenoptimierung durch gezielte Erkundung",
-    valueCostOptimizationDesc: "Mit unseren Vorstudien reduzieren Sie die Anzahl notwendiger Bohrungen und Sondierungen auf ein optimales Maß. Gleichzeitig minimieren Sie das Risiko unerwarteter Mehrkosten während der Bauphase durch frühzeitige Kenntnis kritischer Bodenverhältnisse.",
-    valueExpertise: "Fachliche Kompetenz durch interdisziplinäres Netzwerk",
-    valueExpertiseDesc: "Wir verbinden moderne geotechnische Analysemethoden mit dem Fachwissen eines Netzwerks von Spezialisten verschiedener Disziplinen. Diese Kombination gewährleistet Ihnen normkonforme, praxistaugliche Lösungen für jede geotechnische Herausforderung.",
-    
-    // Construction companies benefits
-    constructionBenefit1: "Reduzierung von Risiken und unerwarteten Kosten",
-    constructionBenefit2: "Optimierung von Bauprozessen durch präzise Bodenkenntnis",
-    constructionBenefit3: "Einhaltung regulatorischer Anforderungen",
-    constructionBenefit4: "Effiziente Ressourcenplanung basierend auf geotechnischen Erkenntnissen",
-    constructionScenario: "Ein Bauunternehmen hatte bei einem Wohnbauprojekt mit unerwartet weichen Bodenschichten zu kämpfen, die zu Verzögerungen und erheblichen Mehrkosten führten. Mit unserer geotechnischen Vorstudie konnte ein ähnliches Folgeprojekt optimal geplant werden, was eine Kosteneinsparung von ca. 15% bei den Gründungsarbeiten ermöglichte.",
-    
-    // Planning offices benefits
-    planningBenefit1: "Integration präziser geotechnischer Daten in Ihre Planung",
-    planningBenefit2: "Vermeidung kostenintensiver Planungsänderungen",
-    planningBenefit3: "Fundierte Entscheidungsgrundlagen für Designentscheidungen",
-    planningBenefit4: "Optimierung von Fundamentdesign und Bodenstabilisierungsmaßnahmen",
-    planningScenario: "Ein Planungsbüro musste die Fundamentplanung eines Industriebaus mehrfach anpassen, da unerwartete Grundwasserverhältnisse erst während der Bauarbeiten entdeckt wurden. Für zukünftige Projekte integrierte das Büro unsere detaillierten geotechnischen Vorstudien in den Planungsprozess, was zu präziseren Entwürfen von Beginn an führte.",
-    
-    // Municipalities benefits
-    municipalityBenefit1: "Risikominimierung bei öffentlichen Infrastrukturprojekten",
-    municipalityBenefit2: "Kostentransparenz und -kontrolle durch präzise Voruntersuchungen",
-    municipalityBenefit3: "Normkonforme und rechtssichere Dokumentation",
-    municipalityBenefit4: "Optimierung der Steuergelder durch präzise Planungsgrundlagen",
-    municipalityScenario: "Eine Kommune stand bei einem Infrastrukturprojekt vor der Herausforderung, eine wirtschaftliche Trassenführung in geologisch komplexem Gelände zu finden. Unsere präzise geotechnische Vorstudie ermöglichte eine optimierte Streckenführung, die sowohl Kosten als auch Umwelteingriffe minimierte und die Genehmigungsverfahren beschleunigte.",
-    
-    // Investors benefits
-    investorBenefit1: "Frühzeitige Risikobewertung vor Investitionsentscheidungen",
-    investorBenefit2: "Kalkulierbare Kosten durch Eliminierung geotechnischer Unsicherheiten",
-    investorBenefit3: "Fundierte Entscheidungsgrundlagen für Kaufentscheidungen",
-    investorBenefit4: "Vermeidung kostenintensiver Überraschungen während der Projektentwicklung",
-    investorScenario: "Ein Investor konnte dank unserer frühzeitigen geotechnischen Risikoanalyse eine fundierte Entscheidung über den Kauf eines Grundstücks treffen. Die identifizierten Baugrundrisiken wurden in die Kaufpreisverhandlung einbezogen, was zu einer realistischen Bewertung der zu erwartenden Projektkosten führte und später kostenintensive Überraschungen verhinderte.",
-    
-    contactForConsultation: "Kontaktieren Sie uns für eine Beratung",
-    
-    // Projects
-    projectsTitle: "Projekte / Referenzen",
-    projectsSubtitle: "Unsere erfolgreichen Fallstudien",
-    viewDetails: "Details ansehen",
-    
-    // Contact
-    contactTitle: "Kontakt",
-    contactSubtitle: "Sprechen Sie mit uns über Ihr Projekt",
-    nameLabel: "Name",
-    emailLabel: "E-Mail",
-    phoneLabel: "Telefon",
-    messageLabel: "Nachricht",
-    fileUploadLabel: "Dateien hochladen (Pläne, PDFs, CAD)",
-    sendButton: "Nachricht senden",
-    
-    // Footer
-    footerRights: "Alle Rechte vorbehalten",
-    footerPrivacy: "Datenschutz",
-    footerTerms: "Impressum",
-    
-    // Updated and new translations
+    serviceReportsUpdated: "Fachliche Qualitätssicherung und Berichtserstellung",
+    serviceReportsUpdatedDesc: "Eurocode- und DIN-konforme Berichte mit konkreten Empfehlungen, basierend auf fundierter Fachexpertise und modernster Analyse.",
     serviceGeologicalRisk: "Geologische und Umweltrisikobewertung",
-    serviceGeologicalRiskDesc: "Umfassende Analyse geologischer, hydrologischer und umweltrelevanter Faktoren durch Deep Research aus multiplen Datenquellen. Wir kombinieren historische Karten, Bohrprofile, Fernerkundungsdaten und amtliche Umweltkataster für eine fundierte Risikobewertung Ihres Standorts.",
+    serviceGeologicalRiskDesc: "Umfassende Analyse geologischer, hydrologischer und umweltrelevanter Faktoren durch Deep Research aus multiplen Datenquellen.",
     serviceGeologicalRiskDetail: "Unsere geologische und Umweltrisikobewertung bildet die Grundlage jeder geotechnischen Vorstudie und umfasst:\n\n- Systematische Auswertung geologischer Karten verschiedener Maßstäbe und Epochen\n- Deep Research in amtlichen und privaten Bohrdatenbanken im Umkreis des Projektstandorts\n- Analyse aktueller und historischer Satellitenbilder zur Erkennung von Oberflächenveränderungen\n- Auswertung digitaler Geländemodelle (DGM) zur Identifikation morphologischer Besonderheiten\n- Durchführung einer hydrologischen Grundwasseranalyse mit Ermittlung von Grundwasserständen und -schwankungen\n- Prüfung vorhandener Umweltkataster zur Erkennung potenzieller Altlasten und Kontaminationen\n- Bewertung historischer Nutzungen mit Fokus auf mögliche Baugrundrisiken\n- Zusammenführung aller Daten in einem georeferenzierten digitalen Modell\n- Erstbewertung der Erosions- und Hochwasseranfälligkeit des Standorts\n\nDurch den Einsatz unserer spezialisierten KI-Algorithmen können wir selbst in Datenbanken mit Millionen von Einträgen relevante Informationen für Ihren spezifischen Standort identifizieren und auswerten. Diese Methode liefert uns eine deutlich breitere Datenbasis als konventionelle Ansätze und ermöglicht eine präzisere Ersteinschätzung des Baugrunds – oft ohne dass in dieser Phase bereits kostenintensive Erkundungen vor Ort erforderlich sind.",
 
     // Extended Services
@@ -181,10 +101,17 @@ export const translations = {
     serviceGeologicalMapDesc: "Detailed analysis of geological maps for a better understanding of soil conditions.",
     serviceAiStudies: "AI-Supported Preliminary Studies",
     serviceAiStudiesDesc: "State-of-the-art AI technology for precise and cost-efficient geotechnical analyses.",
+    serviceAiStudiesDescUpdated: "State-of-the-art AI technology for precise, cost-efficient geotechnical analyses and well-founded decision-making bases.",
     serviceDrillingOpt: "Drilling Optimization",
     serviceDrillingOptDesc: "Strategic placement of drillings and CPT tests for maximum information gain.",
+    serviceDrillingOptimized: "Optimized Ground Investigation Planning",
+    serviceDrillingOptimizedDesc: "Strategic placement of drillings, CPT tests, and laboratory analyses for maximum information gain at optimized costs.",
     serviceReports: "Standard-Compliant Reports",
     serviceReportsDesc: "Eurocode and DIN-compliant reports that meet all regulatory requirements.",
+    serviceReportsUpdated: "Technical Quality Assurance and Report Creation",
+    serviceReportsUpdatedDesc: "Eurocode and DIN-compliant reports with concrete recommendations, based on sound technical expertise and state-of-the-art analysis.",
+    serviceGeologicalRisk: "Geological and Environmental Risk Assessment",
+    serviceGeologicalRiskDesc: "Comprehensive analysis of geological, hydrological, and environmental factors through deep research from multiple data sources.",
     
     // About
     aboutTitle: "About Us",
@@ -271,27 +198,8 @@ export const translations = {
     
     // Updated and new translations
     serviceGeologicalRisk: "Geological and Environmental Risk Assessment",
-    serviceGeologicalRiskDesc: "Comprehensive analysis of geological, hydrological, and environmental factors through deep research from multiple data sources. We combine historical maps, borehole profiles, remote sensing data, and official environmental cadastres for a well-founded risk assessment of your site.",
+    serviceGeologicalRiskDesc: "Comprehensive analysis of geological, hydrological, and environmental factors through deep research from multiple data sources.",
     serviceGeologicalRiskDetail: "Our geological and environmental risk assessment forms the foundation of every geotechnical preliminary study and includes:\n\n- Systematic evaluation of geological maps of various scales and epochs\n- Deep research in official and private drilling databases in the vicinity of the project site\n- Analysis of current and historical satellite images to detect surface changes\n- Evaluation of digital terrain models (DTM) to identify morphological features\n- Conducting a hydrological groundwater analysis with determination of groundwater levels and fluctuations\n- Review of existing environmental cadastres to identify potential contaminated sites\n- Assessment of historical land uses with a focus on possible ground-related risks\n- Integration of all data in a georeferenced digital model\n- Initial assessment of the site's susceptibility to erosion and flooding\n\nThrough the use of our specialized AI algorithms, we can identify and evaluate relevant information for your specific location even in databases with millions of entries. This method provides us with a significantly broader data foundation than conventional approaches and enables a more precise initial assessment of the subsoil – often without requiring cost-intensive on-site investigations at this stage.",
-
-    // Extended Services
-    extendedServicesTitle: "Extended Services",
-    extendedServicesSubtitle: "Comprehensive Support for Your Geotechnical Projects",
-    extendedServicesIntro: "In addition to our geotechnical preliminary studies, we offer you a wide range of extended services that accompany your projects from planning to implementation. Benefit from our expertise in all phases of your construction project.",
-    
-    extendedServiceProjectManagement: "Project Management for<br>Ground Investigations",
-    extendedServiceProjectManagementDesc: "We take over the coordination of your<br>ground investigations – from initial planning<br>to the final report. This includes time<br>scheduling, cost monitoring and quality<br>assurance according to Eurocode 7.",
-    
-    extendedServiceTenderManagement: "Tender Manage&shy;ment<br>and Contract Award",
-    extendedServiceTenderManagementDesc: "We create standard-compliant tender documents for your ground investigations, support you in selecting qualified providers, and expertly evaluate incoming offers. We consider both technical aspects and the optimal price-performance ratio.",
-    
-    extendedServiceConstruction: "Construction Supervision<br>and Quality Assurance",
-    extendedServiceConstructionDesc: "Our experts monitor the execution of all<br>drilling and probing work and ensure<br>compliance with the quality standards.<br>Continuous control guarantees the<br>reliability of the obtained data.",
-    
-    extendedServicePlanning: "Technical Planning and<br>Expert Report Preparation",
-    extendedServicePlanningDesc: "Based on the geotechnical preliminary studies and ground investigations, we prepare standard-compliant soil investigation reports according to Eurocode 7 and current DIN standards. These contain concrete recommendations for foundation options, earthworks, and special geotechnical solutions.",
-    
-    extendedServicesCta: "Contact us for details",
   }
 };
 

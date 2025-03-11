@@ -10,23 +10,23 @@ const Index = () => {
 
   const services = [
     { 
-      title: t('serviceGeologicalMap'), 
-      description: t('serviceGeologicalMapDesc'),
+      title: t('serviceGeologicalRisk'), 
+      description: t('serviceGeologicalRiskDesc'),
       icon: <Map size={24} /> 
     },
     { 
       title: t('serviceAiStudies'), 
-      description: t('serviceAiStudiesDesc'),
+      description: t('serviceAiStudiesDescUpdated'),
       icon: <Cpu size={24} /> 
     },
     { 
-      title: t('serviceDrillingOpt'), 
-      description: t('serviceDrillingOptDesc'),
+      title: t('serviceDrillingOptimized'), 
+      description: t('serviceDrillingOptimizedDesc'),
       icon: <Ruler size={24} /> 
     },
     { 
-      title: t('serviceReports'), 
-      description: t('serviceReportsDesc'),
+      title: t('serviceReportsUpdated'), 
+      description: t('serviceReportsUpdatedDesc'),
       icon: <FileText size={24} /> 
     },
   ];
