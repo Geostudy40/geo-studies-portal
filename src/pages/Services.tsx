@@ -1,6 +1,9 @@
+
 import { Map, FileText, Cpu, Ruler, BarChart, Building, Database, Microscope } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 import ServiceCard from '@/components/ServiceCard';
+import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 const Services = () => {
   const { t } = useLanguage();
@@ -89,12 +92,20 @@ const Services = () => {
                 
                 <div className={`lg:col-span-7 ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
                   <h3 className="text-xl font-semibold text-geoblue-800 mb-4">Detaillierte Beschreibung</h3>
-                  <p className="text-gray-600 mb-4">{service.detail}</p>
-                  <div className="bg-geoblue-50 border-l-4 border-geoblue-800 p-4">
+                  <p className="text-gray-600 mb-4 whitespace-pre-line">{service.detail}</p>
+                  <div className="bg-geoblue-50 border-l-4 border-geoblue-800 p-4 mb-6">
                     <p className="text-gray-700 italic">
                       "Unsere {service.title} bietet eine solide Grundlage für kosteneffiziente und sichere Bauprojekte."
                     </p>
                   </div>
+                  
+                  {index === 0 && (
+                    <div className="mt-6">
+                      <Button asChild className="bg-geoblue-800 hover:bg-geoblue-900">
+                        <Link to="/contact">{t('contactForConsultation')}</Link>
+                      </Button>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>

@@ -1,3 +1,4 @@
+
 import React, { createContext, useState, useContext, ReactNode } from 'react';
 
 export const translations = {
@@ -70,6 +71,7 @@ export const translations = {
     messageLabel: "Nachricht",
     fileUploadLabel: "Dateien hochladen (Pläne, PDFs, CAD)",
     sendButton: "Nachricht senden",
+    contactForConsultation: "Kontaktieren Sie uns für eine Beratung",
     
     // Footer
     footerRights: "Alle Rechte vorbehalten",
@@ -150,6 +152,7 @@ export const translations = {
     messageLabel: "Message",
     fileUploadLabel: "Upload files (plans, PDFs, CAD)",
     sendButton: "Send message",
+    contactForConsultation: "Contact us for consultation",
     
     // Footer
     footerRights: "All rights reserved",
