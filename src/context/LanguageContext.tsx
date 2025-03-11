@@ -9,6 +9,7 @@ export const translations = {
     sectors: "Fachgebiete",
     targetAudiences: "Zielgruppen",
     projects: "Projekte / Referenzen",
+    extendedServices: "Erweiterte Leistungen",
     contact: "Kontakt",
     
     // Sectors
@@ -126,6 +127,25 @@ export const translations = {
     serviceGeologicalRisk: "Geologische und Umweltrisikobewertung",
     serviceGeologicalRiskDesc: "Umfassende Analyse geologischer, hydrologischer und umweltrelevanter Faktoren durch Deep Research aus multiplen Datenquellen. Wir kombinieren historische Karten, Bohrprofile, Fernerkundungsdaten und amtliche Umweltkataster für eine fundierte Risikobewertung Ihres Standorts.",
     serviceGeologicalRiskDetail: "Unsere geologische und Umweltrisikobewertung bildet die Grundlage jeder geotechnischen Vorstudie und umfasst:\n\n- Systematische Auswertung geologischer Karten verschiedener Maßstäbe und Epochen\n- Deep Research in amtlichen und privaten Bohrdatenbanken im Umkreis des Projektstandorts\n- Analyse aktueller und historischer Satellitenbilder zur Erkennung von Oberflächenveränderungen\n- Auswertung digitaler Geländemodelle (DGM) zur Identifikation morphologischer Besonderheiten\n- Durchführung einer hydrologischen Grundwasseranalyse mit Ermittlung von Grundwasserständen und -schwankungen\n- Prüfung vorhandener Umweltkataster zur Erkennung potenzieller Altlasten und Kontaminationen\n- Bewertung historischer Nutzungen mit Fokus auf mögliche Baugrundrisiken\n- Zusammenführung aller Daten in einem georeferenzierten digitalen Modell\n- Erstbewertung der Erosions- und Hochwasseranfälligkeit des Standorts\n\nDurch den Einsatz unserer spezialisierten KI-Algorithmen können wir selbst in Datenbanken mit Millionen von Einträgen relevante Informationen für Ihren spezifischen Standort identifizieren und auswerten. Diese Methode liefert uns eine deutlich breitere Datenbasis als konventionelle Ansätze und ermöglicht eine präzisere Ersteinschätzung des Baugrunds – oft ohne dass in dieser Phase bereits kostenintensive Erkundungen vor Ort erforderlich sind.",
+
+    // Extended Services
+    extendedServicesTitle: "Erweiterte Leistungen",
+    extendedServicesSubtitle: "Umfassende Betreuung Ihrer geotechnischen Projekte",
+    extendedServicesIntro: "Neben unseren geotechnischen Vorstudien bieten wir Ihnen ein breites Spektrum an erweiterten Leistungen, die Ihre Projekte von der Planung bis zur Umsetzung begleiten. Profitieren Sie von unserer Expertise in allen Phasen Ihres Bauvorhabens.",
+    
+    extendedServiceProjectManagement: "Projektmanagement für Baugrunduntersuchungen",
+    extendedServiceProjectManagementDesc: "Wir übernehmen die vollständige Koordination Ihrer Baugrunduntersuchungen – von der ersten Planung bis zum finalen Gutachten. Dies umfasst die Zeitplanung, Kostenüberwachung, Qualitätssicherung und Kommunikation mit allen Beteiligten gemäß Eurocode 7 und DIN-Normen.",
+    
+    extendedServiceTenderManagement: "Ausschreibungsmanagement und Vergabe",
+    extendedServiceTenderManagementDesc: "Wir erstellen normgerechte Ausschreibungsunterlagen für Ihre Baugrunderkundungen, unterstützen Sie bei der Auswahl qualifizierter Anbieter und bewerten eingehende Angebote fachkundig. Dabei berücksichtigen wir sowohl technische Aspekte als auch das optimale Preis-Leistungs-Verhältnis.",
+    
+    extendedServiceConstruction: "Bauüberwachung und Qualitätssicherung",
+    extendedServiceConstructionDesc: "Unsere Experten überwachen die fachgerechte Durchführung aller Bohr- und Sondierarbeiten vor Ort und stellen die Einhaltung der vorgegebenen Qualitätsstandards sicher. Die kontinuierliche Kontrolle während der Erkundungsphase gewährleistet die Zuverlässigkeit der gewonnenen Daten.",
+    
+    extendedServicePlanning: "Fachplanung und Gutachtenerstellung",
+    extendedServicePlanningDesc: "Auf Basis der geotechnischen Vorstudien und Baugrunderkundungen erstellen wir normkonforme Baugrundgutachten nach Eurocode 7 und den aktuellen DIN-Normen. Diese enthalten konkrete Empfehlungen für Gründungsvarianten, Erdarbeiten und geotechnische Sonderlösungen.",
+    
+    extendedServicesCta: "Kontaktieren Sie uns für Details",
   },
   en: {
     // Navigation
@@ -135,6 +155,7 @@ export const translations = {
     sectors: "Fields of Expertise",
     targetAudiences: "Target Groups",
     projects: "Projects / References",
+    extendedServices: "Extended Services",
     contact: "Contact",
     
     // Sectors
@@ -252,6 +273,25 @@ export const translations = {
     serviceGeologicalRisk: "Geological and Environmental Risk Assessment",
     serviceGeologicalRiskDesc: "Comprehensive analysis of geological, hydrological, and environmental factors through deep research from multiple data sources. We combine historical maps, borehole profiles, remote sensing data, and official environmental cadastres for a well-founded risk assessment of your site.",
     serviceGeologicalRiskDetail: "Our geological and environmental risk assessment forms the foundation of every geotechnical preliminary study and includes:\n\n- Systematic evaluation of geological maps of various scales and epochs\n- Deep research in official and private drilling databases in the vicinity of the project site\n- Analysis of current and historical satellite images to detect surface changes\n- Evaluation of digital terrain models (DTM) to identify morphological features\n- Conducting a hydrological groundwater analysis with determination of groundwater levels and fluctuations\n- Review of existing environmental cadastres to identify potential contaminated sites\n- Assessment of historical land uses with a focus on possible ground-related risks\n- Integration of all data in a georeferenced digital model\n- Initial assessment of the site's susceptibility to erosion and flooding\n\nThrough the use of our specialized AI algorithms, we can identify and evaluate relevant information for your specific location even in databases with millions of entries. This method provides us with a significantly broader data foundation than conventional approaches and enables a more precise initial assessment of the subsoil – often without requiring cost-intensive on-site investigations at this stage.",
+    
+    // Extended Services
+    extendedServicesTitle: "Extended Services",
+    extendedServicesSubtitle: "Comprehensive Support for Your Geotechnical Projects",
+    extendedServicesIntro: "In addition to our geotechnical preliminary studies, we offer you a wide range of extended services that accompany your projects from planning to implementation. Benefit from our expertise in all phases of your construction project.",
+    
+    extendedServiceProjectManagement: "Project Management for Ground Investigations",
+    extendedServiceProjectManagementDesc: "We take over the complete coordination of your ground investigations – from initial planning to the final report. This includes time scheduling, cost monitoring, quality assurance, and communication with all parties involved in accordance with Eurocode 7 and DIN standards.",
+    
+    extendedServiceTenderManagement: "Tender Management and Contract Award",
+    extendedServiceTenderManagementDesc: "We create standard-compliant tender documents for your ground investigations, support you in selecting qualified providers, and expertly evaluate incoming offers. We consider both technical aspects and the optimal price-performance ratio.",
+    
+    extendedServiceConstruction: "Construction Supervision and Quality Assurance",
+    extendedServiceConstructionDesc: "Our experts monitor the professional execution of all drilling and probing work on site and ensure compliance with the specified quality standards. Continuous control during the exploration phase guarantees the reliability of the data obtained.",
+    
+    extendedServicePlanning: "Technical Planning and Expert Report Preparation",
+    extendedServicePlanningDesc: "Based on the geotechnical preliminary studies and ground investigations, we prepare standard-compliant soil investigation reports according to Eurocode 7 and current DIN standards. These contain concrete recommendations for foundation options, earthworks, and special geotechnical solutions.",
+    
+    extendedServicesCta: "Contact us for details",
   }
 };
 
@@ -287,4 +327,3 @@ export const useLanguage = () => {
   }
   return context;
 };
-

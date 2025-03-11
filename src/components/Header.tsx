@@ -16,7 +16,7 @@ const Header = () => {
     { name: t('sectors'), path: '/sectors' },
     { name: t('services'), path: '/services' },
     { name: t('targetAudiences'), path: '/target-audiences' },
-    { name: t('projects'), path: '/projects' },
+    { name: t('extendedServices'), path: '/extended-services' },
     { name: t('contact'), path: '/contact' },
   ];
 

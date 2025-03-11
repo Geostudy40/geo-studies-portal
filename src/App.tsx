@@ -19,6 +19,7 @@ import IndustrialConstruction from "./pages/IndustrialConstruction";
 import WaterConstruction from "./pages/WaterConstruction";
 import RenewableEnergy from "./pages/RenewableEnergy";
 import TargetAudiences from "./pages/TargetAudiences";
+import ExtendedServices from "./pages/ExtendedServices";
 import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
 import Terms from "./pages/Terms";
@@ -49,6 +50,7 @@ const App = () => (
                 <Route path="/renewable-energy" element={<RenewableEnergy />} />
                 <Route path="/services" element={<Services />} />
                 <Route path="/target-audiences" element={<TargetAudiences />} />
+                <Route path="/extended-services" element={<ExtendedServices />} />
                 <Route path="/projects" element={<Projects />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/terms" element={<Terms />} />
