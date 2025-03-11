@@ -133,16 +133,16 @@ export const translations = {
     extendedServicesSubtitle: "Umfassende Betreuung Ihrer geotechnischen Projekte",
     extendedServicesIntro: "Neben unseren geotechnischen Vorstudien bieten wir Ihnen ein breites Spektrum an erweiterten Leistungen, die Ihre Projekte von der Planung bis zur Umsetzung begleiten. Profitieren Sie von unserer Expertise in allen Phasen Ihres Bauvorhabens.",
     
-    extendedServiceProjectManagement: "Projektmanagement für Baugrunduntersuchungen",
-    extendedServiceProjectManagementDesc: "Wir übernehmen die Koordination Ihrer Baugrunduntersuchungen – von der ersten Planung bis zum finalen Gutachten. Dies umfasst Zeitplanung, Kostenüberwachung und Qualitätssicherung gemäß Eurocode 7.",
+    extendedServiceProjectManagement: "Projektmanagement für<br>Baugrunderkundungen",
+    extendedServiceProjectManagementDesc: "Wir übernehmen die Koordination Ihrer<br>Baugrunderkundungen – von der Planung bis<br>zum Gutachten. Dies umfasst Zeitplanung,<br>Kostenüberwachung und Qualitätssicherung<br>gemäß Eurocode 7.",
     
-    extendedServiceTenderManagement: "Ausschreibungsmanagement und Vergabe",
+    extendedServiceTenderManagement: "Ausschreibungsmanagement<br>und Vergabe",
     extendedServiceTenderManagementDesc: "Wir erstellen normgerechte Ausschreibungsunterlagen für Ihre Baugrunderkundungen, unterstützen Sie bei der Auswahl qualifizierter Anbieter und bewerten eingehende Angebote fachkundig. Dabei berücksichtigen wir sowohl technische Aspekte als auch das optimale Preis-Leistungs-Verhältnis.",
     
-    extendedServiceConstruction: "Bauüberwachung und Qualitätssicherung",
-    extendedServiceConstructionDesc: "Unsere Experten überwachen die Durchführung aller Bohr- und Sondierarbeiten und stellen die Einhaltung der Qualitätsstandards sicher. Die Kontrolle gewährleistet zuverlässige Daten.",
+    extendedServiceConstruction: "Bauüberwachung und<br>Qualitätssicherung",
+    extendedServiceConstructionDesc: "Unsere Experten überwachen die<br>Durchführung aller Bohr- und Sondierarbeiten<br>und stellen die Einhaltung der<br>Qualitätsstandards sicher. Die Kontrolle<br>gewährleistet zuverlässige Daten.",
     
-    extendedServicePlanning: "Fachplanung und Gutachtenerstellung",
+    extendedServicePlanning: "Fachplanung und<br>Gutachtenerstellung",
     extendedServicePlanningDesc: "Auf Basis der geotechnischen Vorstudien und Baugrunderkundungen erstellen wir normkonforme Baugrundgutachten nach Eurocode 7 und den aktuellen DIN-Normen. Diese enthalten konkrete Empfehlungen für Gründungsvarianten, Erdarbeiten und geotechnische Sonderlösungen.",
     
     extendedServicesCta: "Kontaktieren Sie uns für Details",
@@ -279,16 +279,16 @@ export const translations = {
     extendedServicesSubtitle: "Comprehensive Support for Your Geotechnical Projects",
     extendedServicesIntro: "In addition to our geotechnical preliminary studies, we offer you a wide range of extended services that accompany your projects from planning to implementation. Benefit from our expertise in all phases of your construction project.",
     
-    extendedServiceProjectManagement: "Project Management for Ground Investigations",
-    extendedServiceProjectManagementDesc: "We take over the complete coordination of your ground investigations – from initial planning to the final report. This includes time scheduling, cost monitoring, quality assurance, and communication with all parties involved in accordance with Eurocode 7 and DIN standards.",
+    extendedServiceProjectManagement: "Project Management for<br>Ground Investigations",
+    extendedServiceProjectManagementDesc: "We take over the coordination of your<br>ground investigations – from initial planning<br>to the final report. This includes time<br>scheduling, cost monitoring and quality<br>assurance in accordance with Eurocode 7.",
     
-    extendedServiceTenderManagement: "Tender Management and Contract Award",
+    extendedServiceTenderManagement: "Tender Management and<br>Contract Award",
     extendedServiceTenderManagementDesc: "We create standard-compliant tender documents for your ground investigations, support you in selecting qualified providers, and expertly evaluate incoming offers. We consider both technical aspects and the optimal price-performance ratio.",
     
-    extendedServiceConstruction: "Construction Supervision and Quality Assurance",
-    extendedServiceConstructionDesc: "Our experts monitor the professional execution of all drilling and probing work on site and ensure compliance with the specified quality standards. Continuous control during the exploration phase guarantees the reliability of the data obtained.",
+    extendedServiceConstruction: "Construction Supervision<br>and Quality Assurance",
+    extendedServiceConstructionDesc: "Our experts monitor the execution of all<br>drilling and probing work and ensure<br>compliance with the quality standards.<br>Continuous control guarantees the<br>reliability of the obtained data.",
     
-    extendedServicePlanning: "Technical Planning and Expert Report Preparation",
+    extendedServicePlanning: "Technical Planning and<br>Expert Report Preparation",
     extendedServicePlanningDesc: "Based on the geotechnical preliminary studies and ground investigations, we prepare standard-compliant soil investigation reports according to Eurocode 7 and current DIN standards. These contain concrete recommendations for foundation options, earthworks, and special geotechnical solutions.",
     
     extendedServicesCta: "Contact us for details",

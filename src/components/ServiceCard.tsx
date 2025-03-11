@@ -13,8 +13,14 @@ const ServiceCard = ({ title, description, icon }: ServiceCardProps) => {
       <div className="flex items-center justify-center w-16 h-16 rounded-full bg-geoblue-100 text-geoblue-800 mb-6">
         {icon}
       </div>
-      <h3 className="text-xl font-semibold text-geoblue-800 mb-3">{title}</h3>
-      <p className="text-gray-600 text-sm md:text-base flex-grow leading-relaxed">{description}</p>
+      <h3 
+        className="text-xl font-semibold text-geoblue-800 mb-3"
+        dangerouslySetInnerHTML={{ __html: title }}
+      />
+      <p 
+        className="text-gray-600 text-sm md:text-base flex-grow leading-relaxed"
+        dangerouslySetInnerHTML={{ __html: description }}
+      />
     </div>
   );
 };
