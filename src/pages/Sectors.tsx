@@ -17,7 +17,7 @@ const Sectors = () => {
     },
     { 
       title: t('sectorInfrastructure'), 
-      path: '/sectors/infrastructure',
+      path: '/infrastructure-construction',
       icon: <Route className="w-12 h-12 text-geoblue-800" />,
       description: language === 'de' ?
         "Geotechnische Analysen für Straßen, Brücken, Tunnel und andere Infrastrukturprojekte." :

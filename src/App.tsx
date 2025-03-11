@@ -14,6 +14,7 @@ import Services from "./pages/Services";
 import Sectors from "./pages/Sectors";
 import SectorDetail from "./pages/SectorDetail";
 import ResidentialConstruction from "./pages/ResidentialConstruction";
+import InfrastructureConstruction from "./pages/InfrastructureConstruction";
 import TargetAudiences from "./pages/TargetAudiences";
 import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
@@ -39,6 +40,7 @@ const App = () => (
                 <Route path="/sectors" element={<Sectors />} />
                 <Route path="/sectors/:sectorId" element={<SectorDetail />} />
                 <Route path="/residential-construction" element={<ResidentialConstruction />} />
+                <Route path="/infrastructure-construction" element={<InfrastructureConstruction />} />
                 <Route path="/services" element={<Services />} />
                 <Route path="/target-audiences" element={<TargetAudiences />} />
                 <Route path="/projects" element={<Projects />} />
