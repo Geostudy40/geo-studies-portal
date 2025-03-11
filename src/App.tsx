@@ -17,6 +17,7 @@ import ResidentialConstruction from "./pages/ResidentialConstruction";
 import InfrastructureConstruction from "./pages/InfrastructureConstruction";
 import IndustrialConstruction from "./pages/IndustrialConstruction";
 import WaterConstruction from "./pages/WaterConstruction";
+import RenewableEnergy from "./pages/RenewableEnergy";
 import TargetAudiences from "./pages/TargetAudiences";
 import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
@@ -45,6 +46,7 @@ const App = () => (
                 <Route path="/infrastructure-construction" element={<InfrastructureConstruction />} />
                 <Route path="/industrial-construction" element={<IndustrialConstruction />} />
                 <Route path="/water-construction" element={<WaterConstruction />} />
+                <Route path="/renewable-energy" element={<RenewableEnergy />} />
                 <Route path="/services" element={<Services />} />
                 <Route path="/target-audiences" element={<TargetAudiences />} />
                 <Route path="/projects" element={<Projects />} />

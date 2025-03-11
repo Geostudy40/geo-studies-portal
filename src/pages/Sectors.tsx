@@ -41,7 +41,7 @@ const Sectors = () => {
     },
     { 
       title: t('sectorRenewable'), 
-      path: '/sectors/renewable',
+      path: '/renewable-energy',
       icon: <Wind className="w-12 h-12 text-geoblue-800" />,
       description: language === 'de' ?
         "Standortanalysen für Windparks, Solaranlagen und andere erneuerbare Energieprojekte." :
