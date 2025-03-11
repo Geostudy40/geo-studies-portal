@@ -1,6 +1,7 @@
 
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/context/LanguageContext';
+import { Linkedin } from 'lucide-react';
 
 const Footer = () => {
   const { t } = useLanguage();
@@ -15,12 +16,12 @@ const Footer = () => {
               GeoStudys
             </Link>
             <p className="text-gray-300 mt-4 max-w-md">
-              Spezialisiert auf geotechnische Vorstudien mit modernsten Methoden und KI-Unterstützung für eine fundierte Entscheidungsfindung bei Bauprojekten.
+              {t('footerDescription')}
             </p>
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold mb-4">Navigation</h3>
+            <h3 className="text-lg font-semibold mb-4">{t('navigation')}</h3>
             <ul className="space-y-2">
               <li><Link to="/" className="text-gray-300 hover:text-white transition-colors">{t('home')}</Link></li>
               <li><Link to="/about" className="text-gray-300 hover:text-white transition-colors">{t('about')}</Link></li>
@@ -32,11 +33,21 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold mb-4">Kontakt</h3>
+            <h3 className="text-lg font-semibold mb-4">{t('contact')}</h3>
             <ul className="space-y-2">
               <li className="text-gray-300">Email: info@geostudys.de</li>
               <li className="text-gray-300">Tel: +49 123 456789</li>
               <li className="text-gray-300">Musterstraße 1, 12345 Berlin</li>
+              <li className="mt-4">
+                <a 
+                  href="#" 
+                  className="inline-flex items-center text-gray-300 hover:text-white transition-colors"
+                  onClick={(e) => e.preventDefault()}
+                >
+                  <Linkedin className="w-5 h-5 mr-2" />
+                  {t('followLinkedIn')}
+                </a>
+              </li>
             </ul>
           </div>
         </div>
@@ -45,7 +56,10 @@ const Footer = () => {
           <p className="text-gray-400 text-sm">
             © {currentYear} GeoStudys. {t('footerRights')}
           </p>
-          <div className="mt-4 md:mt-0 flex space-x-4">
+          <div className="mt-4 md:mt-0 flex flex-wrap gap-4">
+            <Link to="/imprint" className="text-gray-400 hover:text-white text-sm transition-colors">
+              {t('footerImprint')}
+            </Link>
             <Link to="/privacy" className="text-gray-400 hover:text-white text-sm transition-colors">
               {t('footerPrivacy')}
             </Link>
