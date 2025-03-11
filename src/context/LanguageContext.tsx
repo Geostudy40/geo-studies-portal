@@ -57,6 +57,54 @@ export const translations = {
     targetInvestors: "Investoren",
     targetInvestorsDesc: "Minimieren Sie Investitionsrisiken durch frühzeitige Erkennung potenzieller geotechnischer Herausforderungen.",
     
+    // Target Audience Benefits
+    yourBenefits: "Ihre Vorteile",
+    howWeCanHelp: "Wie wir Ihnen helfen können",
+    typicalScenario: "Typisches Szenario",
+    tailoredStudies: "Unsere maßgeschneiderten geotechnischen Vorstudien sind speziell auf die Bedürfnisse von {audience} ausgerichtet. Wir liefern präzise, relevante Daten und Analysen, die direkt in Ihre Entscheidungsprozesse integriert werden können.",
+    clientTestimonials: "Was unsere Kunden sagen",
+    
+    // Construction companies benefits
+    constructionBenefit1: "Reduzierung von Risiken und unerwarteten Kosten",
+    constructionBenefit2: "Optimierung von Bauprozessen durch präzise Bodenkenntnis",
+    constructionBenefit3: "Einhaltung regulatorischer Anforderungen",
+    constructionBenefit4: "Effiziente Ressourcenplanung basierend auf geotechnischen Erkenntnissen",
+    constructionScenario: "Ein Bauunternehmen hatte bei einem Wohnbauprojekt mit unerwartet weichen Bodenschichten zu kämpfen, die zu Verzögerungen und erheblichen Mehrkosten führten. Mit unserer geotechnischen Vorstudie konnte ein ähnliches Folgeprojekt optimal geplant werden, was eine Kosteneinsparung von ca. 15% bei den Gründungsarbeiten ermöglichte.",
+    
+    // Planning offices benefits
+    planningBenefit1: "Integration präziser geotechnischer Daten in Ihre Planung",
+    planningBenefit2: "Vermeidung kostenintensiver Planungsänderungen",
+    planningBenefit3: "Fundierte Entscheidungsgrundlagen für Designentscheidungen",
+    planningBenefit4: "Optimierung von Fundamentdesign und Bodenstabilisierungsmaßnahmen",
+    planningScenario: "Ein Planungsbüro musste die Fundamentplanung eines Industriebaus mehrfach anpassen, da unerwartete Grundwasserverhältnisse erst während der Bauarbeiten entdeckt wurden. Für zukünftige Projekte integrierte das Büro unsere detaillierten geotechnischen Vorstudien in den Planungsprozess, was zu präziseren Entwürfen von Beginn an führte.",
+    
+    // Municipalities benefits
+    municipalityBenefit1: "Risikominimierung bei öffentlichen Infrastrukturprojekten",
+    municipalityBenefit2: "Kostentransparenz und -kontrolle durch präzise Voruntersuchungen",
+    municipalityBenefit3: "Normkonforme und rechtssichere Dokumentation",
+    municipalityBenefit4: "Optimierung der Steuergelder durch präzise Planungsgrundlagen",
+    municipalityScenario: "Eine Kommune stand bei einem Infrastrukturprojekt vor der Herausforderung, eine wirtschaftliche Trassenführung in geologisch komplexem Gelände zu finden. Unsere präzise geotechnische Vorstudie ermöglichte eine optimierte Streckenführung, die sowohl Kosten als auch Umwelteingriffe minimierte und die Genehmigungsverfahren beschleunigte.",
+    
+    // Investors benefits
+    investorBenefit1: "Frühzeitige Risikobewertung vor Investitionsentscheidungen",
+    investorBenefit2: "Kalkulierbare Kosten durch Eliminierung geotechnischer Unsicherheiten",
+    investorBenefit3: "Fundierte Entscheidungsgrundlagen für Kaufentscheidungen",
+    investorBenefit4: "Vermeidung kostenintensiver Überraschungen während der Projektentwicklung",
+    investorScenario: "Ein Investor konnte dank unserer frühzeitigen geotechnischen Risikoanalyse eine fundierte Entscheidung über den Kauf eines Grundstücks treffen. Die identifizierten Baugrundrisiken wurden in die Kaufpreisverhandlung einbezogen, was zu einer realistischen Bewertung der zu erwartenden Projektkosten führte und später kostenintensive Überraschungen verhinderte.",
+    
+    // Testimonials
+    testimonial1Name: "Bauunternehmen GmbH",
+    testimonial1Company: "Wohnungsbau",
+    testimonial1Text: "Die KI-gestützten Vorstudien von GeoStudy haben uns geholfen, den Umfang der Bohrungen zu reduzieren und gleichzeitig ein besseres Verständnis der Bodenverhältnisse zu erhalten.",
+    
+    testimonial2Name: "Planungsbüro Mustermann",
+    testimonial2Company: "Architektur",
+    testimonial2Text: "Die detaillierten geotechnischen Berichte ermöglichten es uns, effiziente und sichere Fundamentlösungen zu entwerfen, die zu erheblichen Kosteneinsparungen führten.",
+    
+    testimonial3Name: "Invest Immo AG",
+    testimonial3Company: "Immobilieninvestment",
+    testimonial3Text: "Die frühzeitige geotechnische Risikoidentifikation hat uns vor einer kostspieligen Fehlinvestition bewahrt. Der Mehrwert dieser Dienstleistung kann nicht hoch genug eingeschätzt werden.",
+    
     // Projects
     projectsTitle: "Projekte / Referenzen",
     projectsSubtitle: "Unsere erfolgreichen Fallstudien",
@@ -89,7 +137,7 @@ export const translations = {
     about: "About Us",
     services: "Services",
     sectors: "Fields of Expertise",
-    targetAudiences: "Target Audiences",
+    targetAudiences: "Target Groups",
     projects: "Projects / References",
     contact: "Contact",
     
@@ -127,16 +175,64 @@ export const translations = {
     aboutContent: "As experienced geologists, we combine traditional expertise with innovative AI technologies to conduct precise and cost-efficient geotechnical preliminary studies. Our expertise allows us to identify potential risks early and propose solutions that save time and costs.",
     
     // Target Audiences
-    targetTitle: "Target Audiences",
+    targetTitle: "Target Groups",
     targetSubtitle: "Tailored Solutions for Different Industries",
     targetConstructionCompanies: "Construction Companies",
     targetConstructionCompaniesDesc: "Reduce risks and optimize your construction projects with our detailed geotechnical analyses.",
     targetPlanningOffices: "Planning Offices",
-    targetPlanningOfficesDesc: "Integrate precise geotechnical data into your planning processes for informed decisions.",
+    targetPlanningOfficesDesc: "Integrate precise geotechnical data into your planning processes for well-founded decisions.",
     targetMunicipalities: "Municipalities",
     targetMunicipalitiesDesc: "Support for public infrastructure projects through reliable geotechnical assessments.",
     targetInvestors: "Investors",
     targetInvestorsDesc: "Minimize investment risks by early detection of potential geotechnical challenges.",
+    
+    // Target Audience Benefits
+    yourBenefits: "Your Benefits",
+    howWeCanHelp: "How We Can Help You",
+    typicalScenario: "Typical Scenario",
+    tailoredStudies: "Our tailored geotechnical preliminary studies are specifically designed for the needs of {audience}. We provide precise, relevant data and analyses that can be directly integrated into your decision-making processes.",
+    clientTestimonials: "What Our Clients Say",
+    
+    // Construction companies benefits
+    constructionBenefit1: "Reduction of risks and unexpected costs",
+    constructionBenefit2: "Optimization of construction processes through precise soil knowledge",
+    constructionBenefit3: "Compliance with regulatory requirements",
+    constructionBenefit4: "Efficient resource planning based on geotechnical insights",
+    constructionScenario: "A construction company struggled with unexpectedly soft soil layers in a residential construction project, leading to delays and significant additional costs. With our geotechnical preliminary study, a similar follow-up project could be optimally planned, resulting in cost savings of approximately 15% in foundation work.",
+    
+    // Planning offices benefits
+    planningBenefit1: "Integration of precise geotechnical data into your planning",
+    planningBenefit2: "Avoidance of cost-intensive planning changes",
+    planningBenefit3: "Well-founded decision bases for design decisions",
+    planningBenefit4: "Optimization of foundation design and soil stabilization measures",
+    planningScenario: "A planning office had to adjust the foundation design of an industrial building multiple times because unexpected groundwater conditions were only discovered during construction. For future projects, the office integrated our detailed geotechnical preliminary studies into the planning process, leading to more precise designs from the beginning.",
+    
+    // Municipalities benefits
+    municipalityBenefit1: "Risk minimization in public infrastructure projects",
+    municipalityBenefit2: "Cost transparency and control through precise preliminary investigations",
+    municipalityBenefit3: "Standard-compliant and legally secure documentation",
+    municipalityBenefit4: "Optimization of taxpayers' money through precise planning foundations",
+    municipalityScenario: "A municipality faced the challenge of finding an economical route alignment in geologically complex terrain for an infrastructure project. Our precise geotechnical preliminary study enabled an optimized route that minimized both costs and environmental interventions and accelerated the approval procedures.",
+    
+    // Investors benefits
+    investorBenefit1: "Early risk assessment before investment decisions",
+    investorBenefit2: "Calculable costs by eliminating geotechnical uncertainties",
+    investorBenefit3: "Well-founded decision bases for purchase decisions",
+    investorBenefit4: "Avoidance of cost-intensive surprises during project development",
+    investorScenario: "An investor was able to make a well-informed decision about purchasing a property thanks to our early geotechnical risk analysis. The identified ground-related risks were included in the purchase price negotiation, leading to a realistic assessment of the expected project costs and preventing cost-intensive surprises later.",
+    
+    // Testimonials
+    testimonial1Name: "Construction Company Ltd",
+    testimonial1Company: "Residential Construction",
+    testimonial1Text: "The AI-supported preliminary studies from GeoStudy helped us reduce the scope of drillings while gaining a better understanding of soil conditions.",
+    
+    testimonial2Name: "Planning Office Sample",
+    testimonial2Company: "Architecture",
+    testimonial2Text: "The detailed geotechnical reports enabled us to design efficient and safe foundation solutions that led to significant cost savings.",
+    
+    testimonial3Name: "Invest Real Estate AG",
+    testimonial3Company: "Real Estate Investment",
+    testimonial3Text: "The early geotechnical risk identification saved us from a costly misinvestment. The added value of this service cannot be rated highly enough.",
     
     // Projects
     projectsTitle: "Projects / References",

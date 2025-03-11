@@ -2,6 +2,8 @@
 import { Building, PenTool, Landmark, BarChart4 } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 import TargetAudienceCard from '@/components/TargetAudienceCard';
+import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 const TargetAudiences = () => {
   const { t } = useLanguage();
@@ -12,44 +14,48 @@ const TargetAudiences = () => {
       description: t('targetConstructionCompaniesDesc'),
       icon: <Building size={24} className="text-white" />,
       benefits: [
-        "Reduzierung von Risiken und unerwarteten Kosten",
-        "Optimierung von Bauprozessen durch präzise Bodenkenntnis",
-        "Einhaltung regulatorischer Anforderungen",
-        "Effiziente Ressourcenplanung basierend auf geotechnischen Erkenntnissen"
-      ]
+        t('constructionBenefit1'),
+        t('constructionBenefit2'),
+        t('constructionBenefit3'),
+        t('constructionBenefit4')
+      ],
+      scenario: t('constructionScenario')
     },
     {
       title: t('targetPlanningOffices'),
       description: t('targetPlanningOfficesDesc'),
       icon: <PenTool size={24} className="text-white" />,
       benefits: [
-        "Integration präziser geotechnischer Daten in Ihre Planung",
-        "Vermeidung kostenintensiver Planungsänderungen",
-        "Fundierte Entscheidungsgrundlagen für Designentscheidungen",
-        "Optimierung von Fundamentdesign und Bodenstabilisierungsmaßnahmen"
-      ]
+        t('planningBenefit1'),
+        t('planningBenefit2'),
+        t('planningBenefit3'),
+        t('planningBenefit4')
+      ],
+      scenario: t('planningScenario')
     },
     {
       title: t('targetMunicipalities'),
       description: t('targetMunicipalitiesDesc'),
       icon: <Landmark size={24} className="text-white" />,
       benefits: [
-        "Risikominimierung bei öffentlichen Infrastrukturprojekten",
-        "Kostentransparenz und -kontrolle durch präzise Voruntersuchungen",
-        "Normkonforme und rechtssichere Dokumentation",
-        "Optimierung der Steuergelder durch präzise Planungsgrundlagen"
-      ]
+        t('municipalityBenefit1'),
+        t('municipalityBenefit2'),
+        t('municipalityBenefit3'),
+        t('municipalityBenefit4')
+      ],
+      scenario: t('municipalityScenario')
     },
     {
       title: t('targetInvestors'),
       description: t('targetInvestorsDesc'),
       icon: <BarChart4 size={24} className="text-white" />,
       benefits: [
-        "Frühzeitige Risikobewertung vor Investitionsentscheidungen",
-        "Kalkulierbare Kosten durch Eliminierung geotechnischer Unsicherheiten",
-        "Fundierte Entscheidungsgrundlagen für Kaufentscheidungen",
-        "Vermeidung kostenintensiver Überraschungen während der Projektentwicklung"
-      ]
+        t('investorBenefit1'),
+        t('investorBenefit2'),
+        t('investorBenefit3'),
+        t('investorBenefit4')
+      ],
+      scenario: t('investorScenario')
     }
   ];
 
@@ -92,7 +98,7 @@ const TargetAudiences = () => {
                     {audience.description}
                   </p>
                   
-                  <h3 className="text-xl font-semibold text-geoblue-800 mb-4">Ihre Vorteile</h3>
+                  <h3 className="text-xl font-semibold text-geoblue-800 mb-4">{t('yourBenefits')}</h3>
                   <ul className="space-y-3">
                     {audience.benefits.map((benefit, i) => (
                       <li key={i} className="flex items-start">
@@ -106,15 +112,20 @@ const TargetAudiences = () => {
                 </div>
                 
                 <div className="bg-geolight rounded-lg p-6 shadow-md border border-gray-100">
-                  <h3 className="text-xl font-semibold text-geoblue-800 mb-4">Wie wir Ihnen helfen können</h3>
+                  <h3 className="text-xl font-semibold text-geoblue-800 mb-4">{t('howWeCanHelp')}</h3>
                   <p className="text-gray-600 mb-4">
-                    Unsere maßgeschneiderten geotechnischen Vorstudien sind speziell auf die Bedürfnisse von {audience.title} ausgerichtet. Wir liefern präzise, relevante Daten und Analysen, die direkt in Ihre Entscheidungsprozesse integriert werden können.
+                    {t('tailoredStudies').replace('{audience}', audience.title)}
                   </p>
-                  <div className="bg-white p-4 rounded border border-gray-200">
-                    <h4 className="font-semibold text-geoblue-800 mb-2">Typisches Szenario</h4>
+                  <div className="bg-white p-4 rounded border border-gray-200 mb-6">
+                    <h4 className="font-semibold text-geoblue-800 mb-2">{t('typicalScenario')}</h4>
                     <p className="text-gray-600 italic">
-                      "Ein {audience.title.toLowerCase()} hatte mit unerwarteten Bodenbedingungen zu kämpfen, die zu Verzögerungen und Mehrkosten führten. Mit unseren geotechnischen Vorstudien hätten diese Probleme frühzeitig erkannt und angemessen geplant werden können."
+                      {audience.scenario}
                     </p>
+                  </div>
+                  <div className="mt-4">
+                    <Button asChild className="w-full bg-geoblue-800 hover:bg-geoblue-700 text-white">
+                      <Link to="/contact">{t('contactForConsultation')}</Link>
+                    </Button>
                   </div>
                 </div>
               </div>
@@ -127,7 +138,7 @@ const TargetAudiences = () => {
       <section className="py-16 bg-geolight">
         <div className="container-custom">
           <h2 className="text-3xl font-bold text-geoblue-800 mb-12 text-center">
-            Was unsere Kunden sagen
+            {t('clientTestimonials')}
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -137,12 +148,12 @@ const TargetAudiences = () => {
                   B
                 </div>
                 <div>
-                  <h3 className="font-semibold text-geoblue-800">Bauunternehmen GmbH</h3>
-                  <p className="text-gray-500 text-sm">Wohnungsbau</p>
+                  <h3 className="font-semibold text-geoblue-800">{t('testimonial1Name')}</h3>
+                  <p className="text-gray-500 text-sm">{t('testimonial1Company')}</p>
                 </div>
               </div>
               <p className="text-gray-600 italic">
-                "Die KI-gestützten Vorstudien von GeoStudy haben uns geholfen, den Umfang der Bohrungen zu reduzieren und gleichzeitig ein besseres Verständnis der Bodenverhältnisse zu erhalten."
+                {t('testimonial1Text')}
               </p>
             </div>
             
@@ -152,12 +163,12 @@ const TargetAudiences = () => {
                   P
                 </div>
                 <div>
-                  <h3 className="font-semibold text-geoblue-800">Planungsbüro Mustermann</h3>
-                  <p className="text-gray-500 text-sm">Architektur</p>
+                  <h3 className="font-semibold text-geoblue-800">{t('testimonial2Name')}</h3>
+                  <p className="text-gray-500 text-sm">{t('testimonial2Company')}</p>
                 </div>
               </div>
               <p className="text-gray-600 italic">
-                "Die detaillierten geotechnischen Berichte ermöglichten es uns, effiziente und sichere Fundamentlösungen zu entwerfen, die zu erheblichen Kosteneinsparungen führten."
+                {t('testimonial2Text')}
               </p>
             </div>
             
@@ -167,12 +178,12 @@ const TargetAudiences = () => {
                   I
                 </div>
                 <div>
-                  <h3 className="font-semibold text-geoblue-800">Invest Immo AG</h3>
-                  <p className="text-gray-500 text-sm">Immobilieninvestment</p>
+                  <h3 className="font-semibold text-geoblue-800">{t('testimonial3Name')}</h3>
+                  <p className="text-gray-500 text-sm">{t('testimonial3Company')}</p>
                 </div>
               </div>
               <p className="text-gray-600 italic">
-                "Die frühzeitige geotechnische Risikoidentifikation hat uns vor einer kostspieligen Fehlinvestition bewahrt. Der Mehrwert dieser Dienstleistung kann nicht hoch genug eingeschätzt werden."
+                {t('testimonial3Text')}
               </p>
             </div>
           </div>
