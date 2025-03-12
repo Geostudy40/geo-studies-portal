@@ -3,5 +3,15 @@ import { createRoot } from 'react-dom/client'
 import App from './App.tsx'
 import './index.css'
 
-// Make sure the DOM is mounted correctly
-createRoot(document.getElementById("root")!).render(<App />);
+try {
+  const rootElement = document.getElementById("root");
+  
+  if (rootElement) {
+    console.log("Root element found, mounting React app");
+    createRoot(rootElement).render(<App />);
+  } else {
+    console.error("Root element not found. Cannot mount React app.");
+  }
+} catch (error) {
+  console.error("Error rendering React app:", error);
+}

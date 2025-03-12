@@ -30,8 +30,14 @@ import Imprint from "./pages/Imprint";
 const queryClient = new QueryClient();
 
 const App = () => {
-  // Add console log to check if the app is loading
+  // Besseres Logging für Debugging
   console.log("App component is rendering");
+  console.log("Current path:", window.location.pathname);
+  console.log("Current base URL:", document.baseURI);
+  
+  // Prüfen, ob wir im GitHub Pages Kontext sind
+  const isGitHubPages = window.location.hostname.includes('github.io');
+  console.log("Is GitHub Pages:", isGitHubPages);
   
   return (
     <QueryClientProvider client={queryClient}>
