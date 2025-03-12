@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -29,8 +28,7 @@ import Imprint from "./pages/Imprint";
 
 const queryClient = new QueryClient();
 
-// Bestimmen Sie die Basis-URL anhand der Umgebung
-const basename = import.meta.env.DEV ? '/' : '/geo-studies-portal';
+const basename = import.meta.env.PROD ? '/geo-studies-portal' : '/';
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
@@ -72,4 +70,3 @@ const App = () => (
 );
 
 export default App;
-
