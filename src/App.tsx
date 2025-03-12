@@ -1,3 +1,4 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -28,13 +29,16 @@ import Imprint from "./pages/Imprint";
 
 const queryClient = new QueryClient();
 
+// Bestimmen Sie die Basis-URL anhand der Umgebung
+const basename = import.meta.env.DEV ? '/' : '/geo-studies-portal';
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <LanguageProvider>
       <TooltipProvider>
         <Toaster />
         <Sonner />
-        <BrowserRouter>
+        <BrowserRouter basename={basename}>
           <div className="flex flex-col min-h-screen">
             <Header />
             <main className="flex-grow pt-16">
@@ -68,3 +72,4 @@ const App = () => (
 );
 
 export default App;
+
