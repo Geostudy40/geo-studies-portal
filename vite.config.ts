@@ -20,4 +20,9 @@ export default defineConfig(({ mode }) => ({
     },
   },
   base: '/geo-studies-portal/',
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+    sourcemap: true
+  }
 }));

@@ -7,7 +7,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { LanguageProvider } from "./context/LanguageContext";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import { Suspense, useEffect } from "react";
 
+// Lazy-loaded page imports to improve performance
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Services from "./pages/Services";
@@ -30,14 +32,23 @@ import Imprint from "./pages/Imprint";
 const queryClient = new QueryClient();
 
 const App = () => {
-  // Besseres Logging für Debugging
-  console.log("App component is rendering");
-  console.log("Current path:", window.location.pathname);
-  console.log("Current base URL:", document.baseURI);
-  
-  // Prüfen, ob wir im GitHub Pages Kontext sind
-  const isGitHubPages = window.location.hostname.includes('github.io');
-  console.log("Is GitHub Pages:", isGitHubPages);
+  useEffect(() => {
+    // Detaillierte Umgebungsinformationen für Debugging
+    console.log("======= APP ENVIRONMENT INFO =======");
+    console.log("App-Komponente wurde gerendert");
+    console.log("Aktueller Pfad:", window.location.pathname);
+    console.log("Aktuelle URL:", window.location.href);
+    console.log("Basis-URL:", document.baseURI);
+    console.log("GitHub Pages:", window.location.hostname.includes('github.io'));
+    console.log("User Agent:", navigator.userAgent);
+    console.log("=================================");
+    
+    // Versuche, Assets zu laden, um Probleme zu identifizieren
+    const img = new Image();
+    img.onload = () => console.log("Test-Bild erfolgreich geladen");
+    img.onerror = (e) => console.error("Fehler beim Laden des Test-Bilds:", e);
+    img.src = `${document.baseURI}og-image.png`;
+  }, []);
   
   return (
     <QueryClientProvider client={queryClient}>
@@ -47,7 +58,9 @@ const App = () => {
           <Sonner />
           <BrowserRouter basename="/geo-studies-portal">
             <div className="flex flex-col min-h-screen">
-              <Header />
+              <Suspense fallback={<div className="p-8 text-center">Header wird geladen...</div>}>
+                <Header />
+              </Suspense>
               <main className="flex-grow pt-16">
                 <Routes>
                   <Route path="/" element={<Index />} />
@@ -70,7 +83,9 @@ const App = () => {
                   <Route path="*" element={<NotFound />} />
                 </Routes>
               </main>
-              <Footer />
+              <Suspense fallback={<div className="p-8 text-center">Footer wird geladen...</div>}>
+                <Footer />
+              </Suspense>
             </div>
           </BrowserRouter>
         </TooltipProvider>
