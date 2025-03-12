@@ -3,7 +3,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { LanguageProvider } from "./context/LanguageContext";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -43,20 +43,32 @@ const App = () => {
     console.log("User Agent:", navigator.userAgent);
     console.log("=================================");
     
-    // Versuche, Assets zu laden, um Probleme zu identifizieren
-    const img = new Image();
-    img.onload = () => console.log("Test-Bild erfolgreich geladen");
-    img.onerror = (e) => console.error("Fehler beim Laden des Test-Bilds:", e);
-    img.src = `${document.baseURI}og-image.png`;
+    // Bilder vorladen um Ladeprobleme zu identifizieren
+    const preloadImages = () => {
+      try {
+        const img = new Image();
+        img.onload = () => console.log("Test-Bild erfolgreich geladen:", img.src);
+        img.onerror = (e) => console.error("Fehler beim Laden des Test-Bilds:", e);
+        img.src = `${document.baseURI}og-image.png`;
+      } catch (e) {
+        console.error("Fehler beim Vorladen von Bildern:", e);
+      }
+    };
+    
+    preloadImages();
   }, []);
   
+  // Prüfen ob wir auf GitHub Pages sind
+  const isGitHubPages = window.location.hostname.includes('github.io');
+  const basename = isGitHubPages ? "/geo-studies-portal" : "";
+
   return (
     <QueryClientProvider client={queryClient}>
       <LanguageProvider>
         <TooltipProvider>
           <Toaster />
           <Sonner />
-          <BrowserRouter basename="/geo-studies-portal">
+          <BrowserRouter basename={basename}>
             <div className="flex flex-col min-h-screen">
               <Suspense fallback={<div className="p-8 text-center">Header wird geladen...</div>}>
                 <Header />
