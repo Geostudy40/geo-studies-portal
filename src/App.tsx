@@ -29,43 +29,48 @@ import Imprint from "./pages/Imprint";
 
 const queryClient = new QueryClient();
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <LanguageProvider>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter basename="/geo-studies-portal">
-          <div className="flex flex-col min-h-screen">
-            <Header />
-            <main className="flex-grow pt-16">
-              <Routes>
-                <Route path="/" element={<Index />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/sectors" element={<Sectors />} />
-                <Route path="/sectors/:sectorId" element={<SectorDetail />} />
-                <Route path="/residential-construction" element={<ResidentialConstruction />} />
-                <Route path="/infrastructure-construction" element={<InfrastructureConstruction />} />
-                <Route path="/industrial-construction" element={<IndustrialConstruction />} />
-                <Route path="/water-construction" element={<WaterConstruction />} />
-                <Route path="/renewable-energy" element={<RenewableEnergy />} />
-                <Route path="/services" element={<Services />} />
-                <Route path="/target-audiences" element={<TargetAudiences />} />
-                <Route path="/extended-services" element={<ExtendedServices />} />
-                <Route path="/projects" element={<Projects />} />
-                <Route path="/contact" element={<Contact />} />
-                <Route path="/terms" element={<Terms />} />
-                <Route path="/privacy" element={<Privacy />} />
-                <Route path="/imprint" element={<Imprint />} />
-                <Route path="*" element={<NotFound />} />
-              </Routes>
-            </main>
-            <Footer />
-          </div>
-        </BrowserRouter>
-      </TooltipProvider>
-    </LanguageProvider>
-  </QueryClientProvider>
-);
+const App = () => {
+  // Add console log to check if the app is loading
+  console.log("App component is rendering");
+  
+  return (
+    <QueryClientProvider client={queryClient}>
+      <LanguageProvider>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          <BrowserRouter basename="/geo-studies-portal">
+            <div className="flex flex-col min-h-screen">
+              <Header />
+              <main className="flex-grow pt-16">
+                <Routes>
+                  <Route path="/" element={<Index />} />
+                  <Route path="/about" element={<About />} />
+                  <Route path="/sectors" element={<Sectors />} />
+                  <Route path="/sectors/:sectorId" element={<SectorDetail />} />
+                  <Route path="/residential-construction" element={<ResidentialConstruction />} />
+                  <Route path="/infrastructure-construction" element={<InfrastructureConstruction />} />
+                  <Route path="/industrial-construction" element={<IndustrialConstruction />} />
+                  <Route path="/water-construction" element={<WaterConstruction />} />
+                  <Route path="/renewable-energy" element={<RenewableEnergy />} />
+                  <Route path="/services" element={<Services />} />
+                  <Route path="/target-audiences" element={<TargetAudiences />} />
+                  <Route path="/extended-services" element={<ExtendedServices />} />
+                  <Route path="/projects" element={<Projects />} />
+                  <Route path="/contact" element={<Contact />} />
+                  <Route path="/terms" element={<Terms />} />
+                  <Route path="/privacy" element={<Privacy />} />
+                  <Route path="/imprint" element={<Imprint />} />
+                  <Route path="*" element={<NotFound />} />
+                </Routes>
+              </main>
+              <Footer />
+            </div>
+          </BrowserRouter>
+        </TooltipProvider>
+      </LanguageProvider>
+    </QueryClientProvider>
+  );
+};
 
 export default App;
