@@ -19,5 +19,5 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  base: mode === 'production' ? '/geo-studies-portal/' : '/',
+  base: '/geo-studies-portal/',
 }));
