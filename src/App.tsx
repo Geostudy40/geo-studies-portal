@@ -29,7 +29,14 @@ import Privacy from "./pages/Privacy";
 import NotFound from "./pages/NotFound";
 import Imprint from "./pages/Imprint";
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      retry: 1,
+      refetchOnWindowFocus: false,
+    },
+  },
+});
 
 const App = () => {
   useEffect(() => {
@@ -39,28 +46,42 @@ const App = () => {
     console.log("Aktueller Pfad:", window.location.pathname);
     console.log("Aktuelle URL:", window.location.href);
     console.log("Basis-URL:", document.baseURI);
+    console.log("Base element:", document.querySelector('base')?.href);
     console.log("GitHub Pages:", window.location.hostname.includes('github.io'));
     console.log("User Agent:", navigator.userAgent);
+    console.log("Window basePath:", window.basePath);
     console.log("=================================");
     
     // Bilder vorladen um Ladeprobleme zu identifizieren
     const preloadImages = () => {
       try {
+        const baseUrl = document.baseURI || '/geo-studies-portal/';
         const img = new Image();
         img.onload = () => console.log("Test-Bild erfolgreich geladen:", img.src);
         img.onerror = (e) => console.error("Fehler beim Laden des Test-Bilds:", e);
-        img.src = `${document.baseURI}og-image.png`;
+        img.src = `${baseUrl}og-image.png`;
+        
+        // Favicon prüfen
+        const favicon = new Image();
+        favicon.onload = () => console.log("Favicon erfolgreich geladen:", favicon.src);
+        favicon.onerror = (e) => console.error("Fehler beim Laden des Favicons:", e);
+        favicon.src = `${baseUrl}favicon.ico`;
       } catch (e) {
         console.error("Fehler beim Vorladen von Bildern:", e);
       }
     };
     
     preloadImages();
+    
+    // DOM-Struktur prüfen
+    console.log("DOM-Struktur:", document.body.innerHTML);
   }, []);
   
-  // Prüfen ob wir auf GitHub Pages sind
-  const isGitHubPages = window.location.hostname.includes('github.io');
-  const basename = isGitHubPages ? "/geo-studies-portal" : "";
+  // Prüfen ob wir auf GitHub Pages sind - entweder aus dem globalen Wert oder selbst ermitteln
+  const isGitHubPages = window.isGitHubPages || window.location.hostname.includes('github.io');
+  const basename = window.basePath || (isGitHubPages ? "/geo-studies-portal" : "");
+  
+  console.log("[App] Router basename:", basename);
 
   return (
     <QueryClientProvider client={queryClient}>
