@@ -5,7 +5,7 @@ const About = () => {
   const { t } = useLanguage();
 
   return (
-    <div>
+    <div className="min-h-screen">
       {/* Header Section */}
       <section className="bg-geoblue-800 text-white py-20">
         <div className="container-custom">
