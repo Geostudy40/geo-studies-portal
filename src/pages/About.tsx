@@ -44,8 +44,8 @@ const About = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
             <div className="order-2 lg:order-1 rounded-lg overflow-hidden shadow-xl">
               <img 
-                src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?q=80&w=2069&auto=format&fit=crop" 
-                alt="Geotechnical Engineering Team"
+                src="/geo-studies-portal/lovable-uploads/52e4d531-0cb3-4076-9fbf-e9943b294347.png" 
+                alt="Interdisciplinary Expert Network"
                 className="w-full h-auto" 
               />
             </div>
