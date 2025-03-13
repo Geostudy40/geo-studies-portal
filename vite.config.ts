@@ -8,6 +8,8 @@ export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
     port: 8080,
+    // Ensures that all paths are properly handled during development
+    open: mode === 'development' ? '/geo-studies-portal/' : false
   },
   plugins: [
     react(),
