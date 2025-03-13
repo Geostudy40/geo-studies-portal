@@ -41,7 +41,8 @@ function mountApp() {
       console.log("[main] Root-Element gefunden, React-App wird gerendert");
       // Prüfen, ob wir auf GitHub Pages sind und den entsprechenden Pfad setzen
       window.isGitHubPages = window.location.hostname.includes('github.io');
-      window.basePath = window.isGitHubPages ? "/geo-studies-portal" : "/geo-studies-portal";
+      // Korrektur: Setze basePath nur für GitHub Pages auf /geo-studies-portal, ansonsten leer
+      window.basePath = window.isGitHubPages ? "/geo-studies-portal" : "";
       console.log("[main] BasePath gesetzt:", window.basePath);
       
       const root = createRoot(rootElement);
