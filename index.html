@@ -7,10 +7,16 @@
     <title>geo-studies-portal</title>
     <meta name="description" content="Lovable Generated Project" />
     <meta name="author" content="Lovable" />
-    <meta property="og:image" content="/geo-studies-portal/og-image.png" />
-    <base href="/geo-studies-portal/" />
+    <meta property="og:image" content="/og-image.png" />
+    <!-- Base-Tag dynamisch setzen -->
+    <script>
+      // Nur für Produktion den Base-Pfad setzen
+      if (window.location.hostname.includes('github.io')) {
+        document.write('<base href="/geo-studies-portal/" />');
+      }
+    </script>
     <!-- Added favicon reference -->
-    <link rel="icon" type="image/x-icon" href="/geo-studies-portal/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
   </head>
 
   <body>
