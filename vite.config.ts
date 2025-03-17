@@ -8,9 +8,8 @@ export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
     port: 8080,
-    // Kein Basis-Pfad im Entwicklungsmodus
-    base: '',
-    open: mode === 'development' ? '/' : false
+    // Bei der Entwicklung den Pfad richtig setzen
+    open: mode === 'development' ? './' : false
   },
   plugins: [
     react(),
@@ -22,8 +21,7 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  // Basis-Pfad nur für Produktion setzen
-  base: mode === 'production' ? '/geo-studies-portal/' : '/',
+  base: '/geo-studies-portal/',
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
