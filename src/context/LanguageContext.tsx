@@ -95,11 +95,11 @@ export const translations: Record<'de' | 'en', Record<TranslationKeys, string>> 
     targetSubtitle: "Maßgeschneiderte Lösungen für verschiedene Branchen",
     targetConstructionCompanies: "Bauunternehmen",
     targetConstructionCompaniesDesc: "Reduzieren Sie Risiken und optimieren Sie Ihre Bauprojekte mit unseren detaillierten geotechnischen Analysen.",
-    targetPlanningOffices: "Planungsbüros",
+    targetPlanningOffices: "Planungsbüros/Architekten",
     targetPlanningOfficesDesc: "Integrieren Sie präzise geotechnische Daten in Ihre Planungsprozesse für fundierte Entscheidungen.",
     targetMunicipalities: "Kommunen",
     targetMunicipalitiesDesc: "Unterstützung für öffentliche Infrastrukturprojekte durch zuverlässige geotechnische Bewertungen.",
-    targetInvestors: "Investoren",
+    targetInvestors: "Investoren/Bauherren",
     targetInvestorsDesc: "Minimieren Sie Investitionsrisiken durch frühzeitige Erkennung potenzieller geotechnischer Herausforderungen.",
     
     // Target Audience Benefits
@@ -244,11 +244,11 @@ export const translations: Record<'de' | 'en', Record<TranslationKeys, string>> 
     targetSubtitle: "Tailored Solutions for Different Industries",
     targetConstructionCompanies: "Construction Companies",
     targetConstructionCompaniesDesc: "Reduce risks and optimize your construction projects with our detailed geotechnical analyses.",
-    targetPlanningOffices: "Planning Offices",
+    targetPlanningOffices: "Planning Offices/Architects",
     targetPlanningOfficesDesc: "Integrate precise geotechnical data into your planning processes for well-founded decisions.",
     targetMunicipalities: "Municipalities",
     targetMunicipalitiesDesc: "Support for public infrastructure projects through reliable geotechnical assessments.",
-    targetInvestors: "Investors",
+    targetInvestors: "Investors/Property Developers",
     targetInvestorsDesc: "Minimize investment risks by early detection of potential geotechnical challenges.",
     
     // Target Audience Benefits

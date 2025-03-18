@@ -10,16 +10,16 @@ const TargetAudiences = () => {
   
   const audiences = [
     {
-      title: t('targetConstructionCompanies'),
-      description: t('targetConstructionCompaniesDesc'),
-      icon: <Building size={24} className="text-white" />,
+      title: t('targetInvestors'),
+      description: t('targetInvestorsDesc'),
+      icon: <BarChart4 size={24} className="text-white" />,
       benefits: [
-        t('constructionBenefit1'),
-        t('constructionBenefit2'),
-        t('constructionBenefit3'),
-        t('constructionBenefit4')
+        t('investorBenefit1'),
+        t('investorBenefit2'),
+        t('investorBenefit3'),
+        t('investorBenefit4')
       ],
-      scenario: t('constructionScenario')
+      scenario: t('investorScenario')
     },
     {
       title: t('targetPlanningOffices'),
@@ -46,16 +46,16 @@ const TargetAudiences = () => {
       scenario: t('municipalityScenario')
     },
     {
-      title: t('targetInvestors'),
-      description: t('targetInvestorsDesc'),
-      icon: <BarChart4 size={24} className="text-white" />,
+      title: t('targetConstructionCompanies'),
+      description: t('targetConstructionCompaniesDesc'),
+      icon: <Building size={24} className="text-white" />,
       benefits: [
-        t('investorBenefit1'),
-        t('investorBenefit2'),
-        t('investorBenefit3'),
-        t('investorBenefit4')
+        t('constructionBenefit1'),
+        t('constructionBenefit2'),
+        t('constructionBenefit3'),
+        t('constructionBenefit4')
       ],
-      scenario: t('investorScenario')
+      scenario: t('constructionScenario')
     }
   ];
 
