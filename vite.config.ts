@@ -9,6 +9,7 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 8080,
     // Bei der Entwicklung den Pfad richtig setzen
+    base: '/geo-studies-portal/',
     open: mode === 'development' ? './' : false
   },
   plugins: [

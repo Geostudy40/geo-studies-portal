@@ -9,6 +9,18 @@ document.addEventListener('DOMContentLoaded', () => {
   console.log("[main] Page URL:", window.location.href);
   console.log("[main] Base URL:", document.baseURI);
   console.log("[main] Base Element:", document.querySelector('base')?.href || "Keine Base gefunden");
+  
+  // Überprüfe, ob die Basis-URL korrekt gesetzt ist
+  const baseElement = document.querySelector('base');
+  if (baseElement) {
+    console.log("[main] Base-Element gefunden:", baseElement.href);
+  } else {
+    console.warn("[main] Kein Base-Element gefunden, füge es hinzu");
+    const newBase = document.createElement('base');
+    newBase.href = '/geo-studies-portal/';
+    document.head.appendChild(newBase);
+  }
+  
   mountApp();
 });
 
