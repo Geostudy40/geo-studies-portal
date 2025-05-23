@@ -3,14 +3,14 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { LanguageProvider } from "./context/LanguageContext";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import SEO from "./components/SEO";
 import { Suspense, useEffect, useState } from "react";
 
-// Lazy-loaded page imports to improve performance
+// Page imports
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Services from "./pages/Services";
@@ -41,7 +41,7 @@ const queryClient = new QueryClient({
 });
 
 const LoadingFallback = () => (
-  <div className="min-h-screen flex items-center justify-center">
+  <div className="min-h-screen flex items-center justify-center bg-white">
     <div className="text-center">
       <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-geoblue-600 mx-auto mb-4"></div>
       <p className="text-gray-600">Seite wird geladen...</p>
@@ -51,21 +51,28 @@ const LoadingFallback = () => (
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    console.log("[App] Initialisierung gestartet");
+    console.log("[App] App-Komponente gemountet");
     
-    // Simuliere App-Loading-Zeit
-    const loadTimer = setTimeout(() => {
-      console.log("[App] App erfolgreich geladen");
-      setIsLoading(false);
-      document.body.classList.add('app-loaded');
-    }, 100);
+    try {
+      // Simuliere kurze Initialisierungszeit
+      const initTimer = setTimeout(() => {
+        console.log("[App] App-Initialisierung abgeschlossen");
+        setIsLoading(false);
+      }, 200);
 
-    return () => clearTimeout(loadTimer);
+      return () => {
+        clearTimeout(initTimer);
+      };
+    } catch (err) {
+      console.error("[App] Fehler bei App-Initialisierung:", err);
+      setError(err instanceof Error ? err.message : 'Unbekannter Fehler');
+      setIsLoading(false);
+    }
   }, []);
-  
-  // Verbesserte Router-Konfiguration mit fallback
+
   const getBasename = () => {
     try {
       const hostname = window.location.hostname;
@@ -83,6 +90,23 @@ const App = () => {
 
   const basename = getBasename();
   console.log("[App] Router basename:", basename);
+
+  if (error) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-white">
+        <div className="text-center max-w-md mx-auto p-6">
+          <h1 className="text-2xl font-bold text-red-600 mb-4">Fehler beim Laden</h1>
+          <p className="text-gray-600 mb-4">{error}</p>
+          <button 
+            onClick={() => window.location.reload()} 
+            className="bg-geoblue-600 text-white px-6 py-2 rounded hover:bg-geoblue-700"
+          >
+            Neu laden
+          </button>
+        </div>
+      </div>
+    );
+  }
 
   if (isLoading) {
     return <LoadingFallback />;

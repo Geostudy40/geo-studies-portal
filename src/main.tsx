@@ -5,30 +5,65 @@ import './index.css'
 
 console.log("[main] Initialisierung gestartet");
 
+let appMounted = false;
+let mountAttempts = 0;
+const MAX_MOUNT_ATTEMPTS = 3;
+
 function mountApp() {
+  if (appMounted) {
+    console.log("[main] App bereits gemountet, überspringe");
+    return;
+  }
+
+  mountAttempts++;
+  console.log(`[main] Mount-Versuch ${mountAttempts}/${MAX_MOUNT_ATTEMPTS}`);
+
   try {
-    console.log("[main] Anwendung wird gestartet");
-    
     const rootElement = document.getElementById("root");
     
-    if (rootElement) {
-      console.log("[main] Root-Element gefunden, React-App wird gerendert");
-      
-      const root = createRoot(rootElement);
-      root.render(<App />);
-      console.log("[main] React-App erfolgreich gerendert");
-      
-    } else {
+    if (!rootElement) {
       console.error("[main] Root-Element nicht gefunden!");
-      showErrorPage("Root-Element nicht gefunden");
+      if (mountAttempts < MAX_MOUNT_ATTEMPTS) {
+        setTimeout(mountApp, 1000);
+      } else {
+        showErrorPage("Root-Element nicht gefunden nach mehreren Versuchen");
+      }
+      return;
     }
+
+    console.log("[main] Root-Element gefunden, React-App wird gerendert");
+    
+    const root = createRoot(rootElement);
+    root.render(<App />);
+    
+    appMounted = true;
+    console.log("[main] React-App erfolgreich gerendert");
+    
+    // Verstecke Loading-Indicator
+    hideInitialLoading();
+    
   } catch (error) {
-    console.error("[main] Fehler beim Rendern der React-App:", error);
-    showErrorPage(error instanceof Error ? error.message : String(error));
+    console.error(`[main] Fehler beim Rendern (Versuch ${mountAttempts}):`, error);
+    
+    if (mountAttempts < MAX_MOUNT_ATTEMPTS) {
+      console.log("[main] Wiederhole Mount-Versuch in 1 Sekunde...");
+      setTimeout(mountApp, 1000);
+    } else {
+      showErrorPage(error instanceof Error ? error.message : String(error));
+    }
+  }
+}
+
+function hideInitialLoading() {
+  const loadingElement = document.querySelector('.initial-loading');
+  if (loadingElement) {
+    loadingElement.style.display = 'none';
   }
 }
 
 function showErrorPage(errorMessage: string) {
+  hideInitialLoading();
+  
   const rootElement = document.getElementById("root");
   if (rootElement) {
     rootElement.innerHTML = `
@@ -36,7 +71,8 @@ function showErrorPage(errorMessage: string) {
         <h1 style="color: #1e40af; margin-bottom: 20px;">Ladefehler</h1>
         <p style="margin-bottom: 10px;">Die Anwendung konnte nicht geladen werden.</p>
         <p style="margin-bottom: 20px; color: #666;"><strong>Fehler:</strong> ${errorMessage}</p>
-        <button onclick="window.location.reload()" style="background: #1e40af; color: white; border: none; padding: 12px 24px; border-radius: 6px; cursor: pointer; font-size: 16px;">Neu laden</button>
+        <button onclick="window.location.reload()" style="background: #1e40af; color: white; border: none; padding: 12px 24px; border-radius: 6px; cursor: pointer; font-size: 16px; margin-right: 10px;">Neu laden</button>
+        <button onclick="window.location.href = window.location.origin + window.location.pathname" style="background: #666; color: white; border: none; padding: 12px 24px; border-radius: 6px; cursor: pointer; font-size: 16px;">Startseite</button>
         <div style="margin-top: 20px; padding: 15px; background: #f8f9fa; border-radius: 6px; text-align: left;">
           <strong>Mögliche Lösungen:</strong>
           <ul style="margin: 10px 0; padding-left: 20px;">
@@ -51,22 +87,29 @@ function showErrorPage(errorMessage: string) {
   }
 }
 
-// Verbesserte App-Loading-Logik
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', mountApp);
-} else {
-  // Kleine Verzögerung um sicherzustellen, dass alle Ressourcen geladen sind
-  setTimeout(mountApp, 10);
+// Verbesserte App-Loading-Logik mit mehreren Fallbacks
+function initializeApp() {
+  console.log("[main] App-Initialisierung gestartet");
+  console.log("[main] Document readyState:", document.readyState);
+  
+  if (document.readyState === 'loading') {
+    console.log("[main] Warte auf DOMContentLoaded...");
+    document.addEventListener('DOMContentLoaded', mountApp);
+  } else {
+    console.log("[main] DOM bereits geladen, starte Mount-Prozess");
+    // Kleine Verzögerung um sicherzustellen, dass alle Ressourcen geladen sind
+    setTimeout(mountApp, 50);
+  }
 }
 
 // Verbesserte Fehlerhandler
 window.addEventListener('error', (event) => {
-  console.error('[main] Globaler Fehler:', event.error);
-  console.error('[main] Fehler-Details:', {
+  console.error('[main] Globaler Fehler:', {
     message: event.message,
     filename: event.filename,
     lineno: event.lineno,
-    colno: event.colno
+    colno: event.colno,
+    error: event.error
   });
 });
 
@@ -75,9 +118,13 @@ window.addEventListener('unhandledrejection', (event) => {
   event.preventDefault();
 });
 
-// Zusätzliche Debugging-Informationen
+// Debugging-Informationen
 console.log('[main] Browser-Info:', {
   userAgent: navigator.userAgent,
   url: window.location.href,
-  readyState: document.readyState
+  readyState: document.readyState,
+  timestamp: new Date().toISOString()
 });
+
+// Starte die App-Initialisierung
+initializeApp();
