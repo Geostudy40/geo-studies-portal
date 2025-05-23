@@ -1,9 +1,11 @@
+
 import { Map, FileText, Cpu, Ruler } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/context/LanguageContext';
 import Hero from '@/components/Hero';
 import ServiceCard from '@/components/ServiceCard';
 import LegalNotice from '@/components/LegalNotice';
+import FAQSection from '@/components/FAQSection';
 
 const Index = () => {
   const { t } = useLanguage();
@@ -102,6 +104,9 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* FAQ Section */}
+      <FAQSection />
       
       {/* CTA Section */}
       <section className="py-20 bg-geoblue-800 text-white">
