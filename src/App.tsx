@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { LanguageProvider } from "./context/LanguageContext";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import SEO from "./components/SEO";
 import { Suspense, useEffect } from "react";
 
 // Lazy-loaded page imports to improve performance
@@ -57,6 +58,7 @@ const App = () => {
           <Toaster />
           <Sonner />
           <BrowserRouter basename={basename}>
+            <SEO />
             <div className="flex flex-col min-h-screen">
               <Header />
               <main className="flex-grow pt-16">
