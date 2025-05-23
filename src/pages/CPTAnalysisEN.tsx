@@ -1,11 +1,9 @@
 
-import { useLanguage } from '@/context/LanguageContext';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 
-const CPTAnalysis = () => {
-  const { t } = useLanguage();
+const CPTAnalysisEN = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -24,7 +22,7 @@ const CPTAnalysis = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('CPT Analysis form submitted:', formData);
+    console.log('CPT Analysis form submitted (EN):', formData);
     // Here you would typically send the data to your backend
   };
 
@@ -35,46 +33,46 @@ const CPTAnalysis = () => {
         <div className="container-custom">
           <nav className="text-sm text-gray-300 mb-4">
             <Link to="/" className="hover:underline">Home</Link> {' > '}
-            <Link to="/services" className="hover:underline ml-1">{t('services')}</Link> {' > '}
-            <span className="text-white ml-1">CPT-Analyse</span>
+            <Link to="/services" className="hover:underline ml-1">Services</Link> {' > '}
+            <span className="text-white ml-1">CPT Analysis</span>
           </nav>
           <h1 className="heading-primary-light">
-            CPT-Analyse (Drucksondierung)
+            CPT Analysis (Cone Penetration Test)
           </h1>
           <p className="text-xl text-gray-300">
-            KI-gestützte Auswertung nach internationalen Standards
+            AI-powered evaluation according to international standards
           </p>
         </div>
       </section>
 
-      {/* Einführungstext */}
+      {/* Introduction */}
       <section className="py-12">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
             <p className="text-lg text-gray-700 leading-relaxed">
-              Unsere CPT-Analysen (Cone Penetration Test) bieten präzise geotechnische Parameter 
-              durch modernste Auswertungsmethoden. Wir setzen verschiedene internationale 
-              Analyseverfahren ein, die optimal auf Ihre Projektanforderungen und regionalen 
-              Gegebenheiten abgestimmt sind.
+              Our CPT analyses (Cone Penetration Test) provide precise geotechnical parameters 
+              through state-of-the-art evaluation methods. We employ various international 
+              analysis procedures that are optimally aligned with your project requirements 
+              and regional conditions.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Hauptkategorien - 4-Spalten Grid */}
+      {/* Main Categories */}
       <section className="py-16 bg-white">
         <div className="container-custom">
           <h2 className="section-heading">
-            Unsere CPT-Analysemethoden
+            Our CPT Analysis Methods
           </h2>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* Card 1: Deutsche Standards */}
+            {/* Card 1: German Standards */}
             <div className="bg-white rounded-lg shadow-lg p-6 border-t-4 border-geoblue-600">
               <div className="text-geoblue-600 text-4xl mb-4">🇩🇪</div>
-              <h3 className="text-xl font-semibold mb-2">Deutsche Standards</h3>
+              <h3 className="text-xl font-semibold mb-2">German Standards</h3>
               <p className="text-gray-600 text-sm mb-4">
-                Priorität 1 - Optimiert für deutsche Bauvorschriften
+                Priority 1 - Optimized for German building regulations
               </p>
               <ul className="text-sm space-y-2">
                 <li>• Schneider et al. (2008)</li>
@@ -82,12 +80,12 @@ const CPTAnalysis = () => {
               </ul>
             </div>
 
-            {/* Card 2: Europäische Standards */}
+            {/* Card 2: European Standards */}
             <div className="bg-white rounded-lg shadow-lg p-6 border-t-4 border-green-600">
               <div className="text-green-600 text-4xl mb-4">🇪🇺</div>
-              <h3 className="text-xl font-semibold mb-2">Europäische Standards</h3>
+              <h3 className="text-xl font-semibold mb-2">European Standards</h3>
               <p className="text-gray-600 text-sm mb-4">
-                Priorität 2 - Harmonisierte EU-weite Verfahren
+                Priority 2 - Harmonized EU-wide procedures
               </p>
               <ul className="text-sm space-y-2">
                 <li>• Eurocode 7 Unified</li>
@@ -96,12 +94,12 @@ const CPTAnalysis = () => {
               </ul>
             </div>
 
-            {/* Card 3: Spezialanwendungen */}
+            {/* Card 3: Special Applications */}
             <div className="bg-white rounded-lg shadow-lg p-6 border-t-4 border-purple-600">
               <div className="text-purple-600 text-4xl mb-4">🎯</div>
-              <h3 className="text-xl font-semibold mb-2">Spezialanwendungen</h3>
+              <h3 className="text-xl font-semibold mb-2">Special Applications</h3>
               <p className="text-gray-600 text-sm mb-4">
-                Priorität 3 - Erweiterte Methoden
+                Priority 3 - Advanced methods
               </p>
               <ul className="text-sm space-y-2">
                 <li>• Mayne (2007/2014)</li>
@@ -110,135 +108,135 @@ const CPTAnalysis = () => {
               </ul>
             </div>
 
-            {/* Card 4: Schnellauswahl */}
+            {/* Card 4: Quick Selection */}
             <div className="bg-white rounded-lg shadow-lg p-6 border-t-4 border-orange-600">
               <div className="text-orange-600 text-4xl mb-4">⚡</div>
-              <h3 className="text-xl font-semibold mb-2">Schnellauswahl</h3>
+              <h3 className="text-xl font-semibold mb-2">Quick Selection</h3>
               <p className="text-gray-600 text-sm mb-4">
-                Optimale Methode für Ihr Projekt
+                Optimal method for your project
               </p>
               <ul className="text-sm space-y-2">
-                <li>• Automatische Auswahl</li>
-                <li>• Projektspezifisch</li>
-                <li>• Mehrfachvergleich</li>
+                <li>• Automatic selection</li>
+                <li>• Project-specific</li>
+                <li>• Multi-comparison</li>
               </ul>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Schnellauswahl-Bereich */}
+      {/* Quick Selection by Project Type */}
       <section className="py-16 bg-geoblue-50">
         <div className="container-custom">
           <h2 className="section-heading">
-            🎯 Schnellauswahl nach Projekttyp
+            🎯 Quick Selection by Project Type
           </h2>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="bg-white p-6 rounded-lg border-l-4 border-geoblue-500">
-              <h4 className="font-semibold mb-2">Standard-Bauvorhaben Deutschland</h4>
+              <h4 className="font-semibold mb-2">Standard Construction Projects Germany</h4>
               <p className="text-geoblue-600 font-medium">→ Schneider et al. (2008)</p>
             </div>
             <div className="bg-white p-6 rounded-lg border-l-4 border-green-500">
-              <h4 className="font-semibold mb-2">Internationale/EU-Projekte</h4>
+              <h4 className="font-semibold mb-2">International/EU Projects</h4>
               <p className="text-green-600 font-medium">→ Eurocode 7 Unified</p>
             </div>
             <div className="bg-white p-6 rounded-lg border-l-4 border-purple-500">
-              <h4 className="font-semibold mb-2">Pfahlgründungen</h4>
+              <h4 className="font-semibold mb-2">Pile Foundations</h4>
               <p className="text-purple-600 font-medium">→ Eslami & Fellenius</p>
             </div>
             <div className="bg-white p-6 rounded-lg border-l-4 border-red-500">
-              <h4 className="font-semibold mb-2">Seismische Gebiete</h4>
+              <h4 className="font-semibold mb-2">Seismic Areas</h4>
               <p className="text-red-600 font-medium">→ Jefferies & Been</p>
             </div>
             <div className="bg-white p-6 rounded-lg border-l-4 border-yellow-500">
-              <h4 className="font-semibold mb-2">Universelle Anwendung</h4>
+              <h4 className="font-semibold mb-2">Universal Application</h4>
               <p className="text-yellow-600 font-medium">→ Robertson (1990)</p>
             </div>
             <div className="bg-white p-6 rounded-lg border-l-4 border-indigo-500">
-              <h4 className="font-semibold mb-2">Forschung/Komplexe Projekte</h4>
+              <h4 className="font-semibold mb-2">Research/Complex Projects</h4>
               <p className="text-indigo-600 font-medium">→ Mayne (2007/2014)</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Detaillierte Methodenbeschreibung */}
+      {/* Detailed Method Description */}
       <section className="py-16 bg-white">
         <div className="container-custom">
           <h2 className="section-heading">
-            Detaillierte Methodenbeschreibung
+            Detailed Method Description
           </h2>
           
           <div className="max-w-4xl mx-auto">
             <details className="mb-4 bg-gray-50 rounded-lg">
               <summary className="p-4 font-semibold cursor-pointer hover:bg-gray-100">
-                1. Schneider et al. (2008) - Deutsche Optimierung
+                1. Schneider et al. (2008) - German Optimization
               </summary>
               <div className="p-4 border-t grid md:grid-cols-2 gap-4">
                 <div>
-                  <h4 className="font-medium mb-2">Normen & Vorschriften</h4>
-                  <p className="text-sm text-gray-600">DIN EN 1997-1/2, optimiert für deutsche Böden</p>
+                  <h4 className="font-medium mb-2">Standards & Regulations</h4>
+                  <p className="text-sm text-gray-600">DIN EN 1997-1/2, optimized for German soils</p>
                 </div>
                 <div>
-                  <h4 className="font-medium mb-2">Spezialisierung</h4>
-                  <p className="text-sm text-gray-600">Erweiterte Robertson-Methode für pleistozäne Ablagerungen</p>
+                  <h4 className="font-medium mb-2">Specialization</h4>
+                  <p className="text-sm text-gray-600">Extended Robertson method for pleistocene deposits</p>
                 </div>
                 <div>
-                  <h4 className="font-medium mb-2">Parameter</h4>
-                  <p className="text-sm text-gray-600">cu, Dr, φ&apos;, Es, γ mit deutschen Kalibrierungen</p>
+                  <h4 className="font-medium mb-2">Parameters</h4>
+                  <p className="text-sm text-gray-600">cu, Dr, φ&apos;, Es, γ with German calibrations</p>
                 </div>
                 <div>
-                  <h4 className="font-medium mb-2">Ideal für</h4>
-                  <p className="text-sm text-gray-600">Alle Baugrundgutachten in Deutschland</p>
+                  <h4 className="font-medium mb-2">Ideal for</h4>
+                  <p className="text-sm text-gray-600">All ground investigation reports in Germany</p>
                 </div>
               </div>
             </details>
             
             <details className="mb-4 bg-gray-50 rounded-lg">
               <summary className="p-4 font-semibold cursor-pointer hover:bg-gray-100">
-                2. Robertson (1990) - Universalstandard
+                2. Robertson (1990) - Universal Standard
               </summary>
               <div className="p-4 border-t grid md:grid-cols-2 gap-4">
                 <div>
-                  <h4 className="font-medium mb-2">Anwendungsbereich</h4>
-                  <p className="text-sm text-gray-600">Weltweit anerkannter Standard für CPT-Auswertung</p>
+                  <h4 className="font-medium mb-2">Standards & Regulations</h4>
+                  <p className="text-sm text-gray-600">EN ISO 22476-1, internationally recognized</p>
                 </div>
                 <div>
-                  <h4 className="font-medium mb-2">Bodenklassifikation</h4>
-                  <p className="text-sm text-gray-600">Soil Behavior Type (SBT) Index</p>
+                  <h4 className="font-medium mb-2">Specialization</h4>
+                  <p className="text-sm text-gray-600">SBT classification (Soil Behaviour Type)</p>
                 </div>
                 <div>
-                  <h4 className="font-medium mb-2">Parameter</h4>
-                  <p className="text-sm text-gray-600">Grundlegende geotechnische Parameter</p>
+                  <h4 className="font-medium mb-2">Parameters</h4>
+                  <p className="text-sm text-gray-600">Ic, cu, Dr, φ&apos;, Es according to standard correlations</p>
                 </div>
                 <div>
-                  <h4 className="font-medium mb-2">Ideal für</h4>
-                  <p className="text-sm text-gray-600">Internationale Projekte, erste Orientierung</p>
+                  <h4 className="font-medium mb-2">Ideal for</h4>
+                  <p className="text-sm text-gray-600">Universal reference method, international projects</p>
                 </div>
               </div>
             </details>
 
             <details className="mb-4 bg-gray-50 rounded-lg">
               <summary className="p-4 font-semibold cursor-pointer hover:bg-gray-100">
-                3. Eurocode 7 Unified - EU-harmonisiert
+                3. Eurocode 7 Unified - EU Harmonization
               </summary>
               <div className="p-4 border-t grid md:grid-cols-2 gap-4">
                 <div>
-                  <h4 className="font-medium mb-2">Normen & Vorschriften</h4>
-                  <p className="text-sm text-gray-600">EN 1997-1/2, harmonisiert für EU-Länder</p>
+                  <h4 className="font-medium mb-2">Standards & Regulations</h4>
+                  <p className="text-sm text-gray-600">EN 1997-1/2 + National Annexes</p>
                 </div>
                 <div>
-                  <h4 className="font-medium mb-2">Spezialisierung</h4>
-                  <p className="text-sm text-gray-600">Einheitliche Verfahren für grenzüberschreitende Projekte</p>
+                  <h4 className="font-medium mb-2">Specialization</h4>
+                  <p className="text-sm text-gray-600">Harmonized EU-wide classification</p>
                 </div>
                 <div>
-                  <h4 className="font-medium mb-2">Parameter</h4>
-                  <p className="text-sm text-gray-600">Charakteristische Werte nach Eurocode-Konzept</p>
+                  <h4 className="font-medium mb-2">Parameters</h4>
+                  <p className="text-sm text-gray-600">Qt, Ic, cu, φ&apos;, Es, γ (EU-harmonized)</p>
                 </div>
                 <div>
-                  <h4 className="font-medium mb-2">Ideal für</h4>
-                  <p className="text-sm text-gray-600">EU-weite Projekte, internationale Investoren</p>
+                  <h4 className="font-medium mb-2">Ideal for</h4>
+                  <p className="text-sm text-gray-600">Cross-border EU construction projects</p>
                 </div>
               </div>
             </details>
@@ -246,52 +244,60 @@ const CPTAnalysis = () => {
         </div>
       </section>
 
-      {/* Leistungsübersicht */}
+      {/* Services Overview */}
       <section className="py-16 bg-geolight">
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-12">
             <div>
-              <h3 className="text-2xl font-bold mb-6">Unsere CPT-Analyseleistungen</h3>
+              <h3 className="text-2xl font-bold mb-6">Our CPT Analysis Services</h3>
               <ul className="space-y-3">
                 <li className="flex items-start">
                   <span className="text-green-500 mr-3 mt-1">✓</span>
-                  <span>Automatische Bodenklassifikation nach verschiedenen internationalen Standards</span>
+                  <span>Automatic soil classification according to various international standards</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-green-500 mr-3 mt-1">✓</span>
-                  <span>Geotechnische Parameterbewertung (Tragfähigkeit, Setzungen, Durchlässigkeit)</span>
+                  <span>Geotechnical parameter assessment (bearing capacity, settlements, permeability)</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-green-500 mr-3 mt-1">✓</span>
-                  <span>Vergleichende Auswertungen mit mehreren Methoden zur Qualitätssicherung</span>
+                  <span>Comparative evaluations with multiple methods for quality assurance</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-green-500 mr-3 mt-1">✓</span>
-                  <span>Projektspezifische Methodenauswahl nach Bauvorhaben und Standort</span>
+                  <span>Project-specific method selection according to construction project and location</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-green-500 mr-3 mt-1">✓</span>
+                  <span>Detailed reports with graphical representation and evaluation</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-green-500 mr-3 mt-1">✓</span>
+                  <span>Recommendations for further investigations</span>
                 </li>
               </ul>
             </div>
             
             <div>
-              <h3 className="text-2xl font-bold mb-6">Warum unsere KI-gestützte CPT-Analyse?</h3>
+              <h3 className="text-2xl font-bold mb-6">Why our AI-powered CPT Analysis?</h3>
               <ul className="space-y-3">
-                <li><strong>Präzision:</strong> Automatisierte Auswertung reduziert menschliche Fehler</li>
-                <li><strong>Effizienz:</strong> Schnelle Bearbeitung großer Datenmengen</li>
-                <li><strong>Qualität:</strong> Vergleich mehrerer Methoden für optimale Ergebnisse</li>
-                <li><strong>Flexibilität:</strong> Anpassung an spezifische Projektanforderungen</li>
-                <li><strong>Transparenz:</strong> Nachvollziehbare Berechnungen und Quellenangaben</li>
+                <li><strong>Precision:</strong> Automated evaluation reduces human errors</li>
+                <li><strong>Efficiency:</strong> Fast processing of large data volumes</li>
+                <li><strong>Quality:</strong> Comparison of multiple methods for optimal results</li>
+                <li><strong>Flexibility:</strong> Adaptation to specific project requirements</li>
+                <li><strong>Transparency:</strong> Traceable calculations and source references</li>
               </ul>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Kontaktformular für CPT */}
+      {/* Contact Form for CPT */}
       <section className="py-16 bg-geoblue-800 text-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-12">
-              Kontakt für CPT-Analysen
+              Contact for CPT Analysis
             </h2>
             
             <form onSubmit={handleSubmit} className="bg-white text-gray-800 p-8 rounded-lg">
@@ -308,7 +314,7 @@ const CPTAnalysis = () => {
                 <input 
                   type="email" 
                   name="email"
-                  placeholder="E-Mail" 
+                  placeholder="Email" 
                   className="w-full p-3 border rounded-lg"
                   value={formData.email}
                   onChange={handleInputChange}
@@ -323,12 +329,12 @@ const CPTAnalysis = () => {
                 onChange={handleInputChange}
                 required
               >
-                <option value="">Projekttyp auswählen</option>
-                <option value="standard-germany">Standard-Bauvorhaben Deutschland</option>
-                <option value="international-eu">Internationale/EU-Projekte</option>
-                <option value="pile-foundations">Pfahlgründungen</option>
-                <option value="seismic-areas">Seismische Gebiete</option>
-                <option value="research">Forschungsprojekte</option>
+                <option value="">Select project type</option>
+                <option value="standard-germany">Standard construction projects Germany</option>
+                <option value="international-eu">International/EU projects</option>
+                <option value="pile-foundations">Pile foundations</option>
+                <option value="seismic-areas">Seismic areas</option>
+                <option value="research">Research projects</option>
               </select>
               
               <select 
@@ -338,17 +344,17 @@ const CPTAnalysis = () => {
                 onChange={handleInputChange}
                 required
               >
-                <option value="">Gewünschte Analysemethode</option>
-                <option value="schneider-2008">Schneider et al. (2008) - Deutsche Optimierung</option>
-                <option value="robertson-1990">Robertson (1990) - Universalstandard</option>
-                <option value="eurocode-7">Eurocode 7 Unified - EU-harmonisiert</option>
-                <option value="automatic">Automatische Auswahl basierend auf Projekt</option>
+                <option value="">Desired analysis method</option>
+                <option value="schneider-2008">Schneider et al. (2008) - German optimization</option>
+                <option value="robertson-1990">Robertson (1990) - Universal standard</option>
+                <option value="eurocode-7">Eurocode 7 Unified - EU harmonized</option>
+                <option value="automatic">Automatic selection based on project</option>
               </select>
               
               <input 
                 type="number" 
                 name="cptCount"
-                placeholder="Anzahl der CPT-Sondierungen" 
+                placeholder="Number of CPT soundings" 
                 className="w-full p-3 border rounded-lg mb-6"
                 value={formData.cptCount}
                 onChange={handleInputChange}
@@ -356,7 +362,7 @@ const CPTAnalysis = () => {
               />
               
               <div className="mb-6">
-                <label className="block mb-2 font-medium">CPT-Dateien hochladen</label>
+                <label className="block mb-2 font-medium">Upload CPT files</label>
                 <input 
                   type="file" 
                   multiple 
@@ -364,13 +370,13 @@ const CPTAnalysis = () => {
                   className="w-full p-3 border rounded-lg"
                 />
                 <p className="text-sm text-gray-500 mt-2">
-                  Unterstützte Formate: TXT, CSV, XLSX, DAT
+                  Supported formats: TXT, CSV, XLSX, DAT
                 </p>
               </div>
               
               <textarea 
                 name="projectDescription"
-                placeholder="Projektbeschreibung und spezielle Anforderungen"
+                placeholder="Project description and special requirements"
                 className="w-full p-3 border rounded-lg mb-6 h-32"
                 value={formData.projectDescription}
                 onChange={handleInputChange}
@@ -380,7 +386,7 @@ const CPTAnalysis = () => {
                 type="submit"
                 className="w-full bg-geoblue-600 hover:bg-geoblue-700 text-white py-3 px-6 rounded-lg transition-colors"
               >
-                CPT-Analyse anfragen
+                Request CPT Analysis
               </Button>
             </form>
           </div>
@@ -390,4 +396,4 @@ const CPTAnalysis = () => {
   );
 };
 
-export default CPTAnalysis;
+export default CPTAnalysisEN;
