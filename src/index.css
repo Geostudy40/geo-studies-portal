@@ -125,11 +125,63 @@
   }
   
   .btn-primary {
-    @apply bg-geoblue-800 hover:bg-geoblue-700 text-white font-semibold py-2 px-6 rounded-md transition-colors duration-300;
+    @apply bg-geoblue-800 hover:bg-geoblue-700 active:bg-geoblue-900 text-white font-semibold rounded-md transition-all duration-300 transform hover:scale-105 active:scale-95;
+    min-height: 44px;
+    padding: 12px 24px;
   }
   
   .btn-secondary {
-    @apply bg-white border border-geoblue-800 text-geoblue-800 hover:bg-geoblue-50 font-semibold py-2 px-6 rounded-md transition-colors duration-300;
+    @apply bg-white border border-geoblue-800 text-geoblue-800 hover:bg-geoblue-50 hover:border-geoblue-700 active:bg-geoblue-100 font-semibold rounded-md transition-all duration-300 transform hover:scale-105 active:scale-95;
+    min-height: 44px;
+    padding: 12px 24px;
+  }
+
+  /* Mobile-optimized button styles */
+  @media (max-width: 768px) {
+    .btn-primary,
+    .btn-secondary {
+      @apply w-full;
+      min-height: 48px;
+      padding: 14px 24px;
+      font-size: 16px;
+    }
+  }
+
+  /* Touch-friendly buttons for all button elements */
+  button, 
+  .btn,
+  input[type="submit"],
+  input[type="button"] {
+    min-height: 44px;
+    @apply transition-all duration-300 transform hover:scale-105 active:scale-95;
+  }
+
+  @media (max-width: 768px) {
+    button:not(.btn-icon), 
+    .btn,
+    input[type="submit"],
+    input[type="button"] {
+      min-height: 48px;
+      @apply w-full;
+    }
+  }
+
+  /* Enhanced form button styles */
+  form button[type="submit"],
+  form input[type="submit"] {
+    @apply bg-geoblue-800 hover:bg-geoblue-700 active:bg-geoblue-900 text-white font-medium rounded-md transition-all duration-300 transform hover:scale-105 active:scale-95;
+    min-height: 44px;
+    padding: 12px 24px;
+  }
+
+  @media (max-width: 768px) {
+    form button[type="submit"],
+    form input[type="submit"] {
+      @apply w-full;
+      min-height: 48px;
+      padding: 14px 24px;
+      font-size: 16px;
+    }
   }
 
   .card-shadow {

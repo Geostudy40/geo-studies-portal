@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Upload } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 import { useToast } from '@/hooks/use-toast';
+import { Button } from '@/components/ui/button';
 
 const ContactForm = () => {
   const { t } = useLanguage();
@@ -75,7 +76,7 @@ const ContactForm = () => {
             required
             value={formData.name}
             onChange={handleChange}
-            className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-geoblue-500 focus:border-transparent"
+            className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-geoblue-500 focus:border-transparent min-h-[44px]"
           />
         </div>
         
@@ -90,7 +91,7 @@ const ContactForm = () => {
             required
             value={formData.email}
             onChange={handleChange}
-            className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-geoblue-500 focus:border-transparent"
+            className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-geoblue-500 focus:border-transparent min-h-[44px]"
           />
         </div>
         
@@ -104,7 +105,7 @@ const ContactForm = () => {
             type="tel"
             value={formData.phone}
             onChange={handleChange}
-            className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-geoblue-500 focus:border-transparent"
+            className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-geoblue-500 focus:border-transparent min-h-[44px]"
           />
         </div>
         
@@ -119,7 +120,7 @@ const ContactForm = () => {
             rows={5}
             value={formData.message}
             onChange={handleChange as React.ChangeEventHandler<HTMLTextAreaElement>}
-            className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-geoblue-500 focus:border-transparent"
+            className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-geoblue-500 focus:border-transparent min-h-[120px]"
           />
         </div>
         
@@ -128,7 +129,7 @@ const ContactForm = () => {
             {t('fileUploadLabel')}
           </label>
           
-          <div className="border-2 border-dashed border-gray-300 rounded-md p-6 text-center">
+          <div className="border-2 border-dashed border-gray-300 rounded-md p-6 text-center hover:border-geoblue-400 transition-colors duration-300">
             <input
               id="files"
               name="files"
@@ -161,7 +162,7 @@ const ContactForm = () => {
                     <button
                       type="button"
                       onClick={() => removeFile(index)}
-                      className="text-red-500 hover:text-red-700"
+                      className="text-red-500 hover:text-red-700 min-h-[32px] min-w-[32px] p-1 transition-colors duration-300"
                     >
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                         <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
@@ -176,10 +177,11 @@ const ContactForm = () => {
       </div>
       
       <div className="mt-8">
-        <button
+        <Button
           type="submit"
           disabled={isSubmitting}
-          className={`btn-primary w-full py-3 text-lg flex justify-center items-center ${
+          size="lg"
+          className={`${
             isSubmitting ? 'opacity-70 cursor-not-allowed' : ''
           }`}
         >
@@ -194,7 +196,7 @@ const ContactForm = () => {
           ) : (
             t('sendButton')
           )}
-        </button>
+        </Button>
       </div>
     </form>
   );
