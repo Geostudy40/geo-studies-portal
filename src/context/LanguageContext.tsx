@@ -1,3 +1,4 @@
+
 import React, { createContext, useState, useContext, ReactNode } from 'react';
 
 // Defining the structure of our translations
@@ -34,7 +35,15 @@ type TranslationKeys =
   | 'extendedServiceProjectManagementDesc' | 'extendedServiceTenderManagement' 
   | 'extendedServiceTenderManagementDesc' | 'extendedServiceConstruction' 
   | 'extendedServiceConstructionDesc' | 'extendedServicePlanning' 
-  | 'extendedServicePlanningDesc' | 'extendedServicesCta';
+  | 'extendedServicePlanningDesc' | 'extendedServicesCta'
+  | 'cptAnalysisTitle' | 'cptAnalysisSubtitle' | 'cptAnalysisIntro' | 'cptAnalysisMethods'
+  | 'cptGermanStandards' | 'cptGermanStandardsDesc' | 'cptEuropeanStandards' | 'cptEuropeanStandardsDesc'
+  | 'cptSpecialApplications' | 'cptSpecialApplicationsDesc' | 'cptQuickSelection' | 'cptQuickSelectionDesc'
+  | 'cptQuickSelectionTitle' | 'cptStandardGermany' | 'cptInternationalEU' | 'cptPileFoundations'
+  | 'cptSeismicAreas' | 'cptUniversalApplication' | 'cptResearchComplex' | 'cptDetailedMethods'
+  | 'cptSchneiderMethod' | 'cptRobertsonMethod' | 'cptEurocodeMethod' | 'cptServicesTitle'
+  | 'cptServicesOverview' | 'cptWhyAI' | 'cptContactTitle' | 'cptProjectType' | 'cptAnalysisMethod'
+  | 'cptNumberSoundings' | 'cptUploadFiles' | 'cptProjectDescription' | 'cptRequestAnalysis';
 
 export const translations: Record<'de' | 'en', Record<TranslationKeys, string>> = {
   de: {
@@ -185,6 +194,41 @@ export const translations: Record<'de' | 'en', Record<TranslationKeys, string>> 
     extendedServicePlanning: "Fachplanung",
     extendedServicePlanningDesc: "Spezialisierte Planungsleistungen für geotechnische Herausforderungen wie Baugruben, Gründungen und Bodenverbesserungsmaßnahmen.",
     extendedServicesCta: "Kontaktieren Sie uns für ein individuelles Angebot",
+
+    // CPT Analysis German translations
+    cptAnalysisTitle: "CPT-Analyse (Drucksondierung)",
+    cptAnalysisSubtitle: "KI-gestützte Auswertung nach internationalen Standards",
+    cptAnalysisIntro: "Unsere CPT-Analysen (Cone Penetration Test) bieten präzise geotechnische Parameter durch modernste Auswertungsmethoden. Wir setzen verschiedene internationale Analyseverfahren ein, die optimal auf Ihre Projektanforderungen und regionalen Gegebenheiten abgestimmt sind.",
+    cptAnalysisMethods: "Unsere CPT-Analysemethoden",
+    cptGermanStandards: "Deutsche Standards",
+    cptGermanStandardsDesc: "Priorität 1 - Optimiert für deutsche Bauvorschriften",
+    cptEuropeanStandards: "Europäische Standards",
+    cptEuropeanStandardsDesc: "Priorität 2 - Harmonisierte EU-weite Verfahren",
+    cptSpecialApplications: "Spezialanwendungen",
+    cptSpecialApplicationsDesc: "Priorität 3 - Erweiterte Methoden",
+    cptQuickSelection: "Schnellauswahl",
+    cptQuickSelectionDesc: "Optimale Methode für Ihr Projekt",
+    cptQuickSelectionTitle: "🎯 Schnellauswahl nach Projekttyp",
+    cptStandardGermany: "Standard-Bauvorhaben Deutschland",
+    cptInternationalEU: "Internationale/EU-Projekte",
+    cptPileFoundations: "Pfahlgründungen",
+    cptSeismicAreas: "Seismische Gebiete",
+    cptUniversalApplication: "Universelle Anwendung",
+    cptResearchComplex: "Forschung/Komplexe Projekte",
+    cptDetailedMethods: "Detaillierte Methodenbeschreibung",
+    cptSchneiderMethod: "1. Schneider et al. (2008) - Deutsche Optimierung",
+    cptRobertsonMethod: "2. Robertson (1990) - Universalstandard",
+    cptEurocodeMethod: "3. Eurocode 7 Unified - EU-harmonisiert",
+    cptServicesTitle: "Unsere CPT-Analyseleistungen",
+    cptServicesOverview: "Warum unsere KI-gestützte CPT-Analyse?",
+    cptWhyAI: "Präzision: Automatisierte Auswertung reduziert menschliche Fehler\nEffizienz: Schnelle Bearbeitung großer Datenmengen\nQualität: Vergleich mehrerer Methoden für optimale Ergebnisse\nFlexibilität: Anpassung an spezifische Projektanforderungen\nTransparenz: Nachvollziehbare Berechnungen und Quellenangaben",
+    cptContactTitle: "Kontakt für CPT-Analysen",
+    cptProjectType: "Projekttyp auswählen",
+    cptAnalysisMethod: "Gewünschte Analysemethode",
+    cptNumberSoundings: "Anzahl der CPT-Sondierungen",
+    cptUploadFiles: "CPT-Dateien hochladen",
+    cptProjectDescription: "Projektbeschreibung und spezielle Anforderungen",
+    cptRequestAnalysis: "CPT-Analyse anfragen",
   },
   en: {
     // Navigation
@@ -334,6 +378,41 @@ export const translations: Record<'de' | 'en', Record<TranslationKeys, string>> 
     extendedServicePlanning: "Specialized Planning",
     extendedServicePlanningDesc: "Specialized planning services for geotechnical challenges such as excavation pits, foundations, and soil improvement measures.",
     extendedServicesCta: "Contact us for a customized offer",
+
+    // CPT Analysis English translations
+    cptAnalysisTitle: "CPT Analysis (Cone Penetration Test)",
+    cptAnalysisSubtitle: "AI-powered evaluation according to international standards",
+    cptAnalysisIntro: "Our CPT analyses (Cone Penetration Test) provide precise geotechnical parameters through state-of-the-art evaluation methods. We employ various international analysis procedures that are optimally aligned with your project requirements and regional conditions.",
+    cptAnalysisMethods: "Our CPT Analysis Methods",
+    cptGermanStandards: "German Standards",
+    cptGermanStandardsDesc: "Priority 1 - Optimized for German building regulations",
+    cptEuropeanStandards: "European Standards",
+    cptEuropeanStandardsDesc: "Priority 2 - Harmonized EU-wide procedures",
+    cptSpecialApplications: "Special Applications",
+    cptSpecialApplicationsDesc: "Priority 3 - Advanced methods",
+    cptQuickSelection: "Quick Selection",
+    cptQuickSelectionDesc: "Optimal method for your project",
+    cptQuickSelectionTitle: "🎯 Quick Selection by Project Type",
+    cptStandardGermany: "Standard Construction Projects Germany",
+    cptInternationalEU: "International/EU Projects",
+    cptPileFoundations: "Pile Foundations",
+    cptSeismicAreas: "Seismic Areas",
+    cptUniversalApplication: "Universal Application",
+    cptResearchComplex: "Research/Complex Projects",
+    cptDetailedMethods: "Detailed Method Description",
+    cptSchneiderMethod: "1. Schneider et al. (2008) - German Optimization",
+    cptRobertsonMethod: "2. Robertson (1990) - Universal Standard",
+    cptEurocodeMethod: "3. Eurocode 7 Unified - EU Harmonization",
+    cptServicesTitle: "Our CPT Analysis Services",
+    cptServicesOverview: "Why our AI-powered CPT Analysis?",
+    cptWhyAI: "Precision: Automated evaluation reduces human errors\nEfficiency: Fast processing of large data volumes\nQuality: Comparison of multiple methods for optimal results\nFlexibility: Adaptation to specific project requirements\nTransparency: Traceable calculations and source references",
+    cptContactTitle: "Contact for CPT Analysis",
+    cptProjectType: "Select project type",
+    cptAnalysisMethod: "Desired analysis method",
+    cptNumberSoundings: "Number of CPT soundings",
+    cptUploadFiles: "Upload CPT files",
+    cptProjectDescription: "Project description and special requirements",
+    cptRequestAnalysis: "Request CPT Analysis",
   }
 };
 
