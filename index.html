@@ -4,9 +4,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geo-studies-portal</title>
-    <meta name="description" content="Lovable Generated Project" />
-    <meta name="author" content="Lovable" />
+    <title>GeoStudys - Geotechnische Vorstudien mit KI</title>
+    <meta name="description" content="Professionelle geotechnische Vorstudien mit KI-Unterstützung. Baugrundgutachten, Risikobewertung und CPT-Analysen." />
+    <meta name="author" content="GeoStudys" />
     <meta property="og:image" content="/geo-studies-portal/og-image.png" />
     <base href="/geo-studies-portal/" />
     <!-- Added favicon reference -->
@@ -14,6 +14,7 @@
     
     <!-- GitHub Pages SPA router fix -->
     <script type="text/javascript">
+      // Single Page App GitHub Pages workaround
       (function(l) {
         if (l.search[1] === '/' ) {
           var decoded = l.search.slice(1).split('&').map(function(s) { 
@@ -23,21 +24,82 @@
               l.pathname.slice(0, -1) + decoded + l.hash
           );
         }
-      }(window.location))
+      }(window.location));
+      
+      // Debugging helper für GitHub Pages
+      console.log("[index.html] Page loaded:", window.location.href);
+      console.log("[index.html] Pathname:", window.location.pathname);
+      console.log("[index.html] Search:", window.location.search);
+      console.log("[index.html] Hash:", window.location.hash);
     </script>
+    
+    <!-- Loading indicator CSS -->
+    <style>
+      .initial-loading {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      }
+      .loading-spinner {
+        width: 40px;
+        height: 40px;
+        border: 4px solid #f3f3f3;
+        border-top: 4px solid #1e40af;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin-bottom: 20px;
+      }
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      body.app-loaded .initial-loading {
+        display: none;
+      }
+    </style>
   </head>
 
   <body>
+    <!-- Initial loading indicator -->
+    <div class="initial-loading">
+      <div style="text-align: center;">
+        <div class="loading-spinner"></div>
+        <p style="color: #666; margin: 0;">GeoStudys wird geladen...</p>
+      </div>
+    </div>
+    
     <div id="root"></div>
+    
     <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
     <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
     <script type="module" src="./src/main.tsx"></script>
+    
     <!-- Added fallback display in case of script loading issues -->
     <noscript>
-      <div style="text-align: center; padding: 2rem;">
+      <div style="text-align: center; padding: 2rem; font-family: sans-serif;">
         <h1>JavaScript deaktiviert</h1>
         <p>Diese Anwendung benötigt JavaScript. Bitte aktivieren Sie JavaScript in Ihrem Browser.</p>
+        <p><a href="/">Zur Startseite</a></p>
       </div>
     </noscript>
+    
+    <!-- Script um sicherzustellen, dass die App lädt -->
+    <script>
+      setTimeout(function() {
+        var root = document.getElementById('root');
+        if (!root || root.children.length === 0) {
+          console.error('[index.html] App nicht geladen nach 5 Sekunden');
+          document.body.innerHTML = '<div style="text-align: center; padding: 50px; font-family: sans-serif;"><h1>Ladefehler</h1><p>Die Anwendung konnte nicht geladen werden.</p><button onclick="window.location.reload()">Neu laden</button></div>';
+        }
+      }, 5000);
+    </script>
   </body>
 </html>

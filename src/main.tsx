@@ -39,15 +39,31 @@ function mountApp() {
     
     if (rootElement) {
       console.log("[main] Root-Element gefunden, React-App wird gerendert");
-      // Prüfen, ob wir auf GitHub Pages sind und den entsprechenden Pfad setzen
-      window.isGitHubPages = window.location.hostname.includes('github.io');
-      // Korrektur: Setze basePath konstant auf /geo-studies-portal für die Konsistenz
-      window.basePath = "/geo-studies-portal";
+      
+      // Prüfen, ob wir auf GitHub Pages sind
+      const isGitHubPages = window.location.hostname.includes('github.io');
+      console.log("[main] GitHub Pages erkannt:", isGitHubPages);
+      
+      // Setze globale Variablen für die App
+      window.isGitHubPages = isGitHubPages;
+      window.basePath = isGitHubPages ? "/geo-studies-portal" : "";
       console.log("[main] BasePath gesetzt:", window.basePath);
       
       const root = createRoot(rootElement);
       root.render(<App />);
       console.log("[main] React-App erfolgreich gerendert");
+      
+      // Prüfe nach dem Rendern, ob Inhalt vorhanden ist
+      setTimeout(() => {
+        const contentAfterRender = document.getElementById("root")?.innerHTML || "";
+        if (contentAfterRender.trim() === "") {
+          console.error("[main] App wurde gerendert, aber Root ist immer noch leer");
+          showErrorPage("App-Rendering fehlgeschlagen");
+        } else {
+          console.log("[main] App erfolgreich geladen und gerendert");
+        }
+      }, 500);
+      
     } else {
       console.error("[main] Root-Element nicht gefunden! DOM-Struktur:", document.body.innerHTML);
       showErrorPage("Root-Element nicht gefunden");
@@ -59,16 +75,20 @@ function mountApp() {
 }
 
 function showErrorPage(errorMessage: string) {
-  document.body.innerHTML = `
-    <div style="font-family: sans-serif; text-align: center; margin-top: 50px;">
-      <h1>Es ist ein Fehler aufgetreten</h1>
-      <p>Bitte versuchen Sie, die Seite neu zu laden oder kontaktieren Sie den Support.</p>
-      <p>URL: ${window.location.href}</p>
-      <p>Zeitpunkt: ${new Date().toISOString()}</p>
-      <pre style="text-align: left; background: #f8f8f8; padding: 20px; border-radius: 5px; max-width: 800px; margin: 20px auto; overflow: auto;">${errorMessage}</pre>
-      <button onclick="window.location.reload()" style="background: #282c34; color: white; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer; margin-top: 20px;">Seite neu laden</button>
-    </div>
-  `;
+  const rootElement = document.getElementById("root");
+  if (rootElement) {
+    rootElement.innerHTML = `
+      <div style="font-family: sans-serif; text-align: center; margin-top: 50px; padding: 20px;">
+        <h1>Es ist ein Fehler aufgetreten</h1>
+        <p>Bitte versuchen Sie, die Seite neu zu laden oder kontaktieren Sie den Support.</p>
+        <p><strong>URL:</strong> ${window.location.href}</p>
+        <p><strong>Zeitpunkt:</strong> ${new Date().toISOString()}</p>
+        <pre style="text-align: left; background: #f8f8f8; padding: 20px; border-radius: 5px; max-width: 800px; margin: 20px auto; overflow: auto;">${errorMessage}</pre>
+        <button onclick="window.location.reload()" style="background: #282c34; color: white; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer; margin-top: 20px;">Seite neu laden</button>
+        <button onclick="window.location.href = window.basePath || '/'" style="background: #007bff; color: white; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer; margin-top: 20px; margin-left: 10px;">Zur Startseite</button>
+      </div>
+    `;
+  }
 }
 
 // Globalen Fehlerhandler hinzufügen
@@ -80,6 +100,12 @@ window.addEventListener('error', (event) => {
   if (rootElement && rootElement.children.length === 0) {
     showErrorPage(`Globaler Fehler: ${event.message} bei ${event.filename}:${event.lineno}:${event.colno}`);
   }
+});
+
+// Unhandled Promise Rejection Handler
+window.addEventListener('unhandledrejection', (event) => {
+  console.error('[main] Unhandled Promise Rejection:', event.reason);
+  event.preventDefault(); // Verhindere die Standard-Fehlerbehandlung
 });
 
 // Declare global variables for TypeScript
