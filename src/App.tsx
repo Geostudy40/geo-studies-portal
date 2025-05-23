@@ -77,9 +77,8 @@ const App = () => {
     console.log("DOM-Struktur:", document.body.innerHTML);
   }, []);
   
-  // Prüfen ob wir auf GitHub Pages sind - entweder aus dem globalen Wert oder selbst ermitteln
-  const isGitHubPages = window.isGitHubPages || window.location.hostname.includes('github.io');
-  const basename = window.basePath || (isGitHubPages ? "/geo-studies-portal" : "");
+  // Korrekte Basis-URL für GitHub Pages setzen
+  const basename = '/geo-studies-portal';
   
   console.log("[App] Router basename:", basename);
 
