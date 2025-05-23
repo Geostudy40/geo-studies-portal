@@ -1,4 +1,3 @@
-
 import React, { createContext, useState, useContext, ReactNode } from 'react';
 
 // Defining the structure of our translations
@@ -43,10 +42,21 @@ type TranslationKeys =
   | 'cptSeismicAreas' | 'cptUniversalApplication' | 'cptResearchComplex' | 'cptDetailedMethods'
   | 'cptSchneiderMethod' | 'cptRobertsonMethod' | 'cptEurocodeMethod' | 'cptServicesTitle'
   | 'cptServicesOverview' | 'cptWhyAI' | 'cptContactTitle' | 'cptProjectType' | 'cptAnalysisMethod'
-  | 'cptNumberSoundings' | 'cptUploadFiles' | 'cptProjectDescription' | 'cptRequestAnalysis';
+  | 'cptNumberSoundings' | 'cptUploadFiles' | 'cptProjectDescription' | 'cptRequestAnalysis'
+  | 'aboutMission' | 'aboutDistinguishes' | 'aboutInnovationDesc' | 'aboutReliability' 
+  | 'aboutReliabilityDesc' | 'aboutCustomerOrientation' | 'aboutCustomerOrientationDesc';
 
 export const translations: Record<'de' | 'en', Record<TranslationKeys, string>> = {
   de: {
+    // About page specific additions
+    aboutMission: "Unsere Mission",
+    aboutDistinguishes: "Was uns auszeichnet",
+    aboutInnovationDesc: "Wir setzen modernste KI-Technologien ein, um präzise und kosteneffiziente Analysen durchzuführen.",
+    aboutReliability: "Zuverlässigkeit",
+    aboutReliabilityDesc: "Unsere Berichte sind präzise, normkonform und bieten eine solide Grundlage für Entscheidungen.",
+    aboutCustomerOrientation: "Kundenorientierung",
+    aboutCustomerOrientationDesc: "Wir verstehen die individuellen Bedürfnisse jedes Kunden und bieten maßgeschneiderte Lösungen.",
+    
     // Navigation
     home: "Home",
     about: "Über uns",
@@ -231,6 +241,15 @@ export const translations: Record<'de' | 'en', Record<TranslationKeys, string>> 
     cptRequestAnalysis: "CPT-Analyse anfragen",
   },
   en: {
+    // About page specific additions
+    aboutMission: "Our Mission",
+    aboutDistinguishes: "What Distinguishes Us",
+    aboutInnovationDesc: "We employ state-of-the-art AI technologies to deliver precise and cost-efficient analyses.",
+    aboutReliability: "Reliability",
+    aboutReliabilityDesc: "Our reports are precise, standard-compliant and provide a solid foundation for decisions.",
+    aboutCustomerOrientation: "Customer Orientation",
+    aboutCustomerOrientationDesc: "We understand the individual needs of each client and offer tailored solutions.",
+    
     // Navigation
     home: "Home",
     about: "About Us",

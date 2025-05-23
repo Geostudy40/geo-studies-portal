@@ -21,41 +21,20 @@ const About = () => {
         <div className="container-custom">
           <div className="mb-16">
             <h2 className="text-3xl font-bold text-geoblue-800 mb-6">
-              Unsere Mission
+              {t('aboutMission')}
             </h2>
-            <p className="text-gray-600 mb-4">
-              Bei GeoStudy ist es unsere Mission, durch präzise geotechnische Vorstudien die Grundlage für fundierte Entscheidungen zu schaffen. Wir kombinieren traditionelles geologisches Fachwissen mit modernsten KI-Technologien, um kosteneffiziente und präzise Analysen zu liefern.
-            </p>
-            <p className="text-gray-600 mb-4">
-              Unser Ziel ist es, potenzielle Risiken frühzeitig zu identifizieren und Lösungen vorzuschlagen, die Zeit und Kosten sparen. Wir verstehen, dass jedes Projekt einzigartig ist und bieten daher maßgeschneiderte Lösungen für verschiedene Branchen und Anforderungen.
-            </p>
-          </div>
-          
-          <div className="mb-16">
-            <h2 className="text-3xl font-bold text-geoblue-800 mb-6">
-              Unsere Qualifikationen
-            </h2>
-            <p className="text-gray-600 mb-4">
-              Unser Team besteht aus erfahrenen Geologen mit umfassender Ausbildung und jahrelanger Praxis in der geotechnischen Analyse. Wir halten uns stets über die neuesten Entwicklungen und Technologien in unserem Bereich auf dem Laufenden.
-            </p>
-            <p className="text-gray-600 mb-4">
-              Unsere Expertise in der Implementierung von KI-gestützten Analysen ermöglicht es uns, große Mengen geologischer Daten effizient zu verarbeiten und präzise Vorhersagen zu treffen. Alle unsere Berichte entsprechen den aktuellen Eurocode- und DIN-Normen.
-            </p>
-            
-            <h3 className="text-3xl font-bold text-geoblue-800 mt-8 mb-6">
-              Unser interdisziplinäres Experten-Netzwerk
-            </h3>
-            <p className="text-gray-600 mb-4">
-              Bei GeoStudy arbeiten wir in einer modernen Netzwerkstruktur, die Fachleute aus den Bereichen Geologie, Hydrologie, Bauingenieurwesen und Datenanalyse zusammenbringt. Unsere Spezialisten verfügen über 10 bis 25 Jahre Berufserfahrung in Deutschland und anderen europäischen Ländern und haben sich durch interdisziplinäre Projektarbeit bewährt.
-            </p>
-            <p className="text-gray-600 mb-4">
-              Diese Vernetzung unter einem Dach ermöglicht es uns, die Projekte unserer Kunden besonders effizient, normgerecht und kostengünstig voranzutreiben. Die Kombination aus langjähriger Praxiserfahrung und moderner digitaler Methodik bildet die Grundlage für unsere maßgeschneiderten Lösungen.
-            </p>
+            <div className="text-gray-600 space-y-4">
+              {t('aboutExpandedContent').split('\n\n').map((paragraph, index) => (
+                <p key={index} className="mb-4">
+                  {paragraph}
+                </p>
+              ))}
+            </div>
           </div>
           
           <div className="bg-geolight p-8 rounded-lg shadow-md">
             <h2 className="text-3xl font-bold text-geoblue-800 mb-6 text-center">
-              Was uns auszeichnet
+              {t('aboutDistinguishes')}
             </h2>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -65,9 +44,9 @@ const About = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-semibold text-geoblue-800 mb-2">Innovation</h3>
+                <h3 className="text-xl font-semibold text-geoblue-800 mb-2">{t('valueTimeSavings')}</h3>
                 <p className="text-gray-600">
-                  Wir setzen modernste KI-Technologien ein, um präzise und kosteneffiziente Analysen durchzuführen.
+                  {t('aboutInnovationDesc')}
                 </p>
               </div>
               
@@ -77,9 +56,9 @@ const About = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-semibold text-geoblue-800 mb-2">Zuverlässigkeit</h3>
+                <h3 className="text-xl font-semibold text-geoblue-800 mb-2">{t('aboutReliability')}</h3>
                 <p className="text-gray-600">
-                  Unsere Berichte sind präzise, normkonform und bieten eine solide Grundlage für Entscheidungen.
+                  {t('aboutReliabilityDesc')}
                 </p>
               </div>
               
@@ -89,9 +68,9 @@ const About = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-semibold text-geoblue-800 mb-2">Kundenorientierung</h3>
+                <h3 className="text-xl font-semibold text-geoblue-800 mb-2">{t('aboutCustomerOrientation')}</h3>
                 <p className="text-gray-600">
-                  Wir verstehen die individuellen Bedürfnisse jedes Kunden und bieten maßgeschneiderte Lösungen.
+                  {t('aboutCustomerOrientationDesc')}
                 </p>
               </div>
             </div>
