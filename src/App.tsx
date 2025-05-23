@@ -41,29 +41,14 @@ const queryClient = new QueryClient({
 
 const App = () => {
   useEffect(() => {
-    // Detaillierte Umgebungsinformationen für Debugging
-    console.log("======= APP ENVIRONMENT INFO =======");
-    console.log("App-Komponente wurde gerendert");
-    console.log("Aktueller Pfad:", window.location.pathname);
-    console.log("Aktuelle URL:", window.location.href);
-    console.log("Basis-URL:", document.baseURI);
-    console.log("Base element:", document.querySelector('base')?.href);
-    console.log("GitHub Pages:", window.location.hostname.includes('github.io'));
-    console.log("User Agent:", navigator.userAgent);
-    console.log("Window basePath:", window.basePath);
-    console.log("=================================");
-    
-    // App erfolgreich geladen Marker setzen
-    setTimeout(() => {
-      console.log("[App] App-Komponente vollständig initialisiert");
-      document.body.classList.add('app-loaded');
-    }, 100);
+    console.log("App geladen erfolgreich");
+    document.body.classList.add('app-loaded');
   }, []);
   
-  // Korrekte Basis-URL für GitHub Pages setzen
-  const basename = window.basePath || '/geo-studies-portal';
+  // Einfachere Router-Konfiguration
+  const basename = window.location.hostname.includes('github.io') ? '/geo-studies-portal' : '';
   
-  console.log("[App] Router basename:", basename);
+  console.log("Router basename:", basename);
 
   return (
     <QueryClientProvider client={queryClient}>
@@ -73,13 +58,7 @@ const App = () => {
           <Sonner />
           <BrowserRouter basename={basename}>
             <div className="flex flex-col min-h-screen">
-              <Suspense fallback={
-                <div className="p-8 text-center bg-white shadow-sm">
-                  <div className="animate-pulse">Header wird geladen...</div>
-                </div>
-              }>
-                <Header />
-              </Suspense>
+              <Header />
               <main className="flex-grow pt-16">
                 <Suspense fallback={
                   <div className="min-h-screen flex items-center justify-center">
@@ -112,13 +91,7 @@ const App = () => {
                   </Routes>
                 </Suspense>
               </main>
-              <Suspense fallback={
-                <div className="p-8 text-center bg-geoblue-900 text-white">
-                  <div className="animate-pulse">Footer wird geladen...</div>
-                </div>
-              }>
-                <Footer />
-              </Suspense>
+              <Footer />
             </div>
           </BrowserRouter>
         </TooltipProvider>
