@@ -130,6 +130,27 @@ const Services = () => {
               />
             ))}
           </div>
+
+          {/* CPT-Analyse Highlight */}
+          <div className="mt-12">
+            <div className="bg-gradient-to-r from-geoblue-600 to-blue-700 text-white rounded-lg shadow-lg p-8 text-center">
+              <div className="flex justify-center mb-4">
+                <BarChart size={48} className="text-white" />
+              </div>
+              <h3 className="text-2xl font-semibold mb-4">Spezialisierte CPT-Analyse</h3>
+              <p className="mb-6 text-lg">
+                KI-gestützte Auswertung von Drucksondierungen nach internationalen Standards
+              </p>
+              <p className="mb-8 text-sm opacity-90">
+                Automatische Bodenklassifikation • Geotechnische Parameterbewertung • Projektspezifische Methodenauswahl
+              </p>
+              <Button asChild className="bg-white text-geoblue-600 hover:bg-gray-100 font-medium">
+                <Link to="/cpt-analysis">
+                  CPT-Analyse entdecken →
+                </Link>
+              </Button>
+            </div>
+          </div>
         </div>
       </section>
       

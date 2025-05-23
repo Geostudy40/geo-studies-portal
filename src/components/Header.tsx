@@ -1,12 +1,13 @@
 
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 import LanguageSwitcher from './LanguageSwitcher';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
   const { t } = useLanguage();
   const location = useLocation();
 
@@ -14,14 +15,29 @@ const Header = () => {
     { name: t('home'), path: '/' },
     { name: t('about'), path: '/about' },
     { name: t('sectors'), path: '/sectors' },
-    { name: t('services'), path: '/services' },
+    { 
+      name: t('services'), 
+      path: '/services',
+      dropdown: [
+        { name: 'Kernleistungen', path: '/services' },
+        { name: t('extendedServices'), path: '/extended-services' },
+        { name: 'CPT-Analyse', path: '/cpt-analysis' }
+      ]
+    },
     { name: t('targetAudiences'), path: '/target-audiences' },
-    { name: t('extendedServices'), path: '/extended-services' },
     { name: t('contact'), path: '/contact' },
   ];
 
   const isActive = (path: string) => {
     return location.pathname === path || location.pathname.startsWith(path + '/');
+  };
+
+  const handleServicesMouseEnter = () => {
+    setServicesDropdownOpen(true);
+  };
+
+  const handleServicesMouseLeave = () => {
+    setServicesDropdownOpen(false);
   };
 
   return (
@@ -45,17 +61,53 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-6">
             {navLinks.map((link) => (
-              <Link
+              <div 
                 key={link.path}
-                to={link.path}
-                className={`font-medium transition-colors duration-300 ${
-                  isActive(link.path)
-                    ? 'text-geoblue-800 border-b-2 border-geoblue-800'
-                    : 'text-gray-600 hover:text-geoblue-800'
-                }`}
+                className="relative"
+                onMouseEnter={link.dropdown ? handleServicesMouseEnter : undefined}
+                onMouseLeave={link.dropdown ? handleServicesMouseLeave : undefined}
               >
-                {link.name}
-              </Link>
+                {link.dropdown ? (
+                  <div>
+                    <button
+                      className={`font-medium transition-colors duration-300 flex items-center ${
+                        isActive(link.path)
+                          ? 'text-geoblue-800 border-b-2 border-geoblue-800'
+                          : 'text-gray-600 hover:text-geoblue-800'
+                      }`}
+                    >
+                      {link.name}
+                      <ChevronDown size={16} className="ml-1" />
+                    </button>
+                    
+                    {servicesDropdownOpen && (
+                      <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-md shadow-lg border border-gray-200 z-50">
+                        {link.dropdown.map((dropdownItem) => (
+                          <Link
+                            key={dropdownItem.path}
+                            to={dropdownItem.path}
+                            className="block px-4 py-3 text-sm text-gray-700 hover:bg-geoblue-50 hover:text-geoblue-800 transition-colors"
+                            onClick={() => setServicesDropdownOpen(false)}
+                          >
+                            {dropdownItem.name}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                ) : (
+                  <Link
+                    to={link.path}
+                    className={`font-medium transition-colors duration-300 ${
+                      isActive(link.path)
+                        ? 'text-geoblue-800 border-b-2 border-geoblue-800'
+                        : 'text-gray-600 hover:text-geoblue-800'
+                    }`}
+                  >
+                    {link.name}
+                  </Link>
+                )}
+              </div>
             ))}
             <LanguageSwitcher />
           </nav>
@@ -66,18 +118,33 @@ const Header = () => {
           <nav className="md:hidden py-4 bg-white">
             <div className="flex flex-col space-y-4">
               {navLinks.map((link) => (
-                <Link
-                  key={link.path}
-                  to={link.path}
-                  className={`px-4 py-2 font-medium ${
-                    isActive(link.path)
-                      ? 'text-geoblue-800 bg-geoblue-50'
-                      : 'text-gray-600 hover:text-geoblue-800 hover:bg-gray-50'
-                  }`}
-                  onClick={() => setIsOpen(false)}
-                >
-                  {link.name}
-                </Link>
+                <div key={link.path}>
+                  <Link
+                    to={link.path}
+                    className={`px-4 py-2 font-medium block ${
+                      isActive(link.path)
+                        ? 'text-geoblue-800 bg-geoblue-50'
+                        : 'text-gray-600 hover:text-geoblue-800 hover:bg-gray-50'
+                    }`}
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {link.name}
+                  </Link>
+                  {link.dropdown && (
+                    <div className="ml-4 mt-2 space-y-2">
+                      {link.dropdown.map((dropdownItem) => (
+                        <Link
+                          key={dropdownItem.path}
+                          to={dropdownItem.path}
+                          className="block px-4 py-2 text-sm text-gray-600 hover:text-geoblue-800 hover:bg-gray-50"
+                          onClick={() => setIsOpen(false)}
+                        >
+                          {dropdownItem.name}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
               ))}
               <div className="px-4 py-2">
                 <LanguageSwitcher />
