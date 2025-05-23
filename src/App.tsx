@@ -8,7 +8,7 @@ import { LanguageProvider } from "./context/LanguageContext";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import SEO from "./components/SEO";
-import { Suspense, useEffect } from "react";
+import { Suspense, useEffect, useState } from "react";
 
 // Lazy-loaded page imports to improve performance
 import Index from "./pages/Index";
@@ -40,16 +40,53 @@ const queryClient = new QueryClient({
   },
 });
 
+const LoadingFallback = () => (
+  <div className="min-h-screen flex items-center justify-center">
+    <div className="text-center">
+      <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-geoblue-600 mx-auto mb-4"></div>
+      <p className="text-gray-600">Seite wird geladen...</p>
+    </div>
+  </div>
+);
+
 const App = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
-    console.log("App geladen erfolgreich");
-    document.body.classList.add('app-loaded');
+    console.log("[App] Initialisierung gestartet");
+    
+    // Simuliere App-Loading-Zeit
+    const loadTimer = setTimeout(() => {
+      console.log("[App] App erfolgreich geladen");
+      setIsLoading(false);
+      document.body.classList.add('app-loaded');
+    }, 100);
+
+    return () => clearTimeout(loadTimer);
   }, []);
   
-  // Einfachere Router-Konfiguration
-  const basename = window.location.hostname.includes('github.io') ? '/geo-studies-portal' : '';
-  
-  console.log("Router basename:", basename);
+  // Verbesserte Router-Konfiguration mit fallback
+  const getBasename = () => {
+    try {
+      const hostname = window.location.hostname;
+      console.log("[App] Hostname:", hostname);
+      
+      if (hostname.includes('github.io') || hostname.includes('lovable.app')) {
+        return '/geo-studies-portal';
+      }
+      return '';
+    } catch (error) {
+      console.error("[App] Fehler beim Ermitteln des Basename:", error);
+      return '';
+    }
+  };
+
+  const basename = getBasename();
+  console.log("[App] Router basename:", basename);
+
+  if (isLoading) {
+    return <LoadingFallback />;
+  }
 
   return (
     <QueryClientProvider client={queryClient}>
@@ -62,14 +99,7 @@ const App = () => {
             <div className="flex flex-col min-h-screen">
               <Header />
               <main className="flex-grow pt-16">
-                <Suspense fallback={
-                  <div className="min-h-screen flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-geoblue-600 mx-auto mb-4"></div>
-                      <p className="text-gray-600">Seite wird geladen...</p>
-                    </div>
-                  </div>
-                }>
+                <Suspense fallback={<LoadingFallback />}>
                   <Routes>
                     <Route path="/" element={<Index />} />
                     <Route path="/about" element={<About />} />
