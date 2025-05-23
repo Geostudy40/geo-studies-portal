@@ -1,4 +1,3 @@
-
 import { createRoot } from 'react-dom/client'
 import App from './App.tsx'
 import './index.css'
@@ -55,7 +54,7 @@ function mountApp() {
 }
 
 function hideInitialLoading() {
-  const loadingElement = document.querySelector('.initial-loading');
+  const loadingElement = document.querySelector('.initial-loading') as HTMLElement;
   if (loadingElement) {
     loadingElement.style.display = 'none';
   }
