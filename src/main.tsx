@@ -48,11 +48,7 @@ function showErrorPage(errorMessage: string) {
 }
 
 // App sofort laden
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', mountApp);
-} else {
-  mountApp();
-}
+mountApp();
 
 // Fehlerhandler
 window.addEventListener('error', (event) => {

@@ -3,14 +3,14 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { LanguageProvider } from "./context/LanguageContext";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import SEO from "./components/SEO";
 import { Suspense, useEffect } from "react";
 
-// Lazy-loaded page imports to improve performance
+// Page imports
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Services from "./pages/Services";
@@ -45,11 +45,6 @@ const App = () => {
     console.log("App geladen erfolgreich");
     document.body.classList.add('app-loaded');
   }, []);
-  
-  // Einfachere Router-Konfiguration
-  const basename = window.location.hostname.includes('github.io') ? '/geo-studies-portal' : '';
-  
-  console.log("Router basename:", basename);
 
   return (
     <QueryClientProvider client={queryClient}>
@@ -57,7 +52,7 @@ const App = () => {
         <TooltipProvider>
           <Toaster />
           <Sonner />
-          <BrowserRouter basename={basename}>
+          <BrowserRouter basename="/geo-studies-portal">
             <SEO />
             <div className="flex flex-col min-h-screen">
               <Header />
