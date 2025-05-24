@@ -1,4 +1,3 @@
-
 import { useLanguage } from '@/context/LanguageContext';
 
 const About = () => {
@@ -19,18 +18,16 @@ const About = () => {
       {/* Main Content */}
       <section className="py-16">
         <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
-            <div>
-              <h2 className="text-3xl font-bold text-geoblue-800 mb-6">
-                Unsere Mission
-              </h2>
-              <p className="text-gray-600 mb-4">
-                Bei GeoStudy ist es unsere Mission, durch präzise geotechnische Vorstudien die Grundlage für fundierte Entscheidungen zu schaffen. Wir kombinieren traditionelles geologisches Fachwissen mit modernsten KI-Technologien, um kosteneffiziente und präzise Analysen zu liefern.
-              </p>
-              <p className="text-gray-600 mb-4">
-                Unser Ziel ist es, potenzielle Risiken frühzeitig zu identifizieren und Lösungen vorzuschlagen, die Zeit und Kosten sparen. Wir verstehen, dass jedes Projekt einzigartig ist und bieten daher maßgeschneiderte Lösungen für verschiedene Branchen und Anforderungen.
-              </p>
-            </div>
+          <div className="mb-16">
+            <h2 className="text-3xl font-bold text-geoblue-800 mb-6">
+              Unsere Mission
+            </h2>
+            <p className="text-gray-600 mb-4">
+              Bei GeoStudy ist es unsere Mission, durch präzise geotechnische Vorstudien die Grundlage für fundierte Entscheidungen zu schaffen. Wir kombinieren traditionelles geologisches Fachwissen mit modernsten KI-Technologien, um kosteneffiziente und präzise Analysen zu liefern.
+            </p>
+            <p className="text-gray-600 mb-4">
+              Unser Ziel ist es, potenzielle Risiken frühzeitig zu identifizieren und Lösungen vorzuschlagen, die Zeit und Kosten sparen. Wir verstehen, dass jedes Projekt einzigartig ist und bieten daher maßgeschneiderte Lösungen für verschiedene Branchen und Anforderungen.
+            </p>
           </div>
           
           <div className="mb-16">
