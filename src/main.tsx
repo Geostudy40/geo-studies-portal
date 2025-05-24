@@ -1,3 +1,4 @@
+
 import { createRoot } from 'react-dom/client'
 import App from './App.tsx'
 import './index.css'
@@ -5,8 +6,6 @@ import './index.css'
 console.log("[main] Initialisierung gestartet");
 
 let appMounted = false;
-let mountAttempts = 0;
-const MAX_MOUNT_ATTEMPTS = 3;
 
 function mountApp() {
   if (appMounted) {
@@ -14,19 +13,12 @@ function mountApp() {
     return;
   }
 
-  mountAttempts++;
-  console.log(`[main] Mount-Versuch ${mountAttempts}/${MAX_MOUNT_ATTEMPTS}`);
-
   try {
     const rootElement = document.getElementById("root");
     
     if (!rootElement) {
       console.error("[main] Root-Element nicht gefunden!");
-      if (mountAttempts < MAX_MOUNT_ATTEMPTS) {
-        setTimeout(mountApp, 1000);
-      } else {
-        showErrorPage("Root-Element nicht gefunden nach mehreren Versuchen");
-      }
+      showErrorPage("Root-Element nicht gefunden");
       return;
     }
 
@@ -42,14 +34,8 @@ function mountApp() {
     hideInitialLoading();
     
   } catch (error) {
-    console.error(`[main] Fehler beim Rendern (Versuch ${mountAttempts}):`, error);
-    
-    if (mountAttempts < MAX_MOUNT_ATTEMPTS) {
-      console.log("[main] Wiederhole Mount-Versuch in 1 Sekunde...");
-      setTimeout(mountApp, 1000);
-    } else {
-      showErrorPage(error instanceof Error ? error.message : String(error));
-    }
+    console.error("[main] Fehler beim Rendern:", error);
+    showErrorPage(error instanceof Error ? error.message : String(error));
   }
 }
 
@@ -71,58 +57,36 @@ function showErrorPage(errorMessage: string) {
         <p style="margin-bottom: 10px;">Die Anwendung konnte nicht geladen werden.</p>
         <p style="margin-bottom: 20px; color: #666;"><strong>Fehler:</strong> ${errorMessage}</p>
         <button onclick="window.location.reload()" style="background: #1e40af; color: white; border: none; padding: 12px 24px; border-radius: 6px; cursor: pointer; font-size: 16px; margin-right: 10px;">Neu laden</button>
-        <button onclick="window.location.href = window.location.origin + window.location.pathname" style="background: #666; color: white; border: none; padding: 12px 24px; border-radius: 6px; cursor: pointer; font-size: 16px;">Startseite</button>
-        <div style="margin-top: 20px; padding: 15px; background: #f8f9fa; border-radius: 6px; text-align: left;">
-          <strong>Mögliche Lösungen:</strong>
-          <ul style="margin: 10px 0; padding-left: 20px;">
-            <li>Browser-Cache leeren (Strg+F5)</li>
-            <li>JavaScript aktivieren</li>
-            <li>Anderer Browser verwenden</li>
-            <li>Seite in einigen Minuten erneut versuchen</li>
-          </ul>
-        </div>
+        <button onclick="window.location.href = window.location.origin" style="background: #666; color: white; border: none; padding: 12px 24px; border-radius: 6px; cursor: pointer; font-size: 16px;">Startseite</button>
       </div>
     `;
   }
 }
 
-// Verbesserte App-Loading-Logik mit mehreren Fallbacks
+// Vereinfachte App-Loading-Logik
 function initializeApp() {
   console.log("[main] App-Initialisierung gestartet");
   console.log("[main] Document readyState:", document.readyState);
   
+  // Warte bis DOM bereit ist
   if (document.readyState === 'loading') {
     console.log("[main] Warte auf DOMContentLoaded...");
-    document.addEventListener('DOMContentLoaded', mountApp);
+    document.addEventListener('DOMContentLoaded', () => {
+      setTimeout(mountApp, 100);
+    });
   } else {
     console.log("[main] DOM bereits geladen, starte Mount-Prozess");
-    // Kleine Verzögerung um sicherzustellen, dass alle Ressourcen geladen sind
-    setTimeout(mountApp, 50);
+    setTimeout(mountApp, 100);
   }
 }
 
-// Verbesserte Fehlerhandler
+// Globale Fehlerhandler
 window.addEventListener('error', (event) => {
-  console.error('[main] Globaler Fehler:', {
-    message: event.message,
-    filename: event.filename,
-    lineno: event.lineno,
-    colno: event.colno,
-    error: event.error
-  });
+  console.error('[main] Globaler Fehler:', event.error);
 });
 
 window.addEventListener('unhandledrejection', (event) => {
   console.error('[main] Unhandled Promise Rejection:', event.reason);
-  event.preventDefault();
-});
-
-// Debugging-Informationen
-console.log('[main] Browser-Info:', {
-  userAgent: navigator.userAgent,
-  url: window.location.href,
-  readyState: document.readyState,
-  timestamp: new Date().toISOString()
 });
 
 // Starte die App-Initialisierung
