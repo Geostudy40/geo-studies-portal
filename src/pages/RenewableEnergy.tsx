@@ -9,30 +9,6 @@ const RenewableEnergy = () => {
 
   const isGerman = language === 'de';
   
-  const images = [
-    {
-      src: "https://images.unsplash.com/photo-1592833167005-97b9d50a9052?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80",
-      alt: isGerman ? "Windkraftanlage im Bau" : "Wind turbine under construction",
-      caption: isGerman 
-        ? "Geotechnische Voruntersuchung für optimale Fundierung von Windkraftanlagen"
-        : "Geotechnical preliminary investigation for optimal foundation of wind turbines"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80",
-      alt: isGerman ? "Photovoltaik-Park" : "Photovoltaic park",
-      caption: isGerman 
-        ? "Baugrundanalyse für großflächige Solarparks"
-        : "Soil analysis for large-scale solar parks"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1637773511166-a079dc6b718c?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80",
-      alt: isGerman ? "Geothermie-Bohrung" : "Geothermal drilling",
-      caption: isGerman 
-        ? "Geotechnische Erkundung für Erdwärmeprojekte"
-        : "Geotechnical exploration for geothermal projects"
-    }
-  ];
-
   const advantages = [
     {
       title: isGerman 
@@ -127,41 +103,6 @@ const RenewableEnergy = () => {
                 </p>
               </div>
             ))}
-          </div>
-
-          <div className="mb-12">
-            <h2 className="text-2xl font-semibold text-geoblue-800 mb-6">
-              {isGerman 
-                ? "Unsere Expertise in Bildern" 
-                : "Our Expertise in Pictures"}
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {images.map((image, index) => (
-                <div key={index} className="bg-white rounded-lg overflow-hidden shadow-md">
-                  <img 
-                    src={image.src} 
-                    alt={image.alt} 
-                    className="w-full h-48 object-cover"
-                  />
-                  <p className="p-4 text-sm text-gray-600">
-                    {image.caption}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="bg-white rounded-lg p-6 shadow-md mb-12">
-            <h2 className="text-2xl font-semibold text-geoblue-800 mb-4">
-              {isGerman 
-                ? "Fallbeispiel: Optimierung eines Photovoltaik-Parks auf heterogenem Untergrund" 
-                : "Case Study: Optimization of a Photovoltaic Park on Heterogeneous Subsoil"}
-            </h2>
-            <p className="text-gray-600 mb-4">
-              {isGerman 
-                ? "Bei einem geplanten 25-Hektar-Solarpark in Süddeutschland identifizierte unsere KI-gestützte Vorstudie stark variierende Bodenverhältnisse und ehemalige Abbaugebiete, die in konventionellen Karten nicht verzeichnet waren. Durch präzise Analyse historischer Luftbilder und regionaler Bohrdaten konnten wir die Erkundungsmaßnahmen gezielt auf die Risikobereiche konzentrieren. Die Anpassung des Rammtiefenplans und die Optimierung der Modultischanordnung führten zu Einsparungen von über 15% bei den Gründungskosten und vermieden kostspielige Verzögerungen während der Bauphase."
-                : "For a planned 25-hectare solar park in southern Germany, our AI-supported preliminary study identified strongly varying soil conditions and former mining areas that were not recorded in conventional maps. Through precise analysis of historical aerial photographs and regional drilling data, we were able to concentrate the exploration measures specifically on the risk areas. The adjustment of the ramming depth plan and the optimization of the module table arrangement led to savings of over 15% in foundation costs and avoided costly delays during the construction phase."}
-            </p>
           </div>
 
           <div className="flex justify-center mb-8">
