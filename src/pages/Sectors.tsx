@@ -1,3 +1,4 @@
+
 import { useLanguage } from '@/context/LanguageContext';
 import { Link } from 'react-router-dom';
 import { Building2, Route, Factory, Droplets, Wind } from 'lucide-react';
@@ -12,7 +13,8 @@ const Sectors = () => {
       icon: <Building2 className="w-12 h-12 text-geoblue-800" />,
       description: language === 'de' ? 
         "Optimierte Baugrunduntersuchungen für Wohngebäude, Hochhäuser und Gewerbeobjekte." :
-        "Optimized ground investigations for residential buildings, high-rises, and commercial properties."
+        "Optimized ground investigations for residential buildings, high-rises, and commercial properties.",
+      accentColor: 'border-l-blue-700' // #1e40af
     },
     { 
       title: t('sectorInfrastructure'), 
@@ -20,7 +22,8 @@ const Sectors = () => {
       icon: <Route className="w-12 h-12 text-geoblue-800" />,
       description: language === 'de' ?
         "Geotechnische Analysen für Straßen, Brücken, Tunnel und andere Infrastrukturprojekte." :
-        "Geotechnical analyses for roads, bridges, tunnels, and other infrastructure projects."
+        "Geotechnical analyses for roads, bridges, tunnels, and other infrastructure projects.",
+      accentColor: 'border-l-green-600' // #059669
     },
     { 
       title: t('sectorIndustrial'), 
@@ -28,7 +31,8 @@ const Sectors = () => {
       icon: <Factory className="w-12 h-12 text-geoblue-800" />,
       description: language === 'de' ?
         "Spezialisierte Untersuchungen für Industriebauten, Logistikzentren und Produktionsanlagen." :
-        "Specialized investigations for industrial buildings, logistics centers, and production facilities."
+        "Specialized investigations for industrial buildings, logistics centers, and production facilities.",
+      accentColor: 'border-l-orange-600' // #ea580c
     },
     { 
       title: t('sectorWater'), 
@@ -36,7 +40,8 @@ const Sectors = () => {
       icon: <Droplets className="w-12 h-12 text-geoblue-800" />,
       description: language === 'de' ?
         "Geotechnische Vorstudien für Wasserbauwerke, Häfen, Deiche und wasserwirtschaftliche Anlagen." :
-        "Geotechnical preliminary studies for hydraulic structures, ports, dikes, and water management facilities."
+        "Geotechnical preliminary studies for hydraulic structures, ports, dikes, and water management facilities.",
+      accentColor: 'border-l-purple-600' // #9333ea
     },
     { 
       title: t('sectorRenewable'), 
@@ -44,7 +49,8 @@ const Sectors = () => {
       icon: <Wind className="w-12 h-12 text-geoblue-800" />,
       description: language === 'de' ?
         "Standortanalysen für Windparks, Solaranlagen und andere erneuerbare Energieprojekte." :
-        "Site analyses for wind farms, solar plants, and other renewable energy projects."
+        "Site analyses for wind farms, solar plants, and other renewable energy projects.",
+      accentColor: 'border-l-teal-600' // #0d9488
     }
   ];
 
@@ -74,7 +80,7 @@ const Sectors = () => {
             <Link 
               key={index} 
               to={sector.path}
-              className="bg-white rounded-lg shadow-md p-6 transition-all duration-300 hover:shadow-xl border border-gray-100 hover:border-geoblue-800"
+              className={`bg-geolight rounded-lg shadow-md p-6 transition-all duration-300 hover:shadow-xl border border-gray-100 hover:border-geoblue-800 border-l-4 ${sector.accentColor}`}
             >
               <div className="flex flex-col items-center text-center">
                 <div className="mb-4">
