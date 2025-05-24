@@ -18,42 +18,12 @@ interface ServiceBlockProps {
 }
 
 const ServiceBlock = ({ service, index, accentColor, showContactButton = false }: ServiceBlockProps) => {
-  const { t, language } = useLanguage();
+  const { t } = useLanguage();
 
-  // Function to format service details with highlighted introductory sentences
+  // Simple function to format service details (no intro highlighting needed - already in data)
   const formatServiceDetail = (detail: string) => {
     if (!detail) return '';
-    
-    // Define introductory sentences to highlight (German)
-    const germanIntros = [
-      'Unsere geologische und hydrologische Bewertung geplanter Bauvorhaben bildet die Grundlage jeder geotechnischen Vorstudie und umfasst:',
-      'Unsere KI-gestützten Leistungen umfassen:',
-      'Wir bieten DIN- und Eurocode-konforme Baugrundgutachten und optimierte Erkundungsplanung:',
-      'Unsere fachliche Begleitung während der Bauphase bietet praxisnahe Unterstützung:'
-    ];
-    
-    // Define introductory sentences to highlight (English)
-    const englishIntros = [
-      'Our geological and hydrological assessment of planned construction projects forms the foundation of every geotechnical preliminary study and includes:',
-      'Our AI-supported services include:',
-      'We offer DIN and Eurocode-compliant soil investigation reports and optimized exploration planning:',
-      'Our professional support during the construction phase offers practical assistance:'
-    ];
-    
-    const introsToHighlight = language === 'en' ? englishIntros : germanIntros;
-    
-    let formattedDetail = detail.replace(/-/g, '•');
-    
-    // Apply formatting to ALL introductory sentences
-    introsToHighlight.forEach(intro => {
-      const regex = new RegExp(intro.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi');
-      formattedDetail = formattedDetail.replace(
-        regex,
-        `<span class="font-bold text-lg text-geoblue-800 block mb-3">${intro}</span>`
-      );
-    });
-    
-    return formattedDetail;
+    return detail; // Return as-is since formatting is already embedded in the data
   };
 
   return (
