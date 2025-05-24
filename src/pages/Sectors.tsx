@@ -1,6 +1,7 @@
+
 import { useLanguage } from '@/context/LanguageContext';
 import { Link } from 'react-router-dom';
-import { Building2, Route, Factory, Droplets, Wind } from 'lucide-react';
+import { Building2, Route, Factory, Droplets, Wind, Sun } from 'lucide-react';
 
 const Sectors = () => {
   const { t, language } = useLanguage();
@@ -39,12 +40,20 @@ const Sectors = () => {
         "Geotechnical preliminary studies for hydraulic structures, ports, dikes, and water management facilities."
     },
     { 
-      title: t('sectorRenewable'), 
-      path: '/renewable-energy',
+      title: language === 'de' ? "Windkraftanlagen" : "Wind Turbines", 
+      path: '/wind-turbines',
       icon: <Wind className="w-12 h-12 text-geoblue-800" />,
       description: language === 'de' ?
-        "Standortanalysen für Windparks, Solaranlagen und andere erneuerbare Energieprojekte." :
-        "Site analyses for wind farms, solar plants, and other renewable energy projects."
+        "Standortanalysen für Windkraftanlagen mit Fokus auf Fundamentsicherheit und Langzeitsicherheit." :
+        "Site analyses for wind turbines focusing on foundation security and long-term stability."
+    },
+    { 
+      title: language === 'de' ? "Photovoltaik-Parks" : "Photovoltaic Parks", 
+      path: '/photovoltaic-parks',
+      icon: <Sun className="w-12 h-12 text-geoblue-800" />,
+      description: language === 'de' ?
+        "Standortanalysen für Solarparks und andere erneuerbare Energieprojekte." :
+        "Site analyses for solar parks and other renewable energy projects."
     }
   ];
 

@@ -1,6 +1,8 @@
+
 import { useLanguage } from '@/context/LanguageContext';
 import { MapPin, Phone, Mail } from 'lucide-react';
 import { COMPANY_INFO } from '@/constants/companyInfo';
+import ContactForm from '@/components/ContactForm';
 
 const Contact = () => {
   const { t, language } = useLanguage();
@@ -87,68 +89,12 @@ const Contact = () => {
             </div>
             
             {/* Contact Form */}
-            <div className="bg-white p-8 rounded-lg shadow-md">
+            <div>
               <h2 className="text-2xl font-semibold text-geoblue-800 mb-6">
                 {language === 'en' ? 'Send Message' : 'Nachricht senden'}
               </h2>
               
-              <form className="space-y-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">{t('nameLabel')}</label>
-                  <input 
-                    type="text" 
-                    id="name" 
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-geoblue-500 focus:border-geoblue-500"
-                  />
-                </div>
-                
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">{t('emailLabel')}</label>
-                  <input 
-                    type="email" 
-                    id="email" 
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-geoblue-500 focus:border-geoblue-500"
-                  />
-                </div>
-                
-                <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">{t('phoneLabel')}</label>
-                  <input 
-                    type="tel" 
-                    id="phone" 
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-geoblue-500 focus:border-geoblue-500"
-                  />
-                </div>
-                
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">{t('messageLabel')}</label>
-                  <textarea 
-                    id="message" 
-                    rows={5}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-geoblue-500 focus:border-geoblue-500"
-                  ></textarea>
-                </div>
-                
-                <div>
-                  <label htmlFor="files" className="block text-sm font-medium text-gray-700 mb-1">{t('fileUploadLabel')}</label>
-                  <input 
-                    type="file" 
-                    id="files" 
-                    multiple
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-geoblue-500 focus:border-geoblue-500 text-sm text-gray-500"
-                  />
-                  <p className="mt-1 text-sm text-gray-500">
-                    {language === 'en' ? 'Max. file size: 10MB per file' : 'Max. Dateigröße: 10MB pro Datei'}
-                  </p>
-                </div>
-                
-                <button 
-                  type="submit" 
-                  className="w-full bg-geoblue-800 text-white py-3 px-6 rounded-md hover:bg-geoblue-700 transition-colors font-medium"
-                >
-                  {t('sendButton')}
-                </button>
-              </form>
+              <ContactForm />
             </div>
           </div>
         </div>

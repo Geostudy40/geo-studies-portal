@@ -11,9 +11,13 @@ const NotFound = () => {
 
   useEffect(() => {
     console.error(
-      "404 Error: User attempted to access non-existent route:",
+      "404 Error: Versuch, nicht existierende Route aufzurufen:",
       location.pathname
     );
+    // Debug-Informationen zur Fehlerbehebung
+    console.log("Base URL:", document.baseURI);
+    console.log("Current URL:", window.location.href);
+    console.log("Window basePath:", window.basePath);
   }, [location.pathname]);
 
   return (
@@ -24,6 +28,11 @@ const NotFound = () => {
           {language === "de" 
             ? "Diese Seite wurde leider nicht gefunden." 
             : "Oops! Page not found."}
+        </p>
+        <p className="text-sm text-gray-500 mb-6">
+          {language === "de" 
+            ? `Gesuchter Pfad: ${location.pathname}` 
+            : `Requested path: ${location.pathname}`}
         </p>
         <Button asChild className="bg-geoblue-800 hover:bg-geoblue-700">
           <Link to="/">

@@ -1,8 +1,10 @@
 
 import { useLanguage } from "@/context/LanguageContext";
+import { useState } from "react";
 
 const Terms = () => {
-  const { t, language } = useLanguage();
+  const { language } = useLanguage();
+  const [showDetails, setShowDetails] = useState(false);
 
   return (
     <div className="py-12 md:py-20">
@@ -16,41 +18,47 @@ const Terms = () => {
         <div className="max-w-3xl mx-auto prose">
           {language === "de" ? (
             <>
-              <h2>Angaben gemäß § 5 TMG</h2>
+              <h2>Impressum</h2>
+              <p><strong>Angaben gemäß § 5 TMG</strong></p>
+              
               <p>
-                Max Mustermann<br />
-                Musterstraße 123<br />
-                12345 Musterstadt<br />
+                <strong>GeoStudys – Ingenieurbüro für geologische Vorstudien</strong><br />
+                Inhaber: Dipl.-Geol. Kazem Bezrafshan<br />
+                Am Stichkanal 2–4<br />
+                14167 Berlin<br />
                 Deutschland
               </p>
 
               <h2>Kontakt</h2>
               <p>
-                Telefon: +49 (0) 123 456789<br />
-                E-Mail: info@geostudy.de
+                Telefon: +49 1578 833 01 12<br />
+                E‑Mail: <a href="mailto:info@geostudys.com" target="_blank" rel="noopener">info@geostudys.com</a>
               </p>
 
-              <h2>Umsatzsteuer-ID</h2>
+              <h2>Umsatzsteuer‑Identifikationsnummer gemäß § 27a UStG</h2>
               <p>
-                Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br />
-                DE123456789
+                DE 251 900 987
+              </p>
+
+              <h2>Berufsbezeichnung</h2>
+              <p>
+                Geologe (freiberuflich) / Geotechnisches Ingenieurbüro<br />
+                Zuständige Kammer: Ingenieurkammer Berlin
               </p>
 
               <h2>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
               <p>
-                Max Mustermann<br />
-                Musterstraße 123<br />
-                12345 Musterstadt
+                Dipl.-Geol. Kazem Bezrafshan<br />
+                Adresse wie oben
               </p>
 
               <h2>Streitschlichtung</h2>
               <p>
-                Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: 
-                https://ec.europa.eu/consumers/odr/. Unsere E-Mail-Adresse finden Sie oben im Impressum.
+                Die Europäische Kommission stellt eine Plattform zur Online‑Streitbeilegung (OS) bereit:<br />
+                <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">https://ec.europa.eu/consumers/odr</a>
               </p>
               <p>
-                Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer 
-                Verbraucherschlichtungsstelle teilzunehmen.
+                Wir sind nicht bereit und nicht verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucher­schlichtungsstelle teilzunehmen.
               </p>
 
               <h2>Haftung für Inhalte</h2>
@@ -63,44 +71,50 @@ const Terms = () => {
             </>
           ) : (
             <>
-              <h2>Information according to § 5 TMG</h2>
+              <h2>Imprint</h2>
+              <p><strong>Information pursuant to § 5 German Teleservices Act (TMG)</strong></p>
+              
               <p>
-                Max Mustermann<br />
-                Musterstrasse 123<br />
-                12345 Musterstadt<br />
+                <strong>GeoStudys – Geological Pre‑Study Engineering Office</strong><br />
+                Owner: Dipl. Geol. Kazem Bezrafshan<br />
+                Am Stichkanal 2–4<br />
+                D‑14167 Berlin<br />
                 Germany
               </p>
 
               <h2>Contact</h2>
               <p>
-                Phone: +49 (0) 123 456789<br />
-                Email: info@geostudy.de
+                Phone: +49 1578 833 01 12<br />
+                E‑mail: <a href="mailto:info@geostudys.com" target="_blank" rel="noopener">info@geostudys.com</a>
               </p>
 
-              <h2>VAT ID</h2>
+              <h2>VAT identification number pursuant to § 27a German VAT Act</h2>
               <p>
-                Sales tax identification number according to § 27 a of the Sales Tax Law:<br />
-                DE123456789
+                DE 251 900 987
               </p>
 
-              <h2>Responsible for content according to § 55 Abs. 2 RStV</h2>
+              <h2>Professional designation</h2>
               <p>
-                Max Mustermann<br />
-                Musterstrasse 123<br />
-                12345 Musterstadt
+                Geologist (freelance) / Geotechnical engineering office<br />
+                Competent chamber: Berlin Chamber of Engineers
               </p>
 
-              <h2>Dispute Resolution</h2>
+              <h2>Responsible for the content pursuant to § 55 para. 2 Interstate Broadcasting Treaty (RStV)</h2>
               <p>
-                The European Commission provides a platform for online dispute resolution (OS): 
-                https://ec.europa.eu/consumers/odr/. You can find our email address in the impressum above.
-              </p>
-              <p>
-                We are not willing or obliged to participate in dispute resolution proceedings before a 
-                consumer arbitration board.
+                Dipl. Geol. Kazem Bezrafshan<br />
+                Address as above
               </p>
 
-              <h2>Liability for Contents</h2>
+              <h2>Dispute resolution</h2>
+              <p>
+                The European Commission provides a platform for online dispute resolution (ODR):<br />
+                <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">https://ec.europa.eu/consumers/odr</a>
+              </p>
+              <p>
+                We are neither willing nor obliged to participate in dispute resolution proceedings before a consumer arbitration board.
+              </p>
+
+              <h2>Liability for content</h2>
               <p>
                 As a service provider, we are responsible for our own content on these pages according to § 7 
                 paragraph 1 TMG (German Telemedia Act) and general laws. According to §§ 8 to 10 TMG, we are not 

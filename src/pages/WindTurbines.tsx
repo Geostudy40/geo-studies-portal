@@ -3,36 +3,13 @@ import { useLanguage } from '@/context/LanguageContext';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Wind, Shield, Droplet, FileText, Cpu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import SEO from '@/components/SEO';
 
-const RenewableEnergy = () => {
+const WindTurbines = () => {
   const { language } = useLanguage();
 
   const isGerman = language === 'de';
   
-  const images = [
-    {
-      src: "https://images.unsplash.com/photo-1592833167005-97b9d50a9052?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80",
-      alt: isGerman ? "Windkraftanlage im Bau" : "Wind turbine under construction",
-      caption: isGerman 
-        ? "Geotechnische Voruntersuchung für optimale Fundierung von Windkraftanlagen"
-        : "Geotechnical preliminary investigation for optimal foundation of wind turbines"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80",
-      alt: isGerman ? "Photovoltaik-Park" : "Photovoltaic park",
-      caption: isGerman 
-        ? "Baugrundanalyse für großflächige Solarparks"
-        : "Soil analysis for large-scale solar parks"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1637773511166-a079dc6b718c?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80",
-      alt: isGerman ? "Geothermie-Bohrung" : "Geothermal drilling",
-      caption: isGerman 
-        ? "Geotechnische Erkundung für Erdwärmeprojekte"
-        : "Geotechnical exploration for geothermal projects"
-    }
-  ];
-
   const advantages = [
     {
       title: isGerman 
@@ -83,12 +60,13 @@ const RenewableEnergy = () => {
 
   return (
     <div className="bg-[#E9ECF5] min-h-screen">
+      <SEO pagePath="/wind-turbines" />
       <div className="container-custom py-16 md:py-24">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-3xl md:text-4xl font-bold text-geoblue-800 mb-8">
             {isGerman 
-              ? "Geotechnische Vorstudien für Erneuerbare Energien" 
-              : "Geotechnical Preliminary Studies for Renewable Energy"}
+              ? "Geotechnische Vorstudien für Windkraftanlagen" 
+              : "Geotechnical Preliminary Studies for Wind Turbines"}
           </h1>
 
           <div className="mb-8">
@@ -103,14 +81,14 @@ const RenewableEnergy = () => {
 
           <p className="text-xl text-gray-700 mb-12 font-montserrat">
             {isGerman 
-              ? "Unsere KI-gestützte geotechnische Vorstudie für Projekte im Bereich Erneuerbare Energien bietet Ihnen eine solide Grundlage für Ihre Investitionen und Planungen. Von Photovoltaik-Parks über Windkraftanlagen bis zu Erdwärmeprojekten – wir liefern präzise standortspezifische Analysen unter Berücksichtigung der besonderen Anforderungen regenerativer Energieerzeugung und der jeweiligen lokalen geologischen Bedingungen."
-              : "Our AI-supported geotechnical preliminary study for renewable energy projects provides you with a solid foundation for your investments and planning. From photovoltaic parks to wind power plants to geothermal projects – we deliver precise site-specific analyses considering the special requirements of renewable energy generation and the respective local geological conditions."}
+              ? "Unsere KI-gestützte geotechnische Vorstudie für Windenergieprojekte bietet Ihnen eine solide Grundlage für Ihre Investitionen und Planungen. Wir liefern präzise standortspezifische Analysen unter Berücksichtigung der besonderen Anforderungen von Windkraftanlagen an die Gründung und die lokalen geologischen Bedingungen."
+              : "Our AI-supported geotechnical preliminary study for wind energy projects provides you with a solid foundation for your investments and planning. We deliver precise site-specific analyses taking into account the special requirements of wind turbines for foundation and local geological conditions."}
           </p>
 
           <h2 className="text-2xl font-semibold text-geoblue-800 mb-8">
             {isGerman 
-              ? "Vorteile unserer Vorstudien für Erneuerbare Energien" 
-              : "Benefits of our Preliminary Studies for Renewable Energy"}
+              ? "Vorteile unserer Vorstudien für Windkraftanlagen" 
+              : "Benefits of our Preliminary Studies for Wind Turbines"}
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
@@ -129,38 +107,26 @@ const RenewableEnergy = () => {
             ))}
           </div>
 
-          <div className="mb-12">
-            <h2 className="text-2xl font-semibold text-geoblue-800 mb-6">
-              {isGerman 
-                ? "Unsere Expertise in Bildern" 
-                : "Our Expertise in Pictures"}
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {images.map((image, index) => (
-                <div key={index} className="bg-white rounded-lg overflow-hidden shadow-md">
-                  <img 
-                    src={image.src} 
-                    alt={image.alt} 
-                    className="w-full h-48 object-cover"
-                  />
-                  <p className="p-4 text-sm text-gray-600">
-                    {image.caption}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-
           <div className="bg-white rounded-lg p-6 shadow-md mb-12">
             <h2 className="text-2xl font-semibold text-geoblue-800 mb-4">
               {isGerman 
-                ? "Fallbeispiel: Optimierung eines Photovoltaik-Parks auf heterogenem Untergrund" 
-                : "Case Study: Optimization of a Photovoltaic Park on Heterogeneous Subsoil"}
+                ? "Geotechnische Optimierung für Windkraftanlagen" 
+                : "Geotechnical Optimization for Wind Turbines"}
             </h2>
             <p className="text-gray-600 mb-4">
               {isGerman 
-                ? "Bei einem geplanten 25-Hektar-Solarpark in Süddeutschland identifizierte unsere KI-gestützte Vorstudie stark variierende Bodenverhältnisse und ehemalige Abbaugebiete, die in konventionellen Karten nicht verzeichnet waren. Durch präzise Analyse historischer Luftbilder und regionaler Bohrdaten konnten wir die Erkundungsmaßnahmen gezielt auf die Risikobereiche konzentrieren. Die Anpassung des Rammtiefenplans und die Optimierung der Modultischanordnung führten zu Einsparungen von über 15% bei den Gründungskosten und vermieden kostspielige Verzögerungen während der Bauphase."
-                : "For a planned 25-hectare solar park in southern Germany, our AI-supported preliminary study identified strongly varying soil conditions and former mining areas that were not recorded in conventional maps. Through precise analysis of historical aerial photographs and regional drilling data, we were able to concentrate the exploration measures specifically on the risk areas. The adjustment of the ramming depth plan and the optimization of the module table arrangement led to savings of over 15% in foundation costs and avoided costly delays during the construction phase."}
+                ? "Die Fundamente von Windkraftanlagen müssen enormen statischen und dynamischen Lasten standhalten, weshalb eine präzise geotechnische Bewertung entscheidend für ihre Langzeitstabilität ist."
+                : "The foundations of wind turbines must withstand enormous static and dynamic loads, making precise geotechnical assessment crucial for their long-term stability."}
+            </p>
+            <p className="text-gray-600 mb-4">
+              {isGerman 
+                ? "Unsere KI-gestützte Vorstudie analysiert die komplexen Wechselwirkungen zwischen Baugrund und Windkraftanlage. Durch die intelligente Verknüpfung regionaler geologischer Daten, topografischer Analysen und Bohrdatenbanken erstellen wir detaillierte Bodenprofile zur Optimierung der Fundamentplanung."
+                : "Our AI-supported preliminary study analyzes the complex interactions between subsoil and wind turbine. By intelligently linking regional geological data, topographic analyses, and drilling databases, we create detailed soil profiles to optimize foundation planning."}
+            </p>
+            <p className="text-gray-600 mb-4">
+              {isGerman 
+                ? "Die frühzeitige Erkennung kritischer Bodenschichten und die Anpassung der Gründungstiefe können die Gründungskosten um bis zu 15% reduzieren und gleichzeitig die langfristige Standsicherheit erhöhen. Besonderes Augenmerk legen wir auf die Analyse der dynamischen Bodeneigenschaften und deren Einfluss auf das Schwingungsverhalten der Anlage. Unsere erfahrenen Geotechniker mit spezifischer Expertise im Windenergie-Sektor validieren alle computergestützten Analysen und stellen praxisnahe Empfehlungen sicher."
+                : "Early detection of critical soil layers and adjustment of foundation depth can reduce foundation costs by up to 15% while increasing long-term stability. We place special emphasis on analyzing the dynamic soil properties and their influence on the vibration behavior of the turbine. Our experienced geotechnicians with specific expertise in the wind energy sector validate all computer-aided analyses and ensure practical recommendations."}
             </p>
           </div>
 
@@ -179,4 +145,4 @@ const RenewableEnergy = () => {
   );
 };
 
-export default RenewableEnergy;
+export default WindTurbines;

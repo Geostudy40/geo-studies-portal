@@ -52,24 +52,6 @@ const IndustrialConstruction = () => {
     }
   ];
 
-  const images = [
-    {
-      src: "https://images.unsplash.com/photo-1565949173209-1201c8e1b031?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80",
-      alt: language === 'de' ? "Industrieanlage im Bau" : "Industrial facility under construction",
-      caption: language === 'de' ? "Geotechnische Analysen für optimale Fundamentierung von Industriehallen" : "Geotechnical analyses for optimal foundation of industrial halls"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1544981037-65e282f9f023?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80",
-      alt: language === 'de' ? "Logistikzentrum" : "Logistics center",
-      caption: language === 'de' ? "Präzise Baugrundmodelle für großflächige Logistikanlagen" : "Precise ground models for large-scale logistics facilities"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1488972685288-c3fd157d7c7a?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80",
-      alt: language === 'de' ? "Industriepark" : "Industrial park",
-      caption: language === 'de' ? "Standortoptimierung für Industrieparks mit komplexen Anforderungen" : "Site optimization for industrial parks with complex requirements"
-    }
-  ];
-
   return (
     <div className="bg-[#E9ECF5] min-h-screen">
       <div className="container-custom py-16 md:py-24">
@@ -118,38 +100,24 @@ const IndustrialConstruction = () => {
             ))}
           </div>
           
-          <h2 className="text-2xl md:text-3xl font-semibold text-geoblue-800 mb-8">
-            {language === 'de' ? 'Einblicke in unsere Projekte' : 'Insights into our Projects'}
-          </h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-            {images.map((image, index) => (
-              <div key={index} className="bg-white rounded-lg overflow-hidden shadow-md">
-                <img 
-                  src={image.src} 
-                  alt={image.alt} 
-                  className="w-full h-56 object-cover"
-                />
-                <p className="p-4 text-sm text-gray-600 italic">
-                  {image.caption}
-                </p>
-              </div>
-            ))}
-          </div>
-          
           <div className="bg-white rounded-lg p-8 mb-16 shadow-md">
             <h2 className="text-2xl font-semibold text-geoblue-800 mb-4">
-              {language === 'de' ? 'Fallbeispiel: Optimierung eines Logistikzentrums auf heterogenem Baugrund' : 'Case Study: Optimization of a Logistics Center on Heterogeneous Subsoil'}
+              {language === 'de' ? 'Baugrundoptimierung für Industrieanlagen und Logistikzentren' : 'Subsoil Optimization for Industrial Facilities and Logistics Centers'}
             </h2>
             <p className="text-gray-700 mb-4">
               {language === 'de' 
-                ? 'Bei der Planung eines neuen Logistikzentrums auf einer ehemaligen Industriefläche ergab unsere geotechnische Vorstudie, dass der Baugrund sehr heterogen war, mit tragfähigen Bereichen im Westen und weichen, kompressiblen Schichten im Osten der Fläche.'
-                : 'During the planning of a new logistics center on a former industrial site, our geotechnical preliminary study revealed that the subsoil was very heterogeneous, with load-bearing areas in the west and soft, compressible layers in the east of the area.'}
+                ? 'Großflächige Industrieanlagen und Logistikzentren stellen besondere Anforderungen an den Baugrund, insbesondere hinsichtlich Tragfähigkeit, gleichmäßiger Setzung und langfristiger Nutzungsflexibilität.'
+                : 'Large-scale industrial facilities and logistics centers place special demands on the building ground, particularly in terms of load-bearing capacity, uniform settlement, and long-term flexibility of use.'}
+            </p>
+            <p className="text-gray-700 mb-4">
+              {language === 'de'
+                ? 'Unsere KI-gestützte geotechnische Vorstudie identifiziert Baugrundverhältnisse mit unterschiedlichen Tragfähigkeiten und setzungsempfindlichen Bereichen durch die intelligente Analyse regionaler geologischer und hydrogeologischer Daten. Dies ermöglicht eine optimierte Gebäudeanordnung und maßgeschneiderte Gründungslösungen.'
+                : 'Our AI-supported geotechnical preliminary study identifies ground conditions with varying load-bearing capacities and settlement-sensitive areas through intelligent analysis of regional geological and hydrogeological data. This enables optimized building arrangement and customized foundation solutions.'}
             </p>
             <p className="text-gray-700">
               {language === 'de'
-                ? 'Auf Basis unserer Analysen wurde das Gebäudelayout angepasst, um Schwerlastbereiche auf den tragfähigeren Untergrund zu verlegen. Für die östlichen Gebäudeteile empfahlen wir eine angepasste Gründungslösung. Diese frühzeitige Optimierung sparte dem Bauherrn etwa 20% der ursprünglich veranschlagten Gründungskosten und verkürzte die Bauzeit um mehrere Wochen.'
-                : 'Based on our analyses, the building layout was adjusted to relocate heavy-load areas to the more load-bearing subsoil. For the eastern parts of the building, we recommended an adapted foundation solution. This early optimization saved the client about 20% of the originally estimated foundation costs and shortened the construction time by several weeks.'}
+                ? 'Durch die frühzeitige Optimierung des Gebäudelayouts und gezielte Gründungskonzepte können typischerweise 15-20% der Gründungskosten eingespart werden. Die Kombination modernster Datenanalyseverfahren mit der praktischen Erfahrung unserer Geotechniker im Industriebau gewährleistet sowohl wissenschaftliche Präzision als auch praxisnahe Lösungen für Ihre spezifischen Projektanforderungen.'
+                : 'Early optimization of the building layout and targeted foundation concepts can typically save 15-20% of foundation costs. The combination of state-of-the-art data analysis methods with the practical experience of our geotechnicians in industrial construction ensures both scientific precision and practical solutions for your specific project requirements.'}
             </p>
           </div>
           

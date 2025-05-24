@@ -1,38 +1,88 @@
-import { Map, FileText, Cpu, Ruler } from 'lucide-react';
+import { Map, FileText, Cpu, Ruler, HardHat } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/context/LanguageContext';
 import Hero from '@/components/Hero';
 import ServiceCard from '@/components/ServiceCard';
 import LegalNotice from '@/components/LegalNotice';
+import SEO from '@/components/SEO';
 
 const Index = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   const services = [
     { 
-      title: t('serviceGeologicalRisk'), 
+      title: language === 'de' ? "Geotechnische Vorstudien" : "Geotechnical Preliminary Studies", 
       description: t('serviceGeologicalRiskDesc'),
-      icon: <Map size={24} /> 
+      icon: <Map size={24} />,
+      bulletPoints: language === 'de' ? 
+        [
+          "ResNet-basierte Kartenanalyse & GNN-Technologie",
+          "Digitale Geländemodelle & Satellitenbildauswertung",
+          "Optimierte Baugrunderkundung mit 40% Kostenreduktion"
+        ] : 
+        [
+          "ResNet-based map analysis & GNN technology",
+          "Digital terrain models & satellite imagery evaluation",
+          "Optimized ground investigation with 40% cost reduction"
+        ]
     },
     { 
-      title: t('serviceAiStudies'), 
+      title: language === 'de' ? "KI-gestützte Einzelleistungen" : "AI-Supported Individual Services", 
       description: t('serviceAiStudiesDescUpdated'),
-      icon: <Cpu size={24} /> 
+      icon: <Cpu size={24} />,
+      bulletPoints: language === 'de' ? 
+        [
+          "Automatisierte Stratigrafie-Identifikation",
+          "XGBoost-Regression für qc/qT-Parameter",
+          "Clusteranalyse für Bodenzonen-Klassifikation"
+        ] : 
+        [
+          "Automated stratigraphy identification",
+          "XGBoost regression for qc/qT parameters",
+          "Cluster analysis for soil zone classification"
+        ]
     },
     { 
-      title: t('serviceDrillingOptimized'), 
-      description: t('serviceDrillingOptimizedDesc'),
-      icon: <Ruler size={24} /> 
+      title: language === 'de' ? "Baugrundgutachten und Erkundungsplanung" : "Soil Investigation Reports and Exploration Planning", 
+      description: language === 'de' 
+        ? "Nahtlose Überführung von Vorstudien-Ergebnissen in klassische Baugrundgutachten mit optimierter Erkundungstiefe." 
+        : "Seamless transition from preliminary studies to classic soil investigation reports with optimized exploration depth.",
+      icon: <FileText size={24} />,
+      bulletPoints: language === 'de' ? 
+        [
+          "DIN EN 1997/4020 & Eurocode-konforme Gutachten",
+          "Erkundungsoptimierung & Effizienzsteigerung",
+          "Integration von KI-Analyseergebnissen"
+        ] : 
+        [
+          "DIN EN 1997/4020 & Eurocode-compliant reports",
+          "Exploration optimization & efficiency improvement",
+          "Integration of AI analysis results"
+        ]
     },
     { 
-      title: t('serviceReportsUpdated'), 
-      description: t('serviceReportsUpdatedDesc'),
-      icon: <FileText size={24} /> 
+      title: language === 'de' ? "Baufachliche Begleitung" : "Construction Support", 
+      description: language === 'de'
+        ? "KI-gestützte Begleitung der Bauausführungen für Bauunternehmen und Bohrfirmen mit Fokus auf Risikominimierung."
+        : "AI-supported guidance for construction companies and drilling firms with a focus on risk minimization.",
+      icon: <HardHat size={24} />,
+      bulletPoints: language === 'de' ? 
+        [
+          "Abweichungsanalyse Prognose/Ist-Baugrund",
+          "Optimierte Bohrverlaufsplanung",
+          "Lückenlose Dokumentation für Nachträge"
+        ] : 
+        [
+          "Deviation analysis between prediction and actual ground",
+          "Optimized drilling path planning",
+          "Comprehensive documentation for supplements"
+        ]
     },
   ];
 
   return (
     <div>
+      <SEO pagePath="/" />
       <Hero />
       
       {/* Services Section */}
@@ -54,13 +104,14 @@ const Index = () => {
                 title={service.title}
                 description={service.description}
                 icon={service.icon}
+                bulletPoints={service.bulletPoints}
               />
             ))}
           </div>
           
           <div className="mt-12 text-center">
-            <Link to="/services" className="btn-secondary">
-              Alle Leistungen anzeigen
+            <Link to="/services" className="bg-geoblue-800 hover:bg-geoblue-900 text-white font-semibold py-3 px-6 rounded-md transition-colors duration-300">
+              {language === 'de' ? 'Alle Leistungen anzeigen' : 'View all services'}
             </Link>
           </div>
           
@@ -68,36 +119,28 @@ const Index = () => {
         </div>
       </section>
       
-      {/* About Preview Section */}
+      {/* About Preview Section - Modified to span full width */}
       <section className="py-20 bg-white">
         <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-geoblue-800 mb-6">
-                {t('aboutTitle')}
-              </h2>
-              <div className="text-gray-600 space-y-4 mb-8">
-                <p>
-                  Als erfahrene Geologen kombinieren wir traditionelles Fachwissen mit innovativen KI-Technologien, um präzise und kosteneffiziente geotechnische Vorstudien durchzuführen.
-                </p>
-                <p>
-                  Unser interdisziplinäres Experten-Netzwerk vereint Fachleute aus den Bereichen Geologie, Hydrologie, Bauingenieurwesen und Datenanalyse mit 10-25 Jahren Berufserfahrung in Deutschland und anderen europäischen Ländern. Diese moderne Netzwerkstruktur ermöglicht es uns, die Projekte unserer Kunden besonders effizient, normgerecht und kostengünstig voranzutreiben.
-                </p>
-                <p>
-                  Unsere Expertise ermöglicht es uns, potenzielle Risiken frühzeitig zu identifizieren und Lösungen vorzuschlagen, die Zeit und Kosten sparen.
-                </p>
-              </div>
-              <Link to="/about" className="btn-primary">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-geoblue-800 mb-6">
+              {t('aboutTitle')}
+            </h2>
+            <div className="text-gray-600 space-y-4 mb-8">
+              <p>
+                Als erfahrene Geologen kombinieren wir traditionelles Fachwissen mit innovativen KI-Technologien, um präzise und kosteneffiziente geotechnische Vorstudien durchzuführen.
+              </p>
+              <p>
+                Unser interdisziplinäres Experten-Netzwerk vereint Fachleute aus den Bereichen Geologie, Hydrologie, Bauingenieurwesen und Datenanalyse mit 10-25 Jahren Berufserfahrung in Deutschland und anderen europäischen Ländern. Diese moderne Netzwerkstruktur ermöglicht es uns, die Projekte unserer Kunden besonders effizient, normgerecht und kostengünstig voranzutreiben.
+              </p>
+              <p>
+                Unsere Expertise ermöglicht es uns, potenzielle Risiken frühzeitig zu identifizieren und Lösungen vorzuschlagen, die Zeit und Kosten sparen.
+              </p>
+            </div>
+            <div className="flex justify-start">
+              <Link to="/about" className="bg-geoblue-800 hover:bg-geoblue-900 text-white font-semibold py-3 px-6 rounded-md transition-colors duration-300">
                 Mehr erfahren
               </Link>
-            </div>
-            
-            <div className="rounded-lg overflow-hidden shadow-xl">
-              <img 
-                src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2070&auto=format&fit=crop" 
-                alt="Geotechnical Engineering"
-                className="w-full h-auto" 
-              />
             </div>
           </div>
         </div>

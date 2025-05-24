@@ -1,3 +1,4 @@
+
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/context/LanguageContext';
 import { Linkedin } from 'lucide-react';
@@ -8,7 +9,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-geoblue-900 text-white">
+    <footer className="bg-geoblue-800 text-white">
       <div className="container-custom py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-2">

@@ -3,12 +3,7 @@ import type { Config } from "tailwindcss";
 
 export default {
 	darkMode: ["class"],
-	content: [
-		"./pages/**/*.{ts,tsx}",
-		"./components/**/*.{ts,tsx}",
-		"./app/**/*.{ts,tsx}",
-		"./src/**/*.{ts,tsx}",
-	],
+	content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
 	prefix: "",
 	theme: {
 		container: {
@@ -63,9 +58,9 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Updated GeoStudys specific colors
+				// Updated GeoStudys specific colors with Saphirblau
 				geoblue: {
-					DEFAULT: '#282c34',
+					DEFAULT: '#1D1E33',
 					50: '#f0f5ff',
 					100: '#e5edff',
 					200: '#cddbff',
@@ -74,10 +69,10 @@ export default {
 					500: '#2563eb',
 					600: '#1d4ed8',
 					700: '#1e40af',
-					800: '#282c34',
-					900: '#282c34',
+					800: '#1D1E33', // Updated to Saphirblau (RAL 5003)
+					900: '#1D1E33', // Updated to Saphirblau (RAL 5003)
 				},
-				geolight: '#E9ECF5', // Updated from #f9fafb to #E9ECF5
+				geolight: '#E9ECF5', // Keeping this color the same
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
