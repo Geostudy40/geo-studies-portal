@@ -1,3 +1,4 @@
+
 import { Map, FileText, Cpu, Ruler, BarChart, Building, Database, Microscope } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 import ServiceCard from '@/components/ServiceCard';
@@ -70,9 +71,9 @@ const Services = () => {
     // Define introductory sentences to highlight (English)
     const englishIntros = [
       'Our geological and hydrological assessment of planned construction projects forms the foundation of every geotechnical preliminary study and includes:',
-      'Our AI-powered services include:',
-      'We provide DIN and Eurocode-compliant geotechnical reports and optimized investigation planning:',
-      'Our professional support during construction provides practical assistance:'
+      'Our AI-supported services include:',
+      'We offer DIN and Eurocode-compliant soil investigation reports and optimized exploration planning:',
+      'Our professional support during the construction phase offers practical assistance:'
     ];
     
     const introsToHighlight = language === 'en' ? englishIntros : germanIntros;
