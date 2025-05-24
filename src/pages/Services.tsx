@@ -1,4 +1,3 @@
-
 import { Map, FileText, Cpu, Ruler, BarChart, Building, Database, Microscope } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 import ServiceCard from '@/components/ServiceCard';
@@ -80,12 +79,12 @@ const Services = () => {
     
     let formattedDetail = detail.replace(/-/g, '•');
     
-    // Wrap introductory sentences with highlighting
+    // Wrap introductory sentences with highlighting - make them bold and larger
     introsToHighlight.forEach(intro => {
       if (formattedDetail.includes(intro)) {
         formattedDetail = formattedDetail.replace(
           intro,
-          `<span class="font-semibold text-lg text-geoblue-800 block mb-3">${intro}</span>`
+          `<span class="font-bold text-lg text-geoblue-800 block mb-3">${intro}</span>`
         );
       }
     });
