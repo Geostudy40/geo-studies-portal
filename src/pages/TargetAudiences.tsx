@@ -63,17 +63,17 @@ const TargetAudiences = () => {
     {
       title: t('valueTimeSavings'),
       description: t('valueTimeSavingsDesc'),
-      icon: <Clock size={36} className="text-geoblue-800" />
+      icon: <Clock size={24} className="text-white" />
     },
     {
       title: t('valueCostOptimization'),
       description: t('valueCostOptimizationDesc'),
-      icon: <Coins size={36} className="text-geoblue-800" />
+      icon: <Coins size={24} className="text-white" />
     },
     {
       title: t('valueExpertise'),
       description: t('valueExpertiseDesc'),
-      icon: <Network size={36} className="text-geoblue-800" />
+      icon: <Network size={24} className="text-white" />
     }
   ];
 
@@ -152,30 +152,30 @@ const TargetAudiences = () => {
         </div>
       </section>
       
-      {/* Added Value Section (replacing Testimonials) */}
-      <section className="py-16 bg-geolight">
+      {/* Added Value Section with consistent design */}
+      <section className="py-16 bg-[#E9ECF5]">
         <div className="container-custom">
-          <h2 className="text-3xl font-bold text-geoblue-800 mb-6 text-center">
-            {t('addedValueTitle')}
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto text-center mb-12">
-            {t('addedValueSubtitle')}
-          </p>
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-geoblue-800 mb-4">
+              {t('addedValueTitle')}
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              {t('addedValueSubtitle')}
+            </p>
+          </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {addedValues.map((value, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-md border border-gray-100 transition-all duration-300 hover:shadow-lg hover:translate-y-[-5px]">
-                <div className="flex justify-center mb-6">
-                  <div className="w-16 h-16 rounded-full bg-geoblue-100 flex items-center justify-center">
+              <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 h-full card-shadow">
+                <div className="bg-geoblue-800 text-white p-4 flex items-center gap-4">
+                  <div className="flex items-center justify-center w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm">
                     {value.icon}
                   </div>
+                  <h3 className="text-xl font-semibold text-white">{value.title}</h3>
                 </div>
-                <h3 className="font-semibold text-geoblue-800 text-xl mb-4 text-center">
-                  {value.title}
-                </h3>
-                <p className="text-gray-600">
-                  {value.description}
-                </p>
+                <div className="p-6">
+                  <p className="text-gray-600">{value.description}</p>
+                </div>
               </div>
             ))}
           </div>
