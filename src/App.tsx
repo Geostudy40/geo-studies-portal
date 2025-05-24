@@ -40,21 +40,13 @@ const queryClient = new QueryClient({
 });
 
 const App = () => {
-  const getBasename = () => {
-    const hostname = window.location.hostname;
-    if (hostname.includes('github.io') || hostname.includes('lovable.app')) {
-      return '/geo-studies-portal';
-    }
-    return '';
-  };
-
   return (
     <QueryClientProvider client={queryClient}>
       <LanguageProvider>
         <TooltipProvider>
           <Toaster />
           <Sonner />
-          <BrowserRouter basename={getBasename()}>
+          <BrowserRouter basename="/geo-studies-portal">
             <SEO />
             <div className="flex flex-col min-h-screen">
               <Header />
