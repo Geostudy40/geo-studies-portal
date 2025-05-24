@@ -44,14 +44,13 @@ const ServiceBlock = ({ service, index, accentColor, showContactButton = false }
     
     let formattedDetail = detail.replace(/-/g, '•');
     
-    // Wrap introductory sentences with highlighting - make them bold and larger
+    // Apply formatting to ALL introductory sentences
     introsToHighlight.forEach(intro => {
-      if (formattedDetail.includes(intro)) {
-        formattedDetail = formattedDetail.replace(
-          intro,
-          `<span class="font-bold text-lg text-geoblue-800 block mb-3">${intro}</span>`
-        );
-      }
+      const regex = new RegExp(intro.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi');
+      formattedDetail = formattedDetail.replace(
+        regex,
+        `<span class="font-bold text-lg text-geoblue-800 block mb-3">${intro}</span>`
+      );
     });
     
     return formattedDetail;
