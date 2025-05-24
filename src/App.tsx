@@ -8,7 +8,6 @@ import { LanguageProvider } from "./context/LanguageContext";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import SEO from "./components/SEO";
-import { Suspense } from "react";
 
 // Page imports
 import Index from "./pages/Index";
@@ -40,35 +39,14 @@ const queryClient = new QueryClient({
   },
 });
 
-const LoadingFallback = () => (
-  <div className="min-h-screen flex items-center justify-center bg-white">
-    <div className="text-center">
-      <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-geoblue-600 mx-auto mb-4"></div>
-      <p className="text-gray-600">Seite wird geladen...</p>
-    </div>
-  </div>
-);
-
 const App = () => {
-  console.log("[App] App-Komponente gestartet");
-
   const getBasename = () => {
-    try {
-      const hostname = window.location.hostname;
-      console.log("[App] Hostname:", hostname);
-      
-      if (hostname.includes('github.io') || hostname.includes('lovable.app')) {
-        return '/geo-studies-portal';
-      }
-      return '';
-    } catch (error) {
-      console.error("[App] Fehler beim Ermitteln des Basename:", error);
-      return '';
+    const hostname = window.location.hostname;
+    if (hostname.includes('github.io') || hostname.includes('lovable.app')) {
+      return '/geo-studies-portal';
     }
+    return '';
   };
-
-  const basename = getBasename();
-  console.log("[App] Router basename:", basename);
 
   return (
     <QueryClientProvider client={queryClient}>
@@ -76,34 +54,32 @@ const App = () => {
         <TooltipProvider>
           <Toaster />
           <Sonner />
-          <BrowserRouter basename={basename}>
+          <BrowserRouter basename={getBasename()}>
             <SEO />
             <div className="flex flex-col min-h-screen">
               <Header />
               <main className="flex-grow pt-16">
-                <Suspense fallback={<LoadingFallback />}>
-                  <Routes>
-                    <Route path="/" element={<Index />} />
-                    <Route path="/about" element={<About />} />
-                    <Route path="/sectors" element={<Sectors />} />
-                    <Route path="/sectors/:sectorId" element={<SectorDetail />} />
-                    <Route path="/residential-construction" element={<ResidentialConstruction />} />
-                    <Route path="/infrastructure-construction" element={<InfrastructureConstruction />} />
-                    <Route path="/industrial-construction" element={<IndustrialConstruction />} />
-                    <Route path="/water-construction" element={<WaterConstruction />} />
-                    <Route path="/renewable-energy" element={<RenewableEnergy />} />
-                    <Route path="/services" element={<Services />} />
-                    <Route path="/target-audiences" element={<TargetAudiences />} />
-                    <Route path="/extended-services" element={<ExtendedServices />} />
-                    <Route path="/cpt-analysis" element={<CPTAnalysis />} />
-                    <Route path="/projects" element={<Projects />} />
-                    <Route path="/contact" element={<Contact />} />
-                    <Route path="/terms" element={<Terms />} />
-                    <Route path="/privacy" element={<Privacy />} />
-                    <Route path="/imprint" element={<Imprint />} />
-                    <Route path="*" element={<NotFound />} />
-                  </Routes>
-                </Suspense>
+                <Routes>
+                  <Route path="/" element={<Index />} />
+                  <Route path="/about" element={<About />} />
+                  <Route path="/sectors" element={<Sectors />} />
+                  <Route path="/sectors/:sectorId" element={<SectorDetail />} />
+                  <Route path="/residential-construction" element={<ResidentialConstruction />} />
+                  <Route path="/infrastructure-construction" element={<InfrastructureConstruction />} />
+                  <Route path="/industrial-construction" element={<IndustrialConstruction />} />
+                  <Route path="/water-construction" element={<WaterConstruction />} />
+                  <Route path="/renewable-energy" element={<RenewableEnergy />} />
+                  <Route path="/services" element={<Services />} />
+                  <Route path="/target-audiences" element={<TargetAudiences />} />
+                  <Route path="/extended-services" element={<ExtendedServices />} />
+                  <Route path="/cpt-analysis" element={<CPTAnalysis />} />
+                  <Route path="/projects" element={<Projects />} />
+                  <Route path="/contact" element={<Contact />} />
+                  <Route path="/terms" element={<Terms />} />
+                  <Route path="/privacy" element={<Privacy />} />
+                  <Route path="/imprint" element={<Imprint />} />
+                  <Route path="*" element={<NotFound />} />
+                </Routes>
               </main>
               <Footer />
             </div>
