@@ -1,5 +1,3 @@
-
-
 import { Map, FileText, Cpu, Ruler, BarChart, Building, Database, Microscope } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 import ServiceCard from '@/components/ServiceCard';
@@ -57,6 +55,41 @@ const Services = () => {
     'border-purple-600' // #9333ea
   ];
 
+  // Function to format service details with highlighted introductory sentences
+  const formatServiceDetail = (detail: string) => {
+    if (!detail) return '';
+    
+    // Define introductory sentences to highlight (German)
+    const germanIntros = [
+      'Unsere KI-gestützten Leistungen umfassen:',
+      'Wir bieten DIN- und Eurocode-konforme Baugrundgutachten und optimierte Erkundungsplanung:',
+      'Unsere fachliche Begleitung während der Bauphase bietet praxisnahe Unterstützung:'
+    ];
+    
+    // Define introductory sentences to highlight (English)
+    const englishIntros = [
+      'Our AI-powered services include:',
+      'We provide DIN and Eurocode-compliant geotechnical reports and optimized investigation planning:',
+      'Our professional support during construction provides practical assistance:'
+    ];
+    
+    const introsToHighlight = language === 'en' ? englishIntros : germanIntros;
+    
+    let formattedDetail = detail.replace(/-/g, '•');
+    
+    // Wrap introductory sentences with highlighting
+    introsToHighlight.forEach(intro => {
+      if (formattedDetail.includes(intro)) {
+        formattedDetail = formattedDetail.replace(
+          intro,
+          `<span class="font-semibold text-lg text-geoblue-800 block mb-3">${intro}</span>`
+        );
+      }
+    });
+    
+    return formattedDetail;
+  };
+
   return (
     <div>
       {/* Header Section */}
@@ -94,10 +127,9 @@ const Services = () => {
                   </div>
                   
                   <div className={`lg:col-span-7 ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
-                    <h3 className="heading-secondary">Detaillierte Beschreibung</h3>
                     <div 
                       className="text-gray-600 mb-4"
-                      dangerouslySetInnerHTML={{ __html: service.detail?.replace(/-/g, '•') || '' }}
+                      dangerouslySetInnerHTML={{ __html: formatServiceDetail(service.detail || '') }}
                     />
                     <div className="bg-geoblue-50 border-l-4 border-geoblue-800 p-4 mb-6">
                       <p className="text-gray-700 italic">
@@ -223,4 +255,3 @@ const Services = () => {
 };
 
 export default Services;
-
