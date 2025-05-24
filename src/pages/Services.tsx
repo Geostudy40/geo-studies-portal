@@ -1,3 +1,4 @@
+
 import { Map, FileText, Cpu, Ruler, BarChart, Building, Database, Microscope } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 import ServiceCard from '@/components/ServiceCard';
@@ -47,6 +48,14 @@ const Services = () => {
     },
   ];
 
+  // Accent colors for gray blocks
+  const accentColors = [
+    'border-blue-700', // #1e40af
+    'border-green-600', // #059669  
+    'border-orange-600', // #ea580c
+    'border-purple-600' // #9333ea
+  ];
+
   return (
     <div>
       {/* Header Section */}
@@ -71,14 +80,14 @@ const Services = () => {
               <div key={index} className="mb-16 last:mb-0">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                   <div className={`lg:col-span-5 ${index % 2 === 1 ? 'lg:order-2' : ''}`}>
-                    <div className="bg-geolight p-8 rounded-lg shadow-md border border-gray-100 h-full">
-                      <div className="flex items-center justify-center w-16 h-16 rounded-full bg-geoblue-100 text-geoblue-800 mb-6">
+                    <div className={`bg-geolight p-8 rounded-lg shadow-md border border-gray-100 border-l-4 ${accentColors[index % accentColors.length]} h-full`}>
+                      <div className="flex items-center justify-center w-16 h-16 rounded-full bg-geoblue-100 text-geoblue-800 mb-6 mx-auto">
                         {service.icon}
                       </div>
-                      <h3 className="heading-secondary">{service.title}</h3>
+                      <h3 className="heading-secondary text-center">{service.title}</h3>
                       <div 
-                        className="text-gray-600 mb-4"
-                        dangerouslySetInnerHTML={{ __html: service.description || '' }}
+                        className="text-gray-600 mb-4 text-left"
+                        dangerouslySetInnerHTML={{ __html: service.description?.replace(/-/g, '•') || '' }}
                       />
                     </div>
                   </div>
@@ -87,7 +96,7 @@ const Services = () => {
                     <h3 className="heading-secondary">Detaillierte Beschreibung</h3>
                     <div 
                       className="text-gray-600 mb-4"
-                      dangerouslySetInnerHTML={{ __html: service.detail || '' }}
+                      dangerouslySetInnerHTML={{ __html: service.detail?.replace(/-/g, '•') || '' }}
                     />
                     <div className="bg-geoblue-50 border-l-4 border-geoblue-800 p-4 mb-6">
                       <p className="text-gray-700 italic">
@@ -134,7 +143,7 @@ const Services = () => {
 
           {/* CPT-Analyse Highlight */}
           <div className="mt-12">
-            <div className="bg-gradient-to-r from-geoblue-600 to-blue-700 text-white rounded-lg shadow-lg p-8 text-center">
+            <div className="bg-gradient-to-r from-geoblue-700 to-geoblue-800 text-white rounded-lg shadow-lg p-8 text-center">
               <div className="flex justify-center mb-4">
                 <BarChart size={48} className="text-white" />
               </div>
