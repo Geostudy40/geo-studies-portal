@@ -8,7 +8,7 @@ import { LanguageProvider } from "./context/LanguageContext";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import SEO from "./components/SEO";
-import { Suspense, useEffect, useState } from "react";
+import { useEffect } from "react";
 
 // Page imports
 import Index from "./pages/Index";
@@ -40,32 +40,15 @@ const queryClient = new QueryClient({
   },
 });
 
-const LoadingFallback = () => (
-  <div className="min-h-screen flex items-center justify-center bg-white">
-    <div className="text-center">
-      <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-geoblue-600 mx-auto mb-4"></div>
-      <p className="text-gray-600">Seite wird geladen...</p>
-    </div>
-  </div>
-);
-
 const App = () => {
-  const [isAppReady, setIsAppReady] = useState(false);
-
   useEffect(() => {
-    console.log("App Component geladen erfolgreich");
+    console.log("[App] App Component wird geladen...");
     
     // Sofortige Markierung als geladen
     document.body.classList.add('app-loaded');
-    setIsAppReady(true);
     
-    // Log für Debug-Zwecke
-    console.log("App ist bereit, Router wird initialisiert");
+    console.log("[App] App erfolgreich geladen und bereit");
   }, []);
-
-  if (!isAppReady) {
-    return <LoadingFallback />;
-  }
 
   return (
     <QueryClientProvider client={queryClient}>
@@ -78,29 +61,27 @@ const App = () => {
             <div className="flex flex-col min-h-screen">
               <Header />
               <main className="flex-grow pt-16">
-                <Suspense fallback={<LoadingFallback />}>
-                  <Routes>
-                    <Route path="/" element={<Index />} />
-                    <Route path="/about" element={<About />} />
-                    <Route path="/sectors" element={<Sectors />} />
-                    <Route path="/sectors/:sectorId" element={<SectorDetail />} />
-                    <Route path="/residential-construction" element={<ResidentialConstruction />} />
-                    <Route path="/infrastructure-construction" element={<InfrastructureConstruction />} />
-                    <Route path="/industrial-construction" element={<IndustrialConstruction />} />
-                    <Route path="/water-construction" element={<WaterConstruction />} />
-                    <Route path="/renewable-energy" element={<RenewableEnergy />} />
-                    <Route path="/services" element={<Services />} />
-                    <Route path="/target-audiences" element={<TargetAudiences />} />
-                    <Route path="/extended-services" element={<ExtendedServices />} />
-                    <Route path="/cpt-analysis" element={<CPTAnalysis />} />
-                    <Route path="/projects" element={<Projects />} />
-                    <Route path="/contact" element={<Contact />} />
-                    <Route path="/terms" element={<Terms />} />
-                    <Route path="/privacy" element={<Privacy />} />
-                    <Route path="/imprint" element={<Imprint />} />
-                    <Route path="*" element={<NotFound />} />
-                  </Routes>
-                </Suspense>
+                <Routes>
+                  <Route path="/" element={<Index />} />
+                  <Route path="/about" element={<About />} />
+                  <Route path="/sectors" element={<Sectors />} />
+                  <Route path="/sectors/:sectorId" element={<SectorDetail />} />
+                  <Route path="/residential-construction" element={<ResidentialConstruction />} />
+                  <Route path="/infrastructure-construction" element={<InfrastructureConstruction />} />
+                  <Route path="/industrial-construction" element={<IndustrialConstruction />} />
+                  <Route path="/water-construction" element={<WaterConstruction />} />
+                  <Route path="/renewable-energy" element={<RenewableEnergy />} />
+                  <Route path="/services" element={<Services />} />
+                  <Route path="/target-audiences" element={<TargetAudiences />} />
+                  <Route path="/extended-services" element={<ExtendedServices />} />
+                  <Route path="/cpt-analysis" element={<CPTAnalysis />} />
+                  <Route path="/projects" element={<Projects />} />
+                  <Route path="/contact" element={<Contact />} />
+                  <Route path="/terms" element={<Terms />} />
+                  <Route path="/privacy" element={<Privacy />} />
+                  <Route path="/imprint" element={<Imprint />} />
+                  <Route path="*" element={<NotFound />} />
+                </Routes>
               </main>
               <Footer />
             </div>

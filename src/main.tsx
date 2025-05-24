@@ -4,12 +4,10 @@ import App from './App.tsx'
 import './index.css'
 
 console.log("[main] Initialisierung gestartet");
-console.log("[main] Current URL:", window.location.href);
-console.log("[main] Pathname:", window.location.pathname);
 
 function mountApp() {
   try {
-    console.log("[main] Anwendung wird gestartet");
+    console.log("[main] App wird gestartet");
     
     const rootElement = document.getElementById("root");
     
@@ -17,30 +15,12 @@ function mountApp() {
       console.log("[main] Root-Element gefunden, React-App wird gerendert");
       
       const root = createRoot(rootElement);
+      root.render(<App />);
       
-      // Fehlerbehandlung für React-Rendering
-      try {
-        root.render(<App />);
-        console.log("[main] React-App erfolgreich gerendert");
-        
-        // Loading-Indikator sofort entfernen nach erfolgreichem Rendering
-        document.body.classList.add('app-loaded');
-        
-        // Zusätzliche Überprüfung nach kurzer Verzögerung
-        setTimeout(() => {
-          const appContent = document.querySelector('#root > *');
-          if (appContent) {
-            console.log("[main] App-Inhalt erfolgreich geladen");
-            document.body.classList.add('app-loaded');
-          } else {
-            console.warn("[main] App-Inhalt nicht gefunden, aber kein Fehler aufgetreten");
-          }
-        }, 100);
-        
-      } catch (renderError) {
-        console.error("[main] Fehler beim React-Rendering:", renderError);
-        showErrorPage("React-Rendering-Fehler: " + (renderError instanceof Error ? renderError.message : String(renderError)));
-      }
+      console.log("[main] React-App erfolgreich gerendert");
+      
+      // Loading-Indikator sofort entfernen
+      document.body.classList.add('app-loaded');
       
     } else {
       console.error("[main] Root-Element nicht gefunden!");
@@ -64,59 +44,22 @@ function showErrorPage(errorMessage: string) {
           <button onclick="window.location.reload()" style="background: #1e40af; color: white; border: none; padding: 12px 24px; border-radius: 4px; cursor: pointer; margin-right: 10px; font-size: 16px;">Neu laden</button>
           <button onclick="window.location.href='/geo-studies-portal/'" style="background: #059669; color: white; border: none; padding: 12px 24px; border-radius: 4px; cursor: pointer; font-size: 16px;">Zur Startseite</button>
         </div>
-        <p style="margin-top: 20px; font-size: 14px; color: #666;">Falls das Problem weiterhin besteht, kontaktieren Sie bitte den Support.</p>
-        <div style="margin-top: 20px; font-size: 12px; color: #999;">
-          <p>Debug-Info: ${window.location.pathname} | ${window.location.search}</p>
-        </div>
       </div>
     `;
-    // Sicherstellen, dass der Loading-Indikator entfernt wird
     document.body.classList.add('app-loaded');
   }
 }
 
-// Fehlerhandler vor dem App-Start registrieren
+// Fehlerhandler registrieren
 window.addEventListener('error', (event) => {
-  console.error('[main] Globaler JavaScript-Fehler:', event.error);
-  console.error('[main] Fehler-Details:', {
-    message: event.message,
-    filename: event.filename,
-    lineno: event.lineno,
-    colno: event.colno,
-    currentPath: window.location.pathname
-  });
+  console.error('[main] JavaScript-Fehler:', event.error);
 });
 
 window.addEventListener('unhandledrejection', (event) => {
   console.error('[main] Unhandled Promise Rejection:', event.reason);
-  console.error('[main] Current location:', window.location.href);
   event.preventDefault();
 });
 
-// App sofort laden
-console.log("[main] Startet App-Mount-Prozess");
+// App laden
+console.log("[main] App wird gemountet");
 mountApp();
-
-// Backup-Timer für den Fall, dass die App nicht lädt
-setTimeout(() => {
-  const rootElement = document.getElementById("root");
-  const hasAppContent = rootElement && rootElement.children.length > 0;
-  const hasLoadingClass = document.body.classList.contains('app-loaded');
-  
-  if (!hasAppContent || !hasLoadingClass) {
-    console.error('[main] App nicht ordnungsgemäß geladen nach 3 Sekunden');
-    console.error('[main] Debug-Info:', {
-      hasRootElement: !!rootElement,
-      hasAppContent: hasAppContent,
-      hasLoadingClass: hasLoadingClass,
-      childrenCount: rootElement?.children.length || 0,
-      currentPath: window.location.pathname,
-      search: window.location.search,
-      hash: window.location.hash
-    });
-    
-    showErrorPage("Timeout: App konnte nicht innerhalb von 3 Sekunden geladen werden");
-  } else {
-    console.log('[main] App erfolgreich geladen und bereit');
-  }
-}, 3000);
