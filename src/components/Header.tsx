@@ -34,18 +34,19 @@ const Header = () => {
     return location.pathname === path || location.pathname.startsWith(path + '/');
   };
 
-  const handleServicesMouseEnter = () => {
-    // Clear any existing timeout
+  const clearHoverTimeout = () => {
     if (hoverTimeout) {
       clearTimeout(hoverTimeout);
       setHoverTimeout(null);
     }
-    // Open dropdown immediately
+  };
+
+  const handleServicesMouseEnter = () => {
+    clearHoverTimeout();
     setServicesDropdownOpen(true);
   };
 
   const handleServicesMouseLeave = () => {
-    // Add a small delay before closing to allow moving to submenu
     const timeout = setTimeout(() => {
       setServicesDropdownOpen(false);
     }, 200);
@@ -53,16 +54,11 @@ const Header = () => {
   };
 
   const handleDropdownMouseEnter = () => {
-    // Clear timeout when mouse enters dropdown area
-    if (hoverTimeout) {
-      clearTimeout(hoverTimeout);
-      setHoverTimeout(null);
-    }
+    clearHoverTimeout();
     setServicesDropdownOpen(true);
   };
 
   const handleDropdownMouseLeave = () => {
-    // Close dropdown when mouse leaves dropdown area
     const timeout = setTimeout(() => {
       setServicesDropdownOpen(false);
     }, 200);
@@ -70,20 +66,14 @@ const Header = () => {
   };
 
   const handleDropdownItemClick = () => {
-    // Immediately close dropdown when item is clicked
-    if (hoverTimeout) {
-      clearTimeout(hoverTimeout);
-      setHoverTimeout(null);
-    }
+    clearHoverTimeout();
     setServicesDropdownOpen(false);
   };
 
   // Clean up timeout on unmount
   useEffect(() => {
     return () => {
-      if (hoverTimeout) {
-        clearTimeout(hoverTimeout);
-      }
+      clearHoverTimeout();
     };
   }, [hoverTimeout]);
 
@@ -118,7 +108,7 @@ const Header = () => {
                 {link.dropdown ? (
                   <div>
                     <button
-                      className={`font-medium transition-colors duration-300 flex items-center py-2 ${
+                      className={`font-medium transition-colors duration-300 flex items-center py-2 px-1 ${
                         isActive(link.path)
                           ? 'text-geoblue-800 border-b-2 border-geoblue-800'
                           : 'text-gray-600 hover:text-geoblue-800'
@@ -134,25 +124,27 @@ const Header = () => {
                     </button>
                     
                     {servicesDropdownOpen && (
-                      <div 
-                        className="absolute top-full left-0 mt-1 w-56 bg-white rounded-lg shadow-lg border border-gray-200 z-50"
-                        onMouseEnter={handleDropdownMouseEnter}
-                        onMouseLeave={handleDropdownMouseLeave}
-                      >
-                        {/* Invisible bridge to prevent dropdown from closing */}
-                        <div className="absolute -top-1 left-0 right-0 h-1 bg-transparent"></div>
+                      <div className="absolute top-full left-0 pt-1">
+                        {/* Invisible bridge extended */}
+                        <div className="absolute -top-1 left-0 right-0 h-2 bg-transparent"></div>
                         
-                        <div className="py-2">
-                          {link.dropdown.map((dropdownItem) => (
-                            <Link
-                              key={dropdownItem.path}
-                              to={dropdownItem.path}
-                              className="block px-4 py-3 text-sm text-gray-700 hover:bg-geoblue-50 hover:text-geoblue-800 transition-colors cursor-pointer"
-                              onClick={handleDropdownItemClick}
-                            >
-                              {dropdownItem.name}
-                            </Link>
-                          ))}
+                        <div 
+                          className="w-56 bg-white rounded-lg shadow-lg border border-gray-200 z-50"
+                          onMouseEnter={handleDropdownMouseEnter}
+                          onMouseLeave={handleDropdownMouseLeave}
+                        >
+                          <div className="py-2">
+                            {link.dropdown.map((dropdownItem) => (
+                              <Link
+                                key={dropdownItem.path}
+                                to={dropdownItem.path}
+                                className="block px-4 py-3 text-sm text-gray-700 hover:bg-geoblue-50 hover:text-geoblue-800 transition-colors cursor-pointer"
+                                onClick={handleDropdownItemClick}
+                              >
+                                {dropdownItem.name}
+                              </Link>
+                            ))}
+                          </div>
                         </div>
                       </div>
                     )}
@@ -160,7 +152,7 @@ const Header = () => {
                 ) : (
                   <Link
                     to={link.path}
-                    className={`font-medium transition-colors duration-300 ${
+                    className={`font-medium transition-colors duration-300 px-1 ${
                       isActive(link.path)
                         ? 'text-geoblue-800 border-b-2 border-geoblue-800'
                         : 'text-gray-600 hover:text-geoblue-800'
