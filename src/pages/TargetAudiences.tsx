@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 
 const TargetAudiences = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   
   const audiences = [
     {
@@ -107,7 +107,7 @@ const TargetAudiences = () => {
           {audiences.map((audience, index) => (
             <div key={index} className="mb-16 last:mb-0">
               <h2 className="text-2xl font-bold text-geoblue-800 mb-6 border-l-4 border-geoblue-800 pl-4">
-                Für {audience.title}
+                {language === 'de' ? 'Für' : 'For'} {audience.title}
               </h2>
               
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
