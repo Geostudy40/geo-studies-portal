@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -86,9 +87,9 @@
     }
     </script>
     
-    <!-- GitHub Pages SPA router fix -->
+    <!-- GitHub Pages SPA router fix - IMPROVED -->
     <script type="text/javascript">
-      // Single Page App GitHub Pages workaround
+      // Single Page App GitHub Pages workaround - improved version
       (function(l) {
         if (l.search[1] === '/' ) {
           var decoded = l.search.slice(1).split('&').map(function(s) { 
@@ -100,11 +101,12 @@
         }
       }(window.location));
       
-      // Debugging helper für GitHub Pages
+      // Enhanced debugging für GitHub Pages
       console.log("[index.html] Page loaded:", window.location.href);
       console.log("[index.html] Pathname:", window.location.pathname);
       console.log("[index.html] Search:", window.location.search);
       console.log("[index.html] Hash:", window.location.hash);
+      console.log("[index.html] Base href:", document.querySelector('base')?.href);
     </script>
     
     <!-- Loading indicator CSS -->
@@ -161,17 +163,28 @@
       <div style="text-align: center; padding: 2rem; font-family: sans-serif;">
         <h1>JavaScript deaktiviert</h1>
         <p>Diese Anwendung benötigt JavaScript. Bitte aktivieren Sie JavaScript in Ihrem Browser.</p>
-        <p><a href="/">Zur Startseite</a></p>
+        <p><a href="/geo-studies-portal/">Zur Startseite</a></p>
       </div>
     </noscript>
     
-    <!-- Script um sicherzustellen, dass die App lädt -->
+    <!-- Enhanced fallback script -->
     <script>
       setTimeout(function() {
         var root = document.getElementById('root');
-        if (!root || root.children.length === 0) {
+        var hasContent = root && root.children.length > 0;
+        var isLoaded = document.body.classList.contains('app-loaded');
+        
+        if (!hasContent || !isLoaded) {
           console.error('[index.html] App nicht geladen nach 5 Sekunden');
-          document.body.innerHTML = '<div style="text-align: center; padding: 50px; font-family: sans-serif;"><h1>Ladefehler</h1><p>Die Anwendung konnte nicht geladen werden.</p><button onclick="window.location.reload()">Neu laden</button></div>';
+          console.error('[index.html] Debug Info:', {
+            hasRoot: !!root,
+            hasContent: hasContent,
+            isLoaded: isLoaded,
+            currentPath: window.location.pathname,
+            search: window.location.search
+          });
+          
+          document.body.innerHTML = '<div style="text-align: center; padding: 50px; font-family: sans-serif;"><h1>Ladefehler</h1><p>Die Anwendung konnte nicht geladen werden.</p><button onclick="window.location.href=\'/geo-studies-portal/\'" style="background: #1e40af; color: white; border: none; padding: 12px 24px; border-radius: 4px; cursor: pointer; margin-right: 10px;">Zur Startseite</button><button onclick="window.location.reload()" style="background: #059669; color: white; border: none; padding: 12px 24px; border-radius: 4px; cursor: pointer;">Neu laden</button></div>';
         }
       }, 5000);
     </script>

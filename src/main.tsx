@@ -4,6 +4,8 @@ import App from './App.tsx'
 import './index.css'
 
 console.log("[main] Initialisierung gestartet");
+console.log("[main] Current URL:", window.location.href);
+console.log("[main] Pathname:", window.location.pathname);
 
 function mountApp() {
   try {
@@ -63,6 +65,9 @@ function showErrorPage(errorMessage: string) {
           <button onclick="window.location.href='/geo-studies-portal/'" style="background: #059669; color: white; border: none; padding: 12px 24px; border-radius: 4px; cursor: pointer; font-size: 16px;">Zur Startseite</button>
         </div>
         <p style="margin-top: 20px; font-size: 14px; color: #666;">Falls das Problem weiterhin besteht, kontaktieren Sie bitte den Support.</p>
+        <div style="margin-top: 20px; font-size: 12px; color: #999;">
+          <p>Debug-Info: ${window.location.pathname} | ${window.location.search}</p>
+        </div>
       </div>
     `;
     // Sicherstellen, dass der Loading-Indikator entfernt wird
@@ -77,12 +82,14 @@ window.addEventListener('error', (event) => {
     message: event.message,
     filename: event.filename,
     lineno: event.lineno,
-    colno: event.colno
+    colno: event.colno,
+    currentPath: window.location.pathname
   });
 });
 
 window.addEventListener('unhandledrejection', (event) => {
   console.error('[main] Unhandled Promise Rejection:', event.reason);
+  console.error('[main] Current location:', window.location.href);
   event.preventDefault();
 });
 
@@ -102,7 +109,10 @@ setTimeout(() => {
       hasRootElement: !!rootElement,
       hasAppContent: hasAppContent,
       hasLoadingClass: hasLoadingClass,
-      childrenCount: rootElement?.children.length || 0
+      childrenCount: rootElement?.children.length || 0,
+      currentPath: window.location.pathname,
+      search: window.location.search,
+      hash: window.location.hash
     });
     
     showErrorPage("Timeout: App konnte nicht innerhalb von 3 Sekunden geladen werden");
