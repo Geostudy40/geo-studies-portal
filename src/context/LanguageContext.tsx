@@ -23,6 +23,10 @@ const translations = {
     // Common
     cta: 'Kontakt aufnehmen',
     
+    // Hero Section
+    heroTitle: 'Innovative Geotechnische Vorstudien mit KI-Unterstützung',
+    heroSubtitle: 'Präzise Baugrundanalysen durch die Kombination von geologischer Expertise und künstlicher Intelligenz',
+    
     // Home page
     servicesTitle: 'Unsere Leistungen',
     servicesSubtitle: 'Professionelle geotechnische Analysen für verschiedene Bauprojekte',
@@ -173,6 +177,10 @@ const translations = {
     
     // Common
     cta: 'Get in Touch',
+    
+    // Hero Section
+    heroTitle: 'Innovative Geotechnical Preliminary Studies with AI Support',
+    heroSubtitle: 'Precise ground analysis through the combination of geological expertise and artificial intelligence',
     
     // Home page
     servicesTitle: 'Our Services',
