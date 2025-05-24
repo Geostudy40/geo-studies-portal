@@ -1,4 +1,5 @@
 
+
 import { useLanguage } from '@/context/LanguageContext';
 import { Link } from 'react-router-dom';
 import { 
@@ -20,35 +21,40 @@ const IndustrialConstruction = () => {
       title: language === 'de' ? "Tragfähigkeitsanalyse für Großflächen und Schwerlast" : "Load-bearing Analysis for Large Areas and Heavy Loads",
       description: language === 'de' 
         ? "Detaillierte Bewertung der Tragfähigkeit für großflächige Lastverteilungen und Punktlasten aus Maschinen oder Hochregalanlagen. Ermittlung von Bodenkennwerten für wirtschaftliche Dimensionierung von Industrieböden und Fundamenten. Beurteilung der Eignung für dynamische Lasten aus Produktionsprozessen."
-        : "Detailed assessment of load-bearing capacity for large-area load distributions and point loads from machinery or high-bay warehouses. Determination of soil parameters for economical dimensioning of industrial floors and foundations. Evaluation of suitability for dynamic loads from production processes."
+        : "Detailed assessment of load-bearing capacity for large-area load distributions and point loads from machinery or high-bay warehouses. Determination of soil parameters for economical dimensioning of industrial floors and foundations. Evaluation of suitability for dynamic loads from production processes.",
+      accentColor: 'border-l-orange-600' // #ea580c
     },
     {
       icon: <Droplets className="h-12 w-12 text-geoblue-800" />,
       title: language === 'de' ? "Grundwasser- und Entwässerungsmanagement" : "Groundwater and Drainage Management",
       description: language === 'de' 
         ? "Umfassende Analyse der Grundwassersituation und hydrogeologischen Bedingungen am Standort. Planung effizienter Entwässerungssysteme für großflächige versiegelte Flächen. Bewertung potentieller Auswirkungen auf den Grundwasserhaushalt und Empfehlungen für Versickerungsmöglichkeiten gemäß aktueller Wassergesetze."
-        : "Comprehensive analysis of groundwater situation and hydrogeological conditions at the site. Planning efficient drainage systems for large sealed surfaces. Assessment of potential impacts on groundwater balance and recommendations for infiltration possibilities according to current water legislation."
+        : "Comprehensive analysis of groundwater situation and hydrogeological conditions at the site. Planning efficient drainage systems for large sealed surfaces. Assessment of potential impacts on groundwater balance and recommendations for infiltration possibilities according to current water legislation.",
+      accentColor: 'border-l-orange-600' // #ea580c
     },
     {
       icon: <Recycle className="h-12 w-12 text-geoblue-800" />,
       title: language === 'de' ? "Altlasten- und Brownfield-Bewertung" : "Contamination and Brownfield Assessment",
       description: language === 'de' 
         ? "Gründliche Recherche der Vornutzung industrieller Standorte und Identifikation potentieller Kontaminationen. Einschätzung von Sanierungsaufwand und -kosten bei belasteten Böden. Entwicklung von Strategien für nachhaltige Folgenutzung ehemaliger Industrieflächen unter Berücksichtigung der BBodSchV und aktueller Umweltrichtlinien."
-        : "Thorough research of previous use of industrial sites and identification of potential contamination. Estimation of remediation efforts and costs for contaminated soils. Development of strategies for sustainable subsequent use of former industrial areas in compliance with soil protection regulations and current environmental guidelines."
+        : "Thorough research of previous use of industrial sites and identification of potential contamination. Estimation of remediation efforts and costs for contaminated soils. Development of strategies for sustainable subsequent use of former industrial areas in compliance with soil protection regulations and current environmental guidelines.",
+      accentColor: 'border-l-orange-600' // #ea580c
     },
     {
       icon: <Clock className="h-12 w-12 text-geoblue-800" />,
       title: language === 'de' ? "Langzeitstabilität und Nutzungsflexibilität" : "Long-term Stability and Usage Flexibility",
       description: language === 'de' 
         ? "Prognose des Langzeitverhaltens des Baugrundes unter statischen und dynamischen Lasten. Beurteilung von Setzungsverhalten und -unterschieden bei heterogenen Bodenverhältnissen. Planung mit Blick auf zukünftige Erweiterungsmöglichkeiten und Nutzungsänderungen unter Berücksichtigung der DIN EN 1997 (Eurocode 7) und DIN 4019."
-        : "Prediction of long-term behavior of the subsoil under static and dynamic loads. Assessment of settlement behavior and differences in heterogeneous soil conditions. Planning with a view to future expansion possibilities and changes in use, considering DIN EN 1997 (Eurocode 7) and DIN 4019."
+        : "Prediction of long-term behavior of the subsoil under static and dynamic loads. Assessment of settlement behavior and differences in heterogeneous soil conditions. Planning with a view to future expansion possibilities and changes in use, considering DIN EN 1997 (Eurocode 7) and DIN 4019.",
+      accentColor: 'border-l-orange-600' // #ea580c
     },
     {
       icon: <Database className="h-12 w-12 text-geoblue-800" />,
       title: language === 'de' ? "KI-optimierte Baugrunderkundung für Großflächen" : "AI-optimized Ground Investigation for Large Areas",
       description: language === 'de' 
         ? "Effiziente Planung des Erkundungsprogramms für großflächige Industrieareale durch KI-gestützte Analyse regionaler Daten. Reduzierung der Erkundungskosten durch optimierte Positionierung von Bohrungen und Sondierungen. Erstellung präziser 3D-Baugrundmodelle mit statistisch fundierter Interpolation zwischen Aufschlusspunkten."
-        : "Efficient planning of the investigation program for large industrial areas through AI-supported analysis of regional data. Reduction of investigation costs through optimized positioning of boreholes and soundings. Creation of precise 3D subsoil models with statistically sound interpolation between exploration points."
+        : "Efficient planning of the investigation program for large industrial areas through AI-supported analysis of regional data. Reduction of investigation costs through optimized positioning of boreholes and soundings. Creation of precise 3D subsoil models with statistically sound interpolation between exploration points.",
+      accentColor: 'border-l-orange-600' // #ea580c
     }
   ];
 
@@ -82,7 +88,7 @@ const IndustrialConstruction = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
             {advantageItems.map((item, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-md border border-gray-100 hover:border-geoblue-800 transition-all duration-300">
+              <div key={index} className={`bg-geolight p-6 rounded-lg shadow-md border border-gray-100 hover:border-geoblue-800 transition-all duration-300 border-l-4 ${item.accentColor}`}>
                 <div className="flex flex-col md:flex-row items-center md:items-start gap-4">
                   <div className="shrink-0">
                     {item.icon}
@@ -115,3 +121,4 @@ const IndustrialConstruction = () => {
 };
 
 export default IndustrialConstruction;
+

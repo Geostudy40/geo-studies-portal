@@ -1,4 +1,5 @@
 
+
 import { useLanguage } from '@/context/LanguageContext';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Wind, Shield, Droplet, FileText, Cpu } from 'lucide-react';
@@ -17,7 +18,8 @@ const RenewableEnergy = () => {
       icon: <Wind className="w-12 h-12 text-geoblue-800" />,
       description: isGerman
         ? "Gründliche Analyse der geologischen Eignung für unterschiedliche Anlagentypen und Gründungsvarianten. Bewertung der Topographie und Bodenbeschaffenheit für optimale Anlagenausrichtung und -platzierung. Identifikation potenzieller technischer Hindernisse im Untergrund und deren Auswirkungen auf die Energieausbeute."
-        : "Thorough analysis of geological suitability for different types of installations and foundation options. Assessment of topography and soil conditions for optimal plant orientation and placement. Identification of potential technical obstacles in the subsoil and their effects on energy yield."
+        : "Thorough analysis of geological suitability for different types of installations and foundation options. Assessment of topography and soil conditions for optimal plant orientation and placement. Identification of potential technical obstacles in the subsoil and their effects on energy yield.",
+      accentColor: 'border-l-teal-600' // #0d9488
     },
     {
       title: isGerman 
@@ -26,7 +28,8 @@ const RenewableEnergy = () => {
       icon: <Shield className="w-12 h-12 text-geoblue-800" />,
       description: isGerman
         ? "Umfassende Bewertung von Baugrundrisiken wie Setzungsempfindlichkeit, Bodenverdichtung und Erosionsgefahr. Analyse der Tragfähigkeit für Windkraftfundamente unter Berücksichtigung dynamischer Lasten gemäß DIBt-Richtlinien. Beurteilung der Untergrundstabilität bei PV-Parks in Hanglagen oder auf rekultivierten Flächen."
-        : "Comprehensive assessment of ground risks such as settlement sensitivity, soil compaction, and erosion hazards. Analysis of load-bearing capacity for wind power foundations considering dynamic loads according to DIBt guidelines. Evaluation of subsoil stability for PV parks on slopes or recultivated areas."
+        : "Comprehensive assessment of ground risks such as settlement sensitivity, soil compaction, and erosion hazards. Analysis of load-bearing capacity for wind power foundations considering dynamic loads according to DIBt guidelines. Evaluation of subsoil stability for PV parks on slopes or recultivated areas.",
+      accentColor: 'border-l-teal-600' // #0d9488
     },
     {
       title: isGerman 
@@ -35,7 +38,8 @@ const RenewableEnergy = () => {
       icon: <Droplet className="w-12 h-12 text-geoblue-800" />,
       description: isGerman
         ? "Detaillierte Untersuchung des Grundwasserhaushalts und potenzieller Auswirkungen geothermischer Anlagen. Bewertung der Oberflächenentwässerung bei großflächigen PV-Parks unter Beachtung des WHG und der Niederschlagswasserverordnungen. Einschätzung möglicher Umweltrisiken und Erarbeitung präventiver Maßnahmen gemäß aktueller Umweltrichtlinien."
-        : "Detailed investigation of groundwater balance and potential impacts of geothermal systems. Assessment of surface drainage for large-scale PV parks in compliance with water management regulations. Evaluation of possible environmental risks and development of preventive measures according to current environmental guidelines."
+        : "Detailed investigation of groundwater balance and potential impacts of geothermal systems. Assessment of surface drainage for large-scale PV parks in compliance with water management regulations. Evaluation of possible environmental risks and development of preventive measures according to current environmental guidelines.",
+      accentColor: 'border-l-teal-600' // #0d9488
     },
     {
       title: isGerman 
@@ -44,7 +48,8 @@ const RenewableEnergy = () => {
       icon: <FileText className="w-12 h-12 text-geoblue-800" />,
       description: isGerman
         ? "Frühzeitige Identifikation regionaler Genehmigungsanforderungen für erneuerbare Energieprojekte. Erstellung geotechnischer Dokumentation gemäß BImSchG, EEG und länderspezifischen Bauvorschriften. Unterstützung bei Standortnachweisen, Flächennutzungsplänen und behördlichen Anforderungen für Eingriffs-Ausgleichs-Regelungen."
-        : "Early identification of regional approval requirements for renewable energy projects. Preparation of geotechnical documentation in accordance with federal emission control regulations, renewable energy laws, and state-specific building codes. Support with site verifications, land use plans, and official requirements for intervention-compensation regulations."
+        : "Early identification of regional approval requirements for renewable energy projects. Preparation of geotechnical documentation in accordance with federal emission control regulations, renewable energy laws, and state-specific building codes. Support with site verifications, land use plans, and official requirements for intervention-compensation regulations.",
+      accentColor: 'border-l-teal-600' // #0d9488
     },
     {
       title: isGerman 
@@ -53,7 +58,8 @@ const RenewableEnergy = () => {
       icon: <Cpu className="w-12 h-12 text-geoblue-800" />,
       description: isGerman
         ? "Einsatz moderner KI-Algorithmen zur Analyse umfangreicher geologischer Datenbanken und historischer Bohrprofile. Präzise Einschätzung der Bohrtiefen und erforderlichen Erkundungsmaßnahmen für Erdwärmesonden. Optimierung des Erkundungsprogramms für großflächige Anlagen bei gleichzeitiger Reduzierung der Erkundungskosten."
-        : "Use of modern AI algorithms to analyze extensive geological databases and historical drilling profiles. Precise estimation of drilling depths and required exploration measures for geothermal probes. Optimization of the exploration program for large-scale facilities while reducing exploration costs."
+        : "Use of modern AI algorithms to analyze extensive geological databases and historical drilling profiles. Precise estimation of drilling depths and required exploration measures for geothermal probes. Optimization of the exploration program for large-scale facilities while reducing exploration costs.",
+      accentColor: 'border-l-teal-600' // #0d9488
     }
   ];
 
@@ -91,7 +97,7 @@ const RenewableEnergy = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
             {advantages.map((advantage, index) => (
-              <div key={index} className="bg-white rounded-lg p-6 shadow-md">
+              <div key={index} className={`bg-geolight rounded-lg p-6 shadow-md border border-gray-100 hover:border-geoblue-800 transition-all duration-300 border-l-4 ${advantage.accentColor}`}>
                 <div className="flex flex-col items-center mb-4">
                   {advantage.icon}
                 </div>
@@ -121,3 +127,4 @@ const RenewableEnergy = () => {
 };
 
 export default RenewableEnergy;
+

@@ -1,4 +1,5 @@
 
+
 import { useLanguage } from '@/context/LanguageContext';
 import { Link } from 'react-router-dom';
 import { 
@@ -20,35 +21,40 @@ const WaterConstruction = () => {
       title: language === 'de' ? "Spezialanalyse für wasserbelastete Bauwerke" : "Specialized Analysis for Water-exposed Structures",
       description: language === 'de' 
         ? "Detaillierte Beurteilung der Bodeneigenschaften unter hydraulischer Belastung und wechselnden Wasserständen. Bewertung von Durchströmungs- und Erosionsrisiken bei Deichen, Dämmen und Uferbefestigungen. Analyse der Stabilität von Bauwerken unter Einfluss von Strömung, Wellen und Tide."
-        : "Detailed assessment of soil properties under hydraulic loading and changing water levels. Evaluation of seepage and erosion risks for dikes, dams, and bank protection. Analysis of structure stability under the influence of currents, waves, and tides."
+        : "Detailed assessment of soil properties under hydraulic loading and changing water levels. Evaluation of seepage and erosion risks for dikes, dams, and bank protection. Analysis of structure stability under the influence of currents, waves, and tides.",
+      accentColor: 'border-l-purple-600' // #9333ea
     },
     {
       icon: <Droplets className="h-12 w-12 text-geoblue-800" />,
       title: language === 'de' ? "Hydraulische Barrieren und Dichtungssysteme" : "Hydraulic Barriers and Sealing Systems",
       description: language === 'de' 
         ? "Beurteilung natürlicher geologischer Barrieren und ihrer Dichtungseigenschaften. Bewertung von Untergrundabdichtungen und Dichtungswänden gemäß DIN 19712. Empfehlungen für technische Dichtungssysteme unter Berücksichtigung standortspezifischer Randbedingungen und DWA-Merkblätter."
-        : "Assessment of natural geological barriers and their sealing properties. Evaluation of underground sealing and cut-off walls according to DIN 19712. Recommendations for technical sealing systems considering site-specific conditions and DWA guidelines."
+        : "Assessment of natural geological barriers and their sealing properties. Evaluation of underground sealing and cut-off walls according to DIN 19712. Recommendations for technical sealing systems considering site-specific conditions and DWA guidelines.",
+      accentColor: 'border-l-purple-600' // #9333ea
     },
     {
       icon: <ShipWheel className="h-12 w-12 text-geoblue-800" />,
       title: language === 'de' ? "Küsten- und Hafentechnische Analysen" : "Coastal and Harbor Technical Analyses",
       description: language === 'de' 
         ? "Standsicherheitsberechnungen für Kaianlagen, Molen und Wellenschutzbauten. Bewertung von Baugrundverhältnissen im Übergangsbereich Land-Wasser und in maritimen Sedimenten. Einschätzung von Einbringmöglichkeiten für Spundwände, Pfähle und Offshore-Gründungen gemäß EAU (Empfehlungen des Arbeitsausschusses Ufereinfassungen)."
-        : "Stability calculations for quay structures, breakwaters, and wave protection structures. Assessment of subsoil conditions in the land-water transition zone and in maritime sediments. Evaluation of installation possibilities for sheet piles, piles, and offshore foundations according to EAU (Recommendations of the Committee for Waterfront Structures)."
+        : "Stability calculations for quay structures, breakwaters, and wave protection structures. Assessment of subsoil conditions in the land-water transition zone and in maritime sediments. Evaluation of installation possibilities for sheet piles, piles, and offshore foundations according to EAU (Recommendations of the Committee for Waterfront Structures).",
+      accentColor: 'border-l-purple-600' // #9333ea
     },
     {
       icon: <CloudRain className="h-12 w-12 text-geoblue-800" />,
       title: language === 'de' ? "Hochwasserschutz und Klimaanpassung" : "Flood Protection and Climate Adaptation",
       description: language === 'de' 
         ? "Ganzheitliche Betrachtung von Baugrundverhältnissen im Kontext des Hochwasserschutzes. Beurteilung der Klimaresilienz wasserbaulicher Anlagen unter Berücksichtigung zukünftiger Extremereignisse. Entwicklung angepasster geotechnischer Lösungen für nachhaltige Hochwasserschutzsysteme gemäß aktueller DIN-Normen und DWA-Regelwerke."
-        : "Holistic consideration of subsoil conditions in the context of flood protection. Assessment of climate resilience of hydraulic structures considering future extreme events. Development of adapted geotechnical solutions for sustainable flood protection systems according to current DIN standards and DWA regulations."
+        : "Holistic consideration of subsoil conditions in the context of flood protection. Assessment of climate resilience of hydraulic structures considering future extreme events. Development of adapted geotechnical solutions for sustainable flood protection systems according to current DIN standards and DWA regulations.",
+      accentColor: 'border-l-purple-600' // #9333ea
     },
     {
       icon: <Radar className="h-12 w-12 text-geoblue-800" />,
       title: language === 'de' ? "KI-gestützte Prognose hydrologischer Wechselwirkungen" : "AI-supported Prediction of Hydrological Interactions",
       description: language === 'de' 
         ? "Einsatz moderner KI-Algorithmen zur Analyse komplexer Wechselwirkungen zwischen Baugrund und Grund-/Oberflächenwasser. Präzise Vorhersage von Sickerwegen und Grundwasserströmungen durch digitale 3D-Modellierung. Optimierung von Erkundungsprogrammen unter Einbeziehung historischer Wasserstands- und Pegelbeobachtungen."
-        : "Use of modern AI algorithms to analyze complex interactions between subsoil and ground/surface water. Precise prediction of seepage paths and groundwater flows through digital 3D modeling. Optimization of exploration programs incorporating historical water level and gauge observations."
+        : "Use of modern AI algorithms to analyze complex interactions between subsoil and ground/surface water. Precise prediction of seepage paths and groundwater flows through digital 3D modeling. Optimization of exploration programs incorporating historical water level and gauge observations.",
+      accentColor: 'border-l-purple-600' // #9333ea
     }
   ];
 
@@ -82,7 +88,7 @@ const WaterConstruction = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
             {advantageItems.map((item, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-md border border-gray-100 hover:border-geoblue-800 transition-all duration-300">
+              <div key={index} className={`bg-geolight p-6 rounded-lg shadow-md border border-gray-100 hover:border-geoblue-800 transition-all duration-300 border-l-4 ${item.accentColor}`}>
                 <div className="flex flex-col md:flex-row items-center md:items-start gap-4">
                   <div className="shrink-0">
                     {item.icon}
@@ -115,3 +121,4 @@ const WaterConstruction = () => {
 };
 
 export default WaterConstruction;
+

@@ -1,4 +1,5 @@
 
+
 import { useLanguage } from '@/context/LanguageContext';
 import { Link } from 'react-router-dom';
 import { 
@@ -20,35 +21,40 @@ const InfrastructureConstruction = () => {
       title: language === 'de' ? "Umfassende Risikobewertung für lineare Bauwerke" : "Comprehensive Risk Assessment for Linear Structures",
       description: language === 'de' 
         ? "Analyse von Baugrundverhältnissen über lange Strecken mit Identifikation kritischer Bereiche. Bewertung von Streckenverläufen hinsichtlich geologischer Risiken wie Störungszonen, Rutschungen oder Setzungsbereiche. Früherkennung von Bereichen mit erhöhtem Erkundungsbedarf."
-        : "Analysis of subsoil conditions over long distances with identification of critical areas. Evaluation of route alignments for geological risks such as fault zones, landslides, or settlement areas. Early detection of areas requiring increased investigation."
+        : "Analysis of subsoil conditions over long distances with identification of critical areas. Evaluation of route alignments for geological risks such as fault zones, landslides, or settlement areas. Early detection of areas requiring increased investigation.",
+      accentColor: 'border-l-green-600' // #059669
     },
     {
       icon: <Droplets className="h-12 w-12 text-geoblue-800" />,
       title: language === 'de' ? "Hydrologische Gefahrenanalyse" : "Hydrological Hazard Analysis",
       description: language === 'de' 
         ? "Detaillierte Untersuchung der Grundwasserverhältnisse und oberflächennahen Wasserläufe. Bewertung von Hochwasserrisiken und Drainage-Erfordernissen. Planung notwendiger Wasserhaltungsmaßnahmen während der Bauphase unter Berücksichtigung saisonaler Schwankungen."
-        : "Detailed investigation of groundwater conditions and near-surface watercourses. Assessment of flood risks and drainage requirements. Planning of necessary water management measures during the construction phase, considering seasonal fluctuations."
+        : "Detailed investigation of groundwater conditions and near-surface watercourses. Assessment of flood risks and drainage requirements. Planning of necessary water management measures during the construction phase, considering seasonal fluctuations.",
+      accentColor: 'border-l-green-600' // #059669
     },
     {
       icon: <Award className="h-12 w-12 text-geoblue-800" />,
       title: language === 'de' ? "Optimierung nach technischen Standards" : "Optimization according to Technical Standards",
       description: language === 'de' 
         ? "Berücksichtigung aller relevanten Eurocodes (insb. EC 7) und DIN-Normen für Verkehrswegebau. Beachtung der ZTV E-StB, RStO und anderer Regelwerke für Erdbau und Verkehrsanlagen. Anpassung an lokale Baustellenverordnungen und behördliche Auflagen."
-        : "Consideration of all relevant Eurocodes (especially EC 7) and DIN standards for transport infrastructure. Compliance with ZTV E-StB, RStO, and other regulations for earthworks and transport facilities. Adaptation to local construction site regulations and official requirements."
+        : "Consideration of all relevant Eurocodes (especially EC 7) and DIN standards for transport infrastructure. Compliance with ZTV E-StB, RStO, and other regulations for earthworks and transport facilities. Adaptation to local construction site regulations and official requirements.",
+      accentColor: 'border-l-green-600' // #059669
     },
     {
       icon: <Leaf className="h-12 w-12 text-geoblue-800" />,
       title: language === 'de' ? "Umweltrelevante Faktoren und Nachhaltigkeit" : "Environmental Factors and Sustainability",
       description: language === 'de' 
         ? "Identifikation von Umweltrisiken wie Altlasten oder Schadstoffbelastungen entlang der Trasse. Berücksichtigung von Schutzgebieten und ökologisch sensiblen Bereichen. Vorschläge für nachhaltige Bauweisen und Ressourcenschonung bei Aushub und Materialeinsatz."
-        : "Identification of environmental risks such as contaminated sites or pollutants along the route. Consideration of protected areas and ecologically sensitive zones. Suggestions for sustainable construction methods and resource conservation in excavation and material use."
+        : "Identification of environmental risks such as contaminated sites or pollutants along the route. Consideration of protected areas and ecologically sensitive zones. Suggestions for sustainable construction methods and resource conservation in excavation and material use.",
+      accentColor: 'border-l-green-600' // #059669
     },
     {
       icon: <Database className="h-12 w-12 text-geoblue-800" />,
       title: language === 'de' ? "KI-gestützte Optimierung des Erkundungsprogramms" : "AI-supported Optimization of the Investigation Program",
       description: language === 'de' 
         ? "Effiziente Planung von Bohrungen und Sondierungen auf Basis umfangreicher Datenbanken. Reduzierung der Erkundungskosten durch gezielte Positionierung von Aufschlüssen an kritischen Stellen. Erstellung präziser geologischer Längsprofile mit statistisch abgesicherter Interpolation zwischen Aufschlusspunkten."
-        : "Efficient planning of boreholes and soundings based on extensive databases. Reduction of investigation costs through targeted positioning of exploration points at critical locations. Creation of precise geological longitudinal profiles with statistically secured interpolation between exploration points."
+        : "Efficient planning of boreholes and soundings based on extensive databases. Reduction of investigation costs through targeted positioning of exploration points at critical locations. Creation of precise geological longitudinal profiles with statistically secured interpolation between exploration points.",
+      accentColor: 'border-l-green-600' // #059669
     }
   ];
 
@@ -82,7 +88,7 @@ const InfrastructureConstruction = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
             {advantageItems.map((item, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-md border border-gray-100 hover:border-geoblue-800 transition-all duration-300">
+              <div key={index} className={`bg-geolight p-6 rounded-lg shadow-md border border-gray-100 hover:border-geoblue-800 transition-all duration-300 border-l-4 ${item.accentColor}`}>
                 <div className="flex flex-col md:flex-row items-center md:items-start gap-4">
                   <div className="shrink-0">
                     {item.icon}
@@ -115,3 +121,4 @@ const InfrastructureConstruction = () => {
 };
 
 export default InfrastructureConstruction;
+
