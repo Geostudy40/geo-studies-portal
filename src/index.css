@@ -125,13 +125,13 @@
   }
   
   .btn-primary {
-    @apply bg-geoblue-800 hover:bg-geoblue-900 active:bg-geoblue-700 text-white font-semibold rounded-md transition-all duration-300 transform hover:scale-105 active:scale-95;
+    @apply bg-geoblue-800 hover:bg-geoblue-700 active:bg-geoblue-900 text-white font-semibold rounded-md transition-all duration-300 transform hover:scale-105 active:scale-95;
     min-height: 44px;
     padding: 12px 24px;
   }
   
   .btn-secondary {
-    @apply bg-white border border-geoblue-800 text-geoblue-800 hover:bg-geoblue-50 hover:border-geoblue-900 active:bg-geoblue-100 font-semibold rounded-md transition-all duration-300 transform hover:scale-105 active:scale-95;
+    @apply bg-white border border-geoblue-800 text-geoblue-800 hover:bg-geoblue-50 hover:border-geoblue-700 active:bg-geoblue-100 font-semibold rounded-md transition-all duration-300 transform hover:scale-105 active:scale-95;
     min-height: 44px;
     padding: 12px 24px;
   }
@@ -169,7 +169,7 @@
   /* Enhanced form button styles */
   form button[type="submit"],
   form input[type="submit"] {
-    @apply bg-geoblue-800 hover:bg-geoblue-900 active:bg-geoblue-700 text-white font-medium rounded-md transition-all duration-300 transform hover:scale-105 active:scale-95;
+    @apply bg-geoblue-800 hover:bg-geoblue-700 active:bg-geoblue-900 text-white font-medium rounded-md transition-all duration-300 transform hover:scale-105 active:scale-95;
     min-height: 44px;
     padding: 12px 24px;
   }
@@ -185,7 +185,7 @@
   }
 
   .card-shadow {
-    @apply shadow-[0_2px_8px_rgba(30,36,96,0.1)];
+    @apply shadow-[0_2px_8px_rgba(30,58,138,0.1)];
   }
 
   .section-divider {
