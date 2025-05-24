@@ -1,39 +1,15 @@
-
 import { Map, FileText, Cpu, Ruler, BarChart, Building, Database, Microscope } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 import ServiceCard from '@/components/ServiceCard';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import { getServicesData } from '../data/servicesData';
 
 const Services = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   
-  const coreServices = [
-    { 
-      title: t('serviceGeologicalRisk'), 
-      description: t('serviceGeologicalRiskDesc'),
-      icon: <Map size={24} />,
-      detail: t('serviceGeologicalRiskDetail')
-    },
-    { 
-      title: t('serviceAiStudies'), 
-      description: t('serviceAiStudiesDesc'),
-      icon: <Cpu size={24} />,
-      detail: "Unsere KI-gestützten Vorstudien kombinieren Daten aus geologischen Karten, historischen Bohrungen und regionalen Bodendatenbanken, um präzise Vorhersagen über die Bodenbeschaffenheit zu treffen. Diese Methode spart Zeit und Kosten bei der Felduntersuchung."
-    },
-    { 
-      title: t('serviceDrillingOpt'), 
-      description: t('serviceDrillingOptDesc'),
-      icon: <Ruler size={24} />,
-      detail: "Basierend auf unseren Vorstudien entwickeln wir optimierte Pläne für Bohrungen und CPT-Tests. Durch die strategische Platzierung dieser Tests können wir die Anzahl der notwendigen Bohrungen minimieren und gleichzeitig die Qualität der Informationen maximieren."
-    },
-    { 
-      title: t('serviceReports'), 
-      description: t('serviceReportsDesc'),
-      icon: <FileText size={24} />,
-      detail: "Unsere Berichte entsprechen allen relevanten Eurocode- und DIN-Normen und bieten eine solide Grundlage für die weitere Planung. Wir präsentieren die Ergebnisse in einer klaren und verständlichen Form, die direkt in Ihre Planungsprozesse integriert werden kann."
-    },
-  ];
+  const servicesData = getServicesData(language);
+  const coreServices = servicesData;
 
   const additionalServices = [
     { 
