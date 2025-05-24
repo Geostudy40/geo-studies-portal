@@ -63,9 +63,9 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Updated GeoStudys specific colors
+				// Updated GeoStudys specific colors to use RAL 5003 Sapphire Blue
 				geoblue: {
-					DEFAULT: '#282c34',
+					DEFAULT: '#1e2460', // RAL 5003 Sapphire Blue
 					50: '#f0f5ff',
 					100: '#e5edff',
 					200: '#cddbff',
@@ -74,10 +74,10 @@ export default {
 					500: '#2563eb',
 					600: '#1d4ed8',
 					700: '#1e40af',
-					800: '#282c34',
-					900: '#282c34',
+					800: '#1e2460', // RAL 5003 Sapphire Blue
+					900: '#1a1f54', // Slightly darker variant of RAL 5003
 				},
-				geolight: '#E9ECF5', // Updated from #f9fafb to #E9ECF5
+				geolight: '#E9ECF5', // Keeping the existing light color
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
