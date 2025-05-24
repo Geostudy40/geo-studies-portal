@@ -52,24 +52,6 @@ const IndustrialConstruction = () => {
     }
   ];
 
-  const images = [
-    {
-      src: "https://images.unsplash.com/photo-1565949173209-1201c8e1b031?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80",
-      alt: language === 'de' ? "Industrieanlage im Bau" : "Industrial facility under construction",
-      caption: language === 'de' ? "Geotechnische Analysen für optimale Fundamentierung von Industriehallen" : "Geotechnical analyses for optimal foundation of industrial halls"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1544981037-65e282f9f023?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80",
-      alt: language === 'de' ? "Logistikzentrum" : "Logistics center",
-      caption: language === 'de' ? "Präzise Baugrundmodelle für großflächige Logistikanlagen" : "Precise ground models for large-scale logistics facilities"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1488972685288-c3fd157d7c7a?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80",
-      alt: language === 'de' ? "Industriepark" : "Industrial park",
-      caption: language === 'de' ? "Standortoptimierung für Industrieparks mit komplexen Anforderungen" : "Site optimization for industrial parks with complex requirements"
-    }
-  ];
-
   return (
     <div className="bg-[#E9ECF5] min-h-screen">
       <div className="container-custom py-16 md:py-24">
@@ -116,41 +98,6 @@ const IndustrialConstruction = () => {
                 </div>
               </div>
             ))}
-          </div>
-          
-          <h2 className="text-2xl md:text-3xl font-semibold text-geoblue-800 mb-8">
-            {language === 'de' ? 'Einblicke in unsere Projekte' : 'Insights into our Projects'}
-          </h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-            {images.map((image, index) => (
-              <div key={index} className="bg-white rounded-lg overflow-hidden shadow-md">
-                <img 
-                  src={image.src} 
-                  alt={image.alt} 
-                  className="w-full h-56 object-cover"
-                />
-                <p className="p-4 text-sm text-gray-600 italic">
-                  {image.caption}
-                </p>
-              </div>
-            ))}
-          </div>
-          
-          <div className="bg-white rounded-lg p-8 mb-16 shadow-md">
-            <h2 className="text-2xl font-semibold text-geoblue-800 mb-4">
-              {language === 'de' ? 'Fallbeispiel: Optimierung eines Logistikzentrums auf heterogenem Baugrund' : 'Case Study: Optimization of a Logistics Center on Heterogeneous Subsoil'}
-            </h2>
-            <p className="text-gray-700 mb-4">
-              {language === 'de' 
-                ? 'Bei der Planung eines neuen Logistikzentrums auf einer ehemaligen Industriefläche ergab unsere geotechnische Vorstudie, dass der Baugrund sehr heterogen war, mit tragfähigen Bereichen im Westen und weichen, kompressiblen Schichten im Osten der Fläche.'
-                : 'During the planning of a new logistics center on a former industrial site, our geotechnical preliminary study revealed that the subsoil was very heterogeneous, with load-bearing areas in the west and soft, compressible layers in the east of the area.'}
-            </p>
-            <p className="text-gray-700">
-              {language === 'de'
-                ? 'Auf Basis unserer Analysen wurde das Gebäudelayout angepasst, um Schwerlastbereiche auf den tragfähigeren Untergrund zu verlegen. Für die östlichen Gebäudeteile empfahlen wir eine angepasste Gründungslösung. Diese frühzeitige Optimierung sparte dem Bauherrn etwa 20% der ursprünglich veranschlagten Gründungskosten und verkürzte die Bauzeit um mehrere Wochen.'
-                : 'Based on our analyses, the building layout was adjusted to relocate heavy-load areas to the more load-bearing subsoil. For the eastern parts of the building, we recommended an adapted foundation solution. This early optimization saved the client about 20% of the originally estimated foundation costs and shortened the construction time by several weeks.'}
-            </p>
           </div>
           
           <div className="flex justify-center mb-16">

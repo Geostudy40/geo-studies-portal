@@ -52,24 +52,6 @@ const InfrastructureConstruction = () => {
     }
   ];
 
-  const images = [
-    {
-      src: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80",
-      alt: language === 'de' ? "Straßenbauprojekt im Bau" : "Road construction project in progress",
-      caption: language === 'de' ? "Geotechnische Analysen für optimierte Trassenführung und Unterbau" : "Geotechnical analyses for optimized route alignment and substructure"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1513828583688-c52646db42da?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80",
-      alt: language === 'de' ? "Brückenbaustelle" : "Bridge construction site",
-      caption: language === 'de' ? "Präzise Untergrundmodelle für sichere Brückenfundamente" : "Precise subsurface models for secure bridge foundations"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1544981037-65e282f9f023?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80",
-      alt: language === 'de' ? "Tunnelbauprojekt" : "Tunnel construction project",
-      caption: language === 'de' ? "Risikominimierung bei anspruchsvollen Tunnelbauprojekten" : "Risk minimization for challenging tunnel construction projects"
-    }
-  ];
-
   return (
     <div className="bg-[#E9ECF5] min-h-screen">
       <div className="container-custom py-16 md:py-24">
@@ -116,41 +98,6 @@ const InfrastructureConstruction = () => {
                 </div>
               </div>
             ))}
-          </div>
-          
-          <h2 className="text-2xl md:text-3xl font-semibold text-geoblue-800 mb-8">
-            {language === 'de' ? 'Einblicke in unsere Projekte' : 'Insights into our Projects'}
-          </h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-            {images.map((image, index) => (
-              <div key={index} className="bg-white rounded-lg overflow-hidden shadow-md">
-                <img 
-                  src={image.src} 
-                  alt={image.alt} 
-                  className="w-full h-56 object-cover"
-                />
-                <p className="p-4 text-sm text-gray-600 italic">
-                  {image.caption}
-                </p>
-              </div>
-            ))}
-          </div>
-          
-          <div className="bg-white rounded-lg p-8 mb-16 shadow-md">
-            <h2 className="text-2xl font-semibold text-geoblue-800 mb-4">
-              {language === 'de' ? 'Fallbeispiel: Optimierung einer Trassenführung durch geotechnische Vorerkundung' : 'Case Study: Optimization of Route Alignment through Geotechnical Preliminary Investigation'}
-            </h2>
-            <p className="text-gray-700 mb-4">
-              {language === 'de' 
-                ? 'Bei einem Straßenbauprojekt in den Alpen sollte eine neue Verbindungsstraße durch ein geologisch komplexes Gebiet geführt werden. Unsere geotechnische Vorstudie identifizierte einen bisher unbekannten Bereich mit Rutschungsgefahr und einer Störungszone im geplanten Trassenverlauf.'
-                : 'In a road construction project in the Alps, a new connecting road was to be built through a geologically complex area. Our geotechnical preliminary study identified a previously unknown area with landslide risk and a fault zone in the planned route alignment.'}
-            </p>
-            <p className="text-gray-700">
-              {language === 'de'
-                ? 'Durch die Anpassung der Trassenführung und gezielte Bohrungen im kritischen Bereich konnten spätere Hangsicherungsmaßnahmen minimiert werden. Die ursprünglich geplanten Kosten wurden um etwa 15% reduziert, und die Bauzeit verkürzte sich um mehrere Wochen, da keine aufwändigen Nachbesserungen erforderlich waren.'
-                : 'By adjusting the route alignment and targeted drilling in the critical area, subsequent slope stabilization measures could be minimized. The originally planned costs were reduced by approximately 15%, and the construction time was shortened by several weeks, as no elaborate improvements were necessary.'}
-            </p>
           </div>
           
           <div className="flex justify-center mb-16">

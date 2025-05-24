@@ -52,24 +52,6 @@ const ResidentialConstruction = () => {
     }
   ];
 
-  const images = [
-    {
-      src: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80",
-      alt: language === 'de' ? "Wohnungsbau im Bauzustand" : "Residential construction in building phase",
-      caption: language === 'de' ? "Optimierte Gründungslösungen für mehrstöckige Wohngebäude" : "Optimized foundation solutions for multi-story residential buildings"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1518005020951-eccb494ad742?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80",
-      alt: language === 'de' ? "Baugrube für Wohnungskomplex" : "Construction pit for residential complex",
-      caption: language === 'de' ? "Umfassende Baugrundanalyse für sichere Baugruben" : "Comprehensive ground analysis for safe construction pits"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1459767129954-1b1c1f9b9ace?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80",
-      alt: language === 'de' ? "Hochhaus-Baustelle" : "High-rise construction site",
-      caption: language === 'de' ? "Geotechnische Untersuchungen für Hochbauprojekte" : "Geotechnical investigations for building construction projects"
-    }
-  ];
-
   return (
     <div className="bg-[#E9ECF5] min-h-screen">
       <div className="container-custom py-16 md:py-24">
@@ -116,41 +98,6 @@ const ResidentialConstruction = () => {
                 </div>
               </div>
             ))}
-          </div>
-          
-          <h2 className="text-2xl md:text-3xl font-semibold text-geoblue-800 mb-8">
-            {language === 'de' ? 'Einblicke in unsere Projekte' : 'Insights into our Projects'}
-          </h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-            {images.map((image, index) => (
-              <div key={index} className="bg-white rounded-lg overflow-hidden shadow-md">
-                <img 
-                  src={image.src} 
-                  alt={image.alt} 
-                  className="w-full h-56 object-cover"
-                />
-                <p className="p-4 text-sm text-gray-600 italic">
-                  {image.caption}
-                </p>
-              </div>
-            ))}
-          </div>
-          
-          <div className="bg-white rounded-lg p-8 mb-16 shadow-md">
-            <h2 className="text-2xl font-semibold text-geoblue-800 mb-4">
-              {language === 'de' ? 'Fallbeispiel: Wohnanlage mit herausforderndem Baugrund' : 'Case Study: Residential Complex with Challenging Ground Conditions'}
-            </h2>
-            <p className="text-gray-700 mb-4">
-              {language === 'de' 
-                ? 'Bei einem Wohnungsbauprojekt in München sollten vier Mehrfamilienhäuser auf einem Grundstück mit stark heterogenem Baugrund errichtet werden. Unsere geotechnische Vorstudie identifizierte einen bisher unbekannten ehemaligen Bachverlauf und eine Torflinse, die punktuell zu erheblichen Setzungsproblemen geführt hätten.'
-                : 'In a residential construction project in Munich, four apartment buildings were to be built on a plot with highly heterogeneous ground. Our geotechnical preliminary study identified a previously unknown former stream course and a peat lens, which would have led to significant settlement problems in specific areas.'}
-            </p>
-            <p className="text-gray-700">
-              {language === 'de'
-                ? 'Durch die Anpassung der Gebäudeposition und eine gezielte Tiefgründung im betroffenen Bereich konnten Mehrkosten von über 200.000 € vermieden werden. Die Bauzeit verkürzte sich um 3 Wochen, da keine nachträglichen Planungsänderungen erforderlich waren.'
-                : 'By adjusting the building position and implementing targeted deep foundation in the affected area, additional costs of over €200,000 were avoided. The construction time was reduced by 3 weeks, as no subsequent planning changes were required.'}
-            </p>
           </div>
           
           <div className="flex justify-center mb-16">

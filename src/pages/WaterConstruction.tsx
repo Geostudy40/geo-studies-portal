@@ -52,24 +52,6 @@ const WaterConstruction = () => {
     }
   ];
 
-  const images = [
-    {
-      src: "https://images.unsplash.com/photo-1433086966358-54859d0ed716?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80",
-      alt: language === 'de' ? "Dammbau-Projekt mit Wasserkraftanlage" : "Dam construction project with hydropower plant",
-      caption: language === 'de' ? "Geotechnische Sicherheitsanalysen für optimale Dammkonstruktionen" : "Geotechnical safety analyses for optimal dam constructions"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1482938289607-e9573fc25ebb?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80",
-      alt: language === 'de' ? "Flussufer-Sicherungsmaßnahmen" : "River bank protection measures",
-      caption: language === 'de' ? "Erosionsschutz durch präzise Baugrundanalyse" : "Erosion protection through precise subsoil analysis"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80",
-      alt: language === 'de' ? "Renaturierungsprojekt an Gewässern" : "Watercourse renaturation project",
-      caption: language === 'de' ? "Nachhaltige wasserbauliche Maßnahmen mit geotechnischer Optimierung" : "Sustainable hydraulic engineering measures with geotechnical optimization"
-    }
-  ];
-
   return (
     <div className="bg-[#E9ECF5] min-h-screen">
       <div className="container-custom py-16 md:py-24">
@@ -116,41 +98,6 @@ const WaterConstruction = () => {
                 </div>
               </div>
             ))}
-          </div>
-          
-          <h2 className="text-2xl md:text-3xl font-semibold text-geoblue-800 mb-8">
-            {language === 'de' ? 'Einblicke in unsere Projekte' : 'Insights into our Projects'}
-          </h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-            {images.map((image, index) => (
-              <div key={index} className="bg-white rounded-lg overflow-hidden shadow-md">
-                <img 
-                  src={image.src} 
-                  alt={image.alt} 
-                  className="w-full h-56 object-cover"
-                />
-                <p className="p-4 text-sm text-gray-600 italic">
-                  {image.caption}
-                </p>
-              </div>
-            ))}
-          </div>
-          
-          <div className="bg-white rounded-lg p-8 mb-16 shadow-md">
-            <h2 className="text-2xl font-semibold text-geoblue-800 mb-4">
-              {language === 'de' ? 'Fallbeispiel: Optimierung eines Deichsanierungsprojekts' : 'Case Study: Optimization of a Dike Rehabilitation Project'}
-            </h2>
-            <p className="text-gray-700 mb-4">
-              {language === 'de' 
-                ? 'Bei einem Deichsanierungsprojekt an der Nordseeküste wurde durch unsere geotechnische Vorstudie eine komplexe Bodenschichtung mit eingeschalteten Torfflächen und Sandbändern identifiziert. Diese hätte bei konventioneller Deichertüchtigung zu erheblichen Setzungen und Stabilitätsproblemen geführt.'
-                : 'In a dike rehabilitation project on the North Sea coast, our geotechnical preliminary study identified a complex soil layering with interspersed peat areas and sand bands. This would have led to significant settlements and stability problems with conventional dike reinforcement.'}
-            </p>
-            <p className="text-gray-700">
-              {language === 'de'
-                ? 'Auf Basis unserer Analysen wurde ein angepasstes Sanierungskonzept mit vertikalen Dräns und kontrollierten Bodenverbesserungsmaßnahmen entwickelt. Dadurch konnten die Baukosten um etwa 30% reduziert und die Bauzeit um mehrere Monate verkürzt werden – bei gleichzeitiger Erhöhung der langfristigen Deichsicherheit gegen Sturmfluten.'
-                : 'Based on our analyses, an adapted rehabilitation concept with vertical drains and controlled soil improvement measures was developed. This reduced construction costs by approximately 30% and shortened the construction time by several months – while simultaneously increasing the long-term dike safety against storm surges.'}
-            </p>
           </div>
           
           <div className="flex justify-center mb-16">
