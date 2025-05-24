@@ -1,4 +1,5 @@
 
+
 import { Map, FileText, Cpu, Ruler, BarChart, Building, Database, Microscope } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 import ServiceCard from '@/components/ServiceCard';
@@ -147,7 +148,7 @@ const Services = () => {
               <div className="flex justify-center mb-4">
                 <BarChart size={48} className="text-white" />
               </div>
-              <h3 className="text-2xl font-semibold mb-4">Spezialisierte CPT-Analyse</h3>
+              <h3 className="text-2xl font-semibold mb-4 text-white">Spezialisierte CPT-Analyse</h3>
               <p className="mb-6 text-lg">
                 KI-gestützte Auswertung von Drucksondierungen nach internationalen Standards
               </p>
@@ -222,3 +223,4 @@ const Services = () => {
 };
 
 export default Services;
+
