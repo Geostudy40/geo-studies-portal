@@ -27,8 +27,16 @@ const Privacy = () => {
               <h3>Datenerfassung auf dieser Website</h3>
               <h4>Wer ist verantwortlich für die Datenerfassung auf dieser Website?</h4>
               <p>
-                Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. Dessen Kontaktdaten 
-                können Sie dem Impressum dieser Website entnehmen.
+                Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber:
+              </p>
+              <p>
+                GeoStudys Consulting<br />
+                Dipl.-Geol. K. Bazrafshan<br />
+                Am Stichkanal 2-4<br />
+                14167 Berlin<br />
+                Deutschland<br />
+                Telefon: +49 157 88 330112<br />
+                E-Mail: info@geostudys.com
               </p>
 
               <h4>Wie erfassen wir Ihre Daten?</h4>
@@ -69,8 +77,16 @@ const Privacy = () => {
               <h3>Data Collection on This Website</h3>
               <h4>Who is responsible for data collection on this website?</h4>
               <p>
-                Data processing on this website is carried out by the website operator. You can find their contact details 
-                in the impressum section of this website.
+                Data processing on this website is carried out by the website operator:
+              </p>
+              <p>
+                GeoStudys Consulting<br />
+                Dipl.-Geol. K. Bazrafshan<br />
+                Am Stichkanal 2-4<br />
+                14167 Berlin<br />
+                Germany<br />
+                Phone: +49 157 88 330112<br />
+                Email: info@geostudys.com
               </p>
 
               <h4>How do we collect your data?</h4>

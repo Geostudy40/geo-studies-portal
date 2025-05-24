@@ -18,29 +18,30 @@ const Terms = () => {
             <>
               <h2>Angaben gemäß § 5 TMG</h2>
               <p>
-                Max Mustermann<br />
-                Musterstraße 123<br />
-                12345 Musterstadt<br />
+                GeoStudys Consulting<br />
+                Dipl.-Geol. K. Bazrafshan<br />
+                Am Stichkanal 2-4<br />
+                14167 Berlin<br />
                 Deutschland
               </p>
 
               <h2>Kontakt</h2>
               <p>
-                Telefon: +49 (0) 123 456789<br />
-                E-Mail: info@geostudy.de
+                Telefon: +49 157 88 330112<br />
+                E-Mail: info@geostudys.com
               </p>
 
               <h2>Umsatzsteuer-ID</h2>
               <p>
                 Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br />
-                DE123456789
+                DE28-219-00987
               </p>
 
               <h2>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
               <p>
-                Max Mustermann<br />
-                Musterstraße 123<br />
-                12345 Musterstadt
+                Dipl.-Geol. K. Bazrafshan<br />
+                Am Stichkanal 2-4<br />
+                14167 Berlin
               </p>
 
               <h2>Streitschlichtung</h2>
@@ -65,29 +66,30 @@ const Terms = () => {
             <>
               <h2>Information according to § 5 TMG</h2>
               <p>
-                Max Mustermann<br />
-                Musterstrasse 123<br />
-                12345 Musterstadt<br />
+                GeoStudys Consulting<br />
+                Dipl.-Geol. K. Bazrafshan<br />
+                Am Stichkanal 2-4<br />
+                14167 Berlin<br />
                 Germany
               </p>
 
               <h2>Contact</h2>
               <p>
-                Phone: +49 (0) 123 456789<br />
-                Email: info@geostudy.de
+                Phone: +49 157 88 330112<br />
+                Email: info@geostudys.com
               </p>
 
               <h2>VAT ID</h2>
               <p>
                 Sales tax identification number according to § 27 a of the Sales Tax Law:<br />
-                DE123456789
+                DE28-219-00987
               </p>
 
               <h2>Responsible for content according to § 55 Abs. 2 RStV</h2>
               <p>
-                Max Mustermann<br />
-                Musterstrasse 123<br />
-                12345 Musterstadt
+                Dipl.-Geol. K. Bazrafshan<br />
+                Am Stichkanal 2-4<br />
+                14167 Berlin
               </p>
 
               <h2>Dispute Resolution</h2>
