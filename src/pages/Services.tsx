@@ -9,7 +9,7 @@ import ProcessSection from '@/components/ProcessSection';
 const Services = () => {
   console.log('[Services] Component loading...');
   
-  const { language } = useLanguage();
+  const { language, t } = useLanguage();
   
   console.log('[Services] Language:', language);
   
@@ -41,7 +41,7 @@ const Services = () => {
       <section className="py-16 bg-white">
         <div className="container-custom">
           <h2 className="section-heading">
-            Unsere Kernleistungen
+            {language === 'de' ? 'Unsere Kernleistungen' : 'Our Core Services'}
           </h2>
           
           {coreServices && coreServices.length > 0 ? (
@@ -56,7 +56,9 @@ const Services = () => {
             ))
           ) : (
             <div className="text-center py-8">
-              <p className="text-gray-600">Dienstleistungen werden geladen...</p>
+              <p className="text-gray-600">
+                {language === 'de' ? 'Dienstleistungen werden geladen...' : 'Services are loading...'}
+              </p>
             </div>
           )}
         </div>
