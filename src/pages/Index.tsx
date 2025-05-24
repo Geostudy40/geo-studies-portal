@@ -7,7 +7,7 @@ import ServiceCard from '@/components/ServiceCard';
 import LegalNotice from '@/components/LegalNotice';
 
 const Index = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   const services = [
     { 
@@ -61,7 +61,7 @@ const Index = () => {
           
           <div className="mt-12 text-center">
             <Link to="/services" className="btn-secondary">
-              Alle Leistungen anzeigen
+              {language === 'de' ? 'Alle Leistungen anzeigen' : 'View All Services'}
             </Link>
           </div>
           
@@ -78,18 +78,34 @@ const Index = () => {
                 {t('aboutTitle')}
               </h2>
               <div className="text-gray-600 space-y-4 mb-8">
-                <p>
-                  Als erfahrene Geologen kombinieren wir traditionelles Fachwissen mit innovativen KI-Technologien, um präzise und kosteneffiziente geotechnische Vorstudien durchzuführen.
-                </p>
-                <p>
-                  Unser interdisziplinäres Experten-Netzwerk vereint Fachleute aus den Bereichen Geologie, Hydrologie, Bauingenieurwesen und Datenanalyse mit 10-25 Jahren Berufserfahrung in Deutschland und anderen europäischen Ländern. Diese moderne Netzwerkstruktur ermöglicht es uns, die Projekte unserer Kunden besonders effizient, normgerecht und kostengünstig voranzutreiben.
-                </p>
-                <p>
-                  Unsere Expertise ermöglicht es uns, potenzielle Risiken frühzeitig zu identifizieren und Lösungen vorzuschlagen, die Zeit und Kosten sparen.
-                </p>
+                {language === 'de' ? (
+                  <>
+                    <p>
+                      Als erfahrene Geologen kombinieren wir traditionelles Fachwissen mit innovativen KI-Technologien, um präzise und kosteneffiziente geotechnische Vorstudien durchzuführen.
+                    </p>
+                    <p>
+                      Unser interdisziplinäres Experten-Netzwerk vereint Fachleute aus den Bereichen Geologie, Hydrologie, Bauingenieurwesen und Datenanalyse mit 10-25 Jahren Berufserfahrung in Deutschland und anderen europäischen Ländern. Diese moderne Netzwerkstruktur ermöglicht es uns, die Projekte unserer Kunden besonders effizient, normgerecht und kostengünstig voranzutreiben.
+                    </p>
+                    <p>
+                      Unsere Expertise ermöglicht es uns, potenzielle Risiken frühzeitig zu identifizieren und Lösungen vorzuschlagen, die Zeit und Kosten sparen.
+                    </p>
+                  </>
+                ) : (
+                  <>
+                    <p>
+                      As experienced geologists, we combine traditional expertise with innovative AI technologies to conduct precise and cost-effective geotechnical preliminary studies.
+                    </p>
+                    <p>
+                      Our interdisciplinary expert network brings together specialists from geology, hydrology, civil engineering and data analysis with 10-25 years of professional experience in Germany and other European countries. This modern network structure enables us to advance our clients' projects particularly efficiently, in compliance with standards and cost-effectively.
+                    </p>
+                    <p>
+                      Our expertise enables us to identify potential risks early and propose solutions that save time and costs.
+                    </p>
+                  </>
+                )}
               </div>
               <Link to="/about" className="btn-primary">
-                Mehr erfahren
+                {language === 'de' ? 'Mehr erfahren' : 'Learn More'}
               </Link>
             </div>
             
@@ -109,10 +125,14 @@ const Index = () => {
         <div className="container-custom">
           <div className="text-center max-w-3xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Bereit, Ihr Bauprojekt zu optimieren?
+              {language === 'de' 
+                ? 'Bereit, Ihr Bauprojekt zu optimieren?' 
+                : 'Ready to Optimize Your Construction Project?'}
             </h2>
             <p className="text-xl mb-8 text-gray-200">
-              Kontaktieren Sie uns noch heute für eine kostenlose Erstberatung zu Ihrem Projekt.
+              {language === 'de'
+                ? 'Kontaktieren Sie uns noch heute für eine kostenlose Erstberatung zu Ihrem Projekt.'
+                : 'Contact us today for a free initial consultation about your project.'}
             </p>
             <Link to="/contact" className="bg-white text-geoblue-800 hover:bg-gray-100 font-semibold py-3 px-8 rounded-md transition-colors duration-300 text-lg">
               {t('cta')}
