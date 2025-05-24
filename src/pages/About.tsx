@@ -31,46 +31,28 @@ const About = () => {
                 Unser Ziel ist es, potenzielle Risiken frühzeitig zu identifizieren und Lösungen vorzuschlagen, die Zeit und Kosten sparen. Wir verstehen, dass jedes Projekt einzigartig ist und bieten daher maßgeschneiderte Lösungen für verschiedene Branchen und Anforderungen.
               </p>
             </div>
-            
-            <div className="rounded-lg overflow-hidden shadow-xl">
-              <img 
-                src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2070&auto=format&fit=crop" 
-                alt="Networking and Collaboration"
-                className="w-full h-auto" 
-              />
-            </div>
           </div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
-            <div className="order-2 lg:order-1 rounded-lg overflow-hidden shadow-xl">
-              <img 
-                src="/geo-studies-portal/lovable-uploads/52e4d531-0cb3-4076-9fbf-e9943b294347.png" 
-                alt="Interdisciplinary Expert Network"
-                className="w-full h-auto" 
-              />
-            </div>
+          <div className="mb-16">
+            <h2 className="text-3xl font-bold text-geoblue-800 mb-6">
+              Unsere Qualifikationen
+            </h2>
+            <p className="text-gray-600 mb-4">
+              Unser Team besteht aus erfahrenen Geologen mit umfassender Ausbildung und jahrelanger Praxis in der geotechnischen Analyse. Wir halten uns stets über die neuesten Entwicklungen und Technologien in unserem Bereich auf dem Laufenden.
+            </p>
+            <p className="text-gray-600 mb-4">
+              Unsere Expertise in der Implementierung von KI-gestützten Analysen ermöglicht es uns, große Mengen geologischer Daten effizient zu verarbeiten und präzise Vorhersagen zu treffen. Alle unsere Berichte entsprechen den aktuellen Eurocode- und DIN-Normen.
+            </p>
             
-            <div className="order-1 lg:order-2">
-              <h2 className="text-3xl font-bold text-geoblue-800 mb-6">
-                Unsere Qualifikationen
-              </h2>
-              <p className="text-gray-600 mb-4">
-                Unser Team besteht aus erfahrenen Geologen mit umfassender Ausbildung und jahrelanger Praxis in der geotechnischen Analyse. Wir halten uns stets über die neuesten Entwicklungen und Technologien in unserem Bereich auf dem Laufenden.
-              </p>
-              <p className="text-gray-600 mb-4">
-                Unsere Expertise in der Implementierung von KI-gestützten Analysen ermöglicht es uns, große Mengen geologischer Daten effizient zu verarbeiten und präzise Vorhersagen zu treffen. Alle unsere Berichte entsprechen den aktuellen Eurocode- und DIN-Normen.
-              </p>
-              
-              <h3 className="text-2xl font-bold text-geoblue-700 mt-8 mb-4">
-                Unser interdisziplinäres Experten-Netzwerk
-              </h3>
-              <p className="text-gray-600 mb-4">
-                Bei GeoStudy arbeiten wir in einer modernen Netzwerkstruktur, die Fachleute aus den Bereichen Geologie, Hydrologie, Bauingenieurwesen und Datenanalyse zusammenbringt. Unsere Spezialisten verfügen über 10 bis 25 Jahre Berufserfahrung in Deutschland und anderen europäischen Ländern und haben sich durch interdisziplinäre Projektarbeit bewährt.
-              </p>
-              <p className="text-gray-600 mb-4">
-                Diese Vernetzung unter einem Dach ermöglicht es uns, die Projekte unserer Kunden besonders effizient, normgerecht und kostengünstig voranzutreiben. Die Kombination aus langjähriger Praxiserfahrung und moderner digitaler Methodik bildet die Grundlage für unsere maßgeschneiderten Lösungen.
-              </p>
-            </div>
+            <h2 className="text-3xl font-bold text-geoblue-800 mt-8 mb-6">
+              Unser interdisziplinäres Experten-Netzwerk
+            </h2>
+            <p className="text-gray-600 mb-4">
+              Bei GeoStudy arbeiten wir in einer modernen Netzwerkstruktur, die Fachleute aus den Bereichen Geologie, Hydrologie, Bauingenieurwesen und Datenanalyse zusammenbringt. Unsere Spezialisten verfügen über 10 bis 25 Jahre Berufserfahrung in Deutschland und anderen europäischen Ländern und haben sich durch interdisziplinäre Projektarbeit bewährt.
+            </p>
+            <p className="text-gray-600 mb-4">
+              Diese Vernetzung unter einem Dach ermöglicht es uns, die Projekte unserer Kunden besonders effizient, normgerecht und kostengünstig voranzutreiben. Die Kombination aus langjähriger Praxiserfahrung und moderner digitaler Methodik bildet die Grundlage für unsere maßgeschneiderten Lösungen.
+            </p>
           </div>
           
           <div className="bg-geolight p-8 rounded-lg shadow-md">
