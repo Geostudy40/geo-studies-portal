@@ -8,7 +8,7 @@ import { LanguageProvider } from "./context/LanguageContext";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import SEO from "./components/SEO";
-import { Suspense, useEffect } from "react";
+import { Suspense, useEffect, useState } from "react";
 
 // Page imports
 import Index from "./pages/Index";
@@ -40,11 +40,32 @@ const queryClient = new QueryClient({
   },
 });
 
+const LoadingFallback = () => (
+  <div className="min-h-screen flex items-center justify-center bg-white">
+    <div className="text-center">
+      <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-geoblue-600 mx-auto mb-4"></div>
+      <p className="text-gray-600">Seite wird geladen...</p>
+    </div>
+  </div>
+);
+
 const App = () => {
+  const [isAppReady, setIsAppReady] = useState(false);
+
   useEffect(() => {
-    console.log("App geladen erfolgreich");
+    console.log("App Component geladen erfolgreich");
+    
+    // Sofortige Markierung als geladen
     document.body.classList.add('app-loaded');
+    setIsAppReady(true);
+    
+    // Log für Debug-Zwecke
+    console.log("App ist bereit, Router wird initialisiert");
   }, []);
+
+  if (!isAppReady) {
+    return <LoadingFallback />;
+  }
 
   return (
     <QueryClientProvider client={queryClient}>
@@ -57,14 +78,7 @@ const App = () => {
             <div className="flex flex-col min-h-screen">
               <Header />
               <main className="flex-grow pt-16">
-                <Suspense fallback={
-                  <div className="min-h-screen flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-geoblue-600 mx-auto mb-4"></div>
-                      <p className="text-gray-600">Seite wird geladen...</p>
-                    </div>
-                  </div>
-                }>
+                <Suspense fallback={<LoadingFallback />}>
                   <Routes>
                     <Route path="/" element={<Index />} />
                     <Route path="/about" element={<About />} />
