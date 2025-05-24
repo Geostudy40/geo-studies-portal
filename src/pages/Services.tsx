@@ -1,3 +1,4 @@
+
 import { Map, FileText, Cpu, Ruler, BarChart, Building, Database, Microscope } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 import ServiceCard from '@/components/ServiceCard';
@@ -61,6 +62,7 @@ const Services = () => {
     
     // Define introductory sentences to highlight (German)
     const germanIntros = [
+      'Unsere geologische und hydrologische Bewertung geplanter Bauvorhaben bildet die Grundlage jeder geotechnischen Vorstudie und umfasst:',
       'Unsere KI-gestützten Leistungen umfassen:',
       'Wir bieten DIN- und Eurocode-konforme Baugrundgutachten und optimierte Erkundungsplanung:',
       'Unsere fachliche Begleitung während der Bauphase bietet praxisnahe Unterstützung:'
@@ -68,6 +70,7 @@ const Services = () => {
     
     // Define introductory sentences to highlight (English)
     const englishIntros = [
+      'Our geological and hydrological assessment of planned construction projects forms the foundation of every geotechnical preliminary study and includes:',
       'Our AI-powered services include:',
       'We provide DIN and Eurocode-compliant geotechnical reports and optimized investigation planning:',
       'Our professional support during construction provides practical assistance:'
