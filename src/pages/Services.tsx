@@ -1,4 +1,3 @@
-
 import { Map, FileText, Cpu, Ruler, BarChart, Building, Database, Microscope } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 import ServiceCard from '@/components/ServiceCard';
@@ -7,10 +6,23 @@ import { Link } from 'react-router-dom';
 import { getServicesData } from '../data/servicesData';
 
 const Services = () => {
+  console.log('[Services] Component loading...');
+  
   const { t, language } = useLanguage();
   
-  const servicesData = getServicesData(language);
-  const coreServices = servicesData;
+  console.log('[Services] Language:', language);
+  
+  let servicesData;
+  let coreServices;
+  
+  try {
+    servicesData = getServicesData(language);
+    coreServices = servicesData;
+    console.log('[Services] Services data loaded successfully:', coreServices.length, 'services');
+  } catch (error) {
+    console.error('[Services] Error loading services data:', error);
+    coreServices = [];
+  }
 
   const additionalServices = [
     { 
@@ -54,45 +66,51 @@ const Services = () => {
             Unsere Kernleistungen
           </h2>
           
-          {coreServices.map((service, index) => (
-            <div key={index} className="mb-16 last:mb-0">
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                <div className={`lg:col-span-5 ${index % 2 === 1 ? 'lg:order-2' : ''}`}>
-                  <div className="bg-geolight p-8 rounded-lg shadow-md border border-gray-100 h-full">
-                    <div className="flex items-center justify-center w-16 h-16 rounded-full bg-geoblue-100 text-geoblue-800 mb-6">
-                      {service.icon}
+          {coreServices && coreServices.length > 0 ? (
+            coreServices.map((service, index) => (
+              <div key={index} className="mb-16 last:mb-0">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                  <div className={`lg:col-span-5 ${index % 2 === 1 ? 'lg:order-2' : ''}`}>
+                    <div className="bg-geolight p-8 rounded-lg shadow-md border border-gray-100 h-full">
+                      <div className="flex items-center justify-center w-16 h-16 rounded-full bg-geoblue-100 text-geoblue-800 mb-6">
+                        {service.icon}
+                      </div>
+                      <h3 className="heading-secondary">{service.title}</h3>
+                      <div 
+                        className="text-gray-600 mb-4"
+                        dangerouslySetInnerHTML={{ __html: service.description || '' }}
+                      />
                     </div>
-                    <h3 className="heading-secondary">{service.title}</h3>
-                    <p 
-                      className="text-gray-600 mb-4"
-                      dangerouslySetInnerHTML={{ __html: service.description }}
-                    />
-                  </div>
-                </div>
-                
-                <div className={`lg:col-span-7 ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
-                  <h3 className="heading-secondary">Detaillierte Beschreibung</h3>
-                  <p 
-                    className="text-gray-600 mb-4 whitespace-pre-line"
-                    dangerouslySetInnerHTML={{ __html: service.detail }}
-                  />
-                  <div className="bg-geoblue-50 border-l-4 border-geoblue-800 p-4 mb-6">
-                    <p className="text-gray-700 italic">
-                      "Unsere {service.title} bietet eine solide Grundlage für kosteneffiziente und sichere Bauprojekte."
-                    </p>
                   </div>
                   
-                  {index === 0 && (
-                    <div className="mt-6">
-                      <Button asChild className="bg-geoblue-800 hover:bg-geoblue-900">
-                        <Link to="/contact">{t('contactForConsultation')}</Link>
-                      </Button>
+                  <div className={`lg:col-span-7 ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
+                    <h3 className="heading-secondary">Detaillierte Beschreibung</h3>
+                    <div 
+                      className="text-gray-600 mb-4"
+                      dangerouslySetInnerHTML={{ __html: service.detail || '' }}
+                    />
+                    <div className="bg-geoblue-50 border-l-4 border-geoblue-800 p-4 mb-6">
+                      <p className="text-gray-700 italic">
+                        "Unsere {service.title} bietet eine solide Grundlage für kosteneffiziente und sichere Bauprojekte."
+                      </p>
                     </div>
-                  )}
+                    
+                    {index === 0 && (
+                      <div className="mt-6">
+                        <Button asChild className="bg-geoblue-800 hover:bg-geoblue-900">
+                          <Link to="/contact">{t('contactForConsultation')}</Link>
+                        </Button>
+                      </div>
+                    )}
+                  </div>
                 </div>
               </div>
+            ))
+          ) : (
+            <div className="text-center py-8">
+              <p className="text-gray-600">Dienstleistungen werden geladen...</p>
             </div>
-          ))}
+          )}
         </div>
       </section>
       
