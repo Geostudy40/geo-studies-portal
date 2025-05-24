@@ -1,3 +1,4 @@
+
 import { Map, FileText, Cpu, Ruler, BarChart, Building, Database, Microscope } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 import ServiceCard from '@/components/ServiceCard';
@@ -62,13 +63,19 @@ const Services = () => {
                       {service.icon}
                     </div>
                     <h3 className="heading-secondary">{service.title}</h3>
-                    <p className="text-gray-600 mb-4">{service.description}</p>
+                    <p 
+                      className="text-gray-600 mb-4"
+                      dangerouslySetInnerHTML={{ __html: service.description }}
+                    />
                   </div>
                 </div>
                 
                 <div className={`lg:col-span-7 ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
                   <h3 className="heading-secondary">Detaillierte Beschreibung</h3>
-                  <p className="text-gray-600 mb-4 whitespace-pre-line">{service.detail}</p>
+                  <p 
+                    className="text-gray-600 mb-4 whitespace-pre-line"
+                    dangerouslySetInnerHTML={{ __html: service.detail }}
+                  />
                   <div className="bg-geoblue-50 border-l-4 border-geoblue-800 p-4 mb-6">
                     <p className="text-gray-700 italic">
                       "Unsere {service.title} bietet eine solide Grundlage für kosteneffiziente und sichere Bauprojekte."
