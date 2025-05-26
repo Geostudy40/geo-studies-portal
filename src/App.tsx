@@ -8,7 +8,7 @@ import { LanguageProvider } from "./context/LanguageContext";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import SEO from "./components/SEO";
-import { Suspense, useEffect, useState } from "react";
+import { Suspense } from "react";
 
 // Page imports
 import Index from "./pages/Index";
@@ -50,22 +50,7 @@ const LoadingFallback = () => (
 );
 
 const App = () => {
-  const [isAppReady, setIsAppReady] = useState(false);
-
-  useEffect(() => {
-    console.log("App Component geladen erfolgreich");
-    
-    // Sofortige Markierung als geladen
-    document.body.classList.add('app-loaded');
-    setIsAppReady(true);
-    
-    // Log für Debug-Zwecke
-    console.log("App ist bereit, Router wird initialisiert");
-  }, []);
-
-  if (!isAppReady) {
-    return <LoadingFallback />;
-  }
+  console.log("App Component wird gerendert");
 
   return (
     <QueryClientProvider client={queryClient}>
