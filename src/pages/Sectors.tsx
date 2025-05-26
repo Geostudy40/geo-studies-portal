@@ -8,7 +8,7 @@ const Sectors = () => {
 
   const sectors = [
     { 
-      title: t('sectorResidential'), 
+      title: language === 'de' ? 'Wohnungs- und Hochbau' : 'Residential and Building Construction', 
       path: '/residential-construction',
       icon: <Building2 className="w-12 h-12 text-geoblue-800" />,
       description: language === 'de' ? 
@@ -17,7 +17,7 @@ const Sectors = () => {
       accentColor: 'border-l-blue-700' // #1e40af
     },
     { 
-      title: t('sectorInfrastructure'), 
+      title: language === 'de' ? 'Infrastruktur und Verkehrsbau' : 'Infrastructure and Transportation', 
       path: '/infrastructure-construction',
       icon: <Route className="w-12 h-12 text-geoblue-800" />,
       description: language === 'de' ?
@@ -26,7 +26,7 @@ const Sectors = () => {
       accentColor: 'border-l-green-600' // #059669
     },
     { 
-      title: t('sectorIndustrial'), 
+      title: language === 'de' ? 'Industrieanlagen und Logistik' : 'Industrial Facilities and Logistics', 
       path: '/industrial-construction',
       icon: <Factory className="w-12 h-12 text-geoblue-800" />,
       description: language === 'de' ?
@@ -35,7 +35,7 @@ const Sectors = () => {
       accentColor: 'border-l-orange-600' // #ea580c
     },
     { 
-      title: t('sectorWater'), 
+      title: language === 'de' ? 'Wasserbau und Wasserwirtschaft' : 'Hydraulic Engineering and Water Management', 
       path: '/water-construction',
       icon: <Droplets className="w-12 h-12 text-geoblue-800" />,
       description: language === 'de' ?
@@ -44,7 +44,7 @@ const Sectors = () => {
       accentColor: 'border-l-purple-600' // #9333ea
     },
     { 
-      title: t('sectorRenewable'), 
+      title: language === 'de' ? 'Erneuerbare Energien' : 'Renewable Energy', 
       path: '/renewable-energy',
       icon: <Wind className="w-12 h-12 text-geoblue-800" />,
       description: language === 'de' ?
@@ -59,8 +59,15 @@ const Sectors = () => {
       <section className="bg-geoblue-800 text-white py-20">
         <div className="container-custom">
           <div className="text-center">
-            <h1 className="heading-primary-light">{t('sectorsTitle')}</h1>
-            <p className="text-xl max-w-3xl mx-auto">{t('sectorsSubtitle')}</p>
+            <h1 className="heading-primary-light">
+              {language === 'de' ? 'Fachgebiete' : 'Fields of Expertise'}
+            </h1>
+            <p className="text-xl max-w-3xl mx-auto">
+              {language === 'de' ? 
+                'Unsere geotechnischen Vorstudien sind speziell auf die Anforderungen verschiedener Bauvorhaben zugeschnitten. Wählen Sie Ihre Branche, um mehr über die spezifischen Vorteile und Leistungen zu erfahren, die wir für Ihr Projekt bieten können.' :
+                'Our geotechnical preliminary studies are tailored to the requirements of various construction projects. Choose your sector to learn more about the specific benefits and services we can offer for your project.'
+              }
+            </p>
           </div>
         </div>
       </section>
@@ -68,10 +75,13 @@ const Sectors = () => {
       <div className="container-custom py-16 md:py-24">
         <div className="text-center mb-16">
           <h1 className="text-3xl md:text-4xl font-bold text-geoblue-800 mb-6">
-            {t('sectorsTitle')}
+            {language === 'de' ? 'Fachgebiete' : 'Fields of Expertise'}
           </h1>
           <p className="text-gray-600 max-w-3xl mx-auto">
-            {t('sectorsSubtitle')}
+            {language === 'de' ? 
+              'Unsere geotechnischen Vorstudien sind speziell auf die Anforderungen verschiedener Bauvorhaben zugeschnitten. Wählen Sie Ihre Branche, um mehr über die spezifischen Vorteile und Leistungen zu erfahren, die wir für Ihr Projekt bieten können.' :
+              'Our geotechnical preliminary studies are tailored to the requirements of various construction projects. Choose your sector to learn more about the specific benefits and services we can offer for your project.'
+            }
           </p>
         </div>
 
