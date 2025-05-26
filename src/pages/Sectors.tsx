@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { Building2, Route, Factory, Droplets, Wind } from 'lucide-react';
 
 const Sectors = () => {
-  const { t, language } = useLanguage();
+  const { language } = useLanguage();
 
   const sectors = [
     { 
