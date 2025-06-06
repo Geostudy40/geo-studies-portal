@@ -50,6 +50,11 @@ const LoadingFallback = () => (
 
 const App = () => {
   console.log("App Component wird gerendert");
+  console.log("Current pathname:", window.location.pathname);
+
+  // Dynamisch den basename basierend auf der Umgebung bestimmen
+  const basename = window.location.hostname.includes('lovable') ? '' : '/geo-studies-portal';
+  console.log("Using basename:", basename);
 
   return (
     <QueryClientProvider client={queryClient}>
@@ -57,7 +62,7 @@ const App = () => {
         <TooltipProvider>
           <Toaster />
           <Sonner />
-          <BrowserRouter basename="/geo-studies-portal">
+          <BrowserRouter basename={basename}>
             <SEO />
             <div className="flex flex-col min-h-screen">
               <Header />

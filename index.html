@@ -38,9 +38,6 @@
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <meta name="googlebot" content="index, follow" />
     
-    <!-- Base path für GitHub Pages -->
-    <base href="/geo-studies-portal/">
-    
     <!-- Added favicon reference -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     
@@ -89,9 +86,8 @@
     }
     </script>
     
-    <!-- GitHub Pages SPA router fix - IMPROVED -->
+    <!-- GitHub Pages SPA router fix -->
     <script type="text/javascript">
-      // Single Page App GitHub Pages workaround - improved version
       (function(l) {
         if (l.search[1] === '/' ) {
           var decoded = l.search.slice(1).split('&').map(function(s) { 
@@ -103,12 +99,10 @@
         }
       }(window.location));
       
-      // Enhanced debugging für GitHub Pages
       console.log("[index.html] Page loaded:", window.location.href);
       console.log("[index.html] Pathname:", window.location.pathname);
       console.log("[index.html] Search:", window.location.search);
       console.log("[index.html] Hash:", window.location.hash);
-      console.log("[index.html] Base href:", document.querySelector('base')?.href);
     </script>
     
     <!-- Loading indicator CSS -->
@@ -158,7 +152,7 @@
     
     <script type="module" src="./src/main.tsx"></script>
     
-    <!-- Added fallback display in case of script loading issues -->
+    <!-- Fallback für Script-Ladefehler -->
     <noscript>
       <div style="text-align: center; padding: 2rem; font-family: sans-serif;">
         <h1>JavaScript deaktiviert</h1>
@@ -181,10 +175,12 @@
             hasContent: hasContent,
             isLoaded: isLoaded,
             currentPath: window.location.pathname,
-            search: window.location.search
+            search: window.location.search,
+            hostname: window.location.hostname
           });
           
-          document.body.innerHTML = '<div style="text-align: center; padding: 50px; font-family: sans-serif;"><h1>Ladefehler</h1><p>Die Anwendung konnte nicht geladen werden.</p><button onclick="window.location.href=\'/geo-studies-portal/\'" style="background: #1e40af; color: white; border: none; padding: 12px 24px; border-radius: 4px; cursor: pointer; margin-right: 10px;">Zur Startseite</button><button onclick="window.location.reload()" style="background: #059669; color: white; border: none; padding: 12px 24px; border-radius: 4px; cursor: pointer;">Neu laden</button></div>';
+          var homeUrl = window.location.hostname.includes('lovable') ? '/' : '/geo-studies-portal/';
+          document.body.innerHTML = '<div style="text-align: center; padding: 50px; font-family: sans-serif;"><h1>Ladefehler</h1><p>Die Anwendung konnte nicht geladen werden.</p><button onclick="window.location.href=\'' + homeUrl + '\'" style="background: #1e40af; color: white; border: none; padding: 12px 24px; border-radius: 4px; cursor: pointer; margin-right: 10px;">Zur Startseite</button><button onclick="window.location.reload()" style="background: #059669; color: white; border: none; padding: 12px 24px; border-radius: 4px; cursor: pointer;">Neu laden</button></div>';
         }
       }, 5000);
     </script>
