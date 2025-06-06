@@ -5,6 +5,7 @@ import './index.css'
 
 console.log("[main] Initialisierung gestartet");
 console.log("[main] Current URL:", window.location.href);
+console.log("[main] Pathname:", window.location.pathname);
 
 function mountApp() {
   try {
@@ -26,7 +27,10 @@ function mountApp() {
     console.log("[main] React-App erfolgreich gerendert");
     
     // Loading-Indikator entfernen
-    document.body.classList.add('app-loaded');
+    setTimeout(() => {
+      document.body.classList.add('app-loaded');
+      console.log("[main] App als geladen markiert");
+    }, 100);
     
   } catch (error) {
     console.error("[main] Fehler beim Initialisieren:", error);

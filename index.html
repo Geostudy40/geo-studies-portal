@@ -38,7 +38,8 @@
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <meta name="googlebot" content="index, follow" />
     
-    <!-- Removed base href to fix routing -->
+    <!-- Base path für GitHub Pages -->
+    <base href="/geo-studies-portal/">
     
     <!-- Added favicon reference -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -183,7 +184,7 @@
             search: window.location.search
           });
           
-          document.body.innerHTML = '<div style="text-align: center; padding: 50px; font-family: sans-serif;"><h1>Ladefehler</h1><p>Die Anwendung konnte nicht geladen werden.</p><button onclick="window.location.href=\'/\'" style="background: #1e40af; color: white; border: none; padding: 12px 24px; border-radius: 4px; cursor: pointer; margin-right: 10px;">Zur Startseite</button><button onclick="window.location.reload()" style="background: #059669; color: white; border: none; padding: 12px 24px; border-radius: 4px; cursor: pointer;">Neu laden</button></div>';
+          document.body.innerHTML = '<div style="text-align: center; padding: 50px; font-family: sans-serif;"><h1>Ladefehler</h1><p>Die Anwendung konnte nicht geladen werden.</p><button onclick="window.location.href=\'/geo-studies-portal/\'" style="background: #1e40af; color: white; border: none; padding: 12px 24px; border-radius: 4px; cursor: pointer; margin-right: 10px;">Zur Startseite</button><button onclick="window.location.reload()" style="background: #059669; color: white; border: none; padding: 12px 24px; border-radius: 4px; cursor: pointer;">Neu laden</button></div>';
         }
       }, 5000);
     </script>
