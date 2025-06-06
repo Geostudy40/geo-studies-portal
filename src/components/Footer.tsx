@@ -43,7 +43,7 @@ const Footer = () => {
               </li>
               <li className="mt-4">
                 <a 
-                  href="https://www.linkedin.com/company/geostudys"
+                  href="https://www.linkedin.com/in/kazem-bazrafshan-3968a7169"
                   target="_blank"
                   rel="noopener noreferrer" 
                   className="inline-flex items-center text-gray-300 hover:text-white transition-colors"
