@@ -21,7 +21,7 @@
     <meta property="og:description" content="KI-gestützte geotechnische Analysen mit menschlicher Expertenverifikation. CPT-Analyse, Baugrundgutachten, Erdwärmepotenzial nach deutschen Standards." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://geostudy40.github.io/geo-studies-portal/" />
-    <meta property="og:image" content="/geo-studies-portal/og-image.png" />
+    <meta property="og:image" content="/og-image.png" />
     <meta property="og:locale" content="de_DE" />
     <meta property="og:locale:alternate" content="en_US" />
     
@@ -29,7 +29,7 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="GeoStudys - KI-gestützte Geotechnische Dienstleistungen" />
     <meta name="twitter:description" content="KI-gestützte geotechnische Analysen mit menschlicher Expertenverifikation." />
-    <meta name="twitter:image" content="/geo-studies-portal/og-image.png" />
+    <meta name="twitter:image" content="/og-image.png" />
     
     <!-- Für Voice Search -->
     <meta name="voice-keywords" content="Geotechniker Deutschland, CPT Analyse Kosten, Baugrundgutachten erstellen lassen, Erdwärme Potenzial berechnen, Schneider 2008, Robertson 1990" />
@@ -38,9 +38,10 @@
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <meta name="googlebot" content="index, follow" />
     
-    <base href="/geo-studies-portal/" />
+    <!-- Removed base href to fix routing -->
+    
     <!-- Added favicon reference -->
-    <link rel="icon" type="image/x-icon" href="/geo-studies-portal/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
     
     <!-- Canonical URL -->
     <link rel="canonical" href="https://geostudy40.github.io/geo-studies-portal/" />
@@ -154,8 +155,6 @@
     
     <div id="root"></div>
     
-    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
     <script type="module" src="./src/main.tsx"></script>
     
     <!-- Added fallback display in case of script loading issues -->
@@ -163,7 +162,7 @@
       <div style="text-align: center; padding: 2rem; font-family: sans-serif;">
         <h1>JavaScript deaktiviert</h1>
         <p>Diese Anwendung benötigt JavaScript. Bitte aktivieren Sie JavaScript in Ihrem Browser.</p>
-        <p><a href="/geo-studies-portal/">Zur Startseite</a></p>
+        <p><a href="/">Zur Startseite</a></p>
       </div>
     </noscript>
     
@@ -184,7 +183,7 @@
             search: window.location.search
           });
           
-          document.body.innerHTML = '<div style="text-align: center; padding: 50px; font-family: sans-serif;"><h1>Ladefehler</h1><p>Die Anwendung konnte nicht geladen werden.</p><button onclick="window.location.href=\'/geo-studies-portal/\'" style="background: #1e40af; color: white; border: none; padding: 12px 24px; border-radius: 4px; cursor: pointer; margin-right: 10px;">Zur Startseite</button><button onclick="window.location.reload()" style="background: #059669; color: white; border: none; padding: 12px 24px; border-radius: 4px; cursor: pointer;">Neu laden</button></div>';
+          document.body.innerHTML = '<div style="text-align: center; padding: 50px; font-family: sans-serif;"><h1>Ladefehler</h1><p>Die Anwendung konnte nicht geladen werden.</p><button onclick="window.location.href=\'/\'" style="background: #1e40af; color: white; border: none; padding: 12px 24px; border-radius: 4px; cursor: pointer; margin-right: 10px;">Zur Startseite</button><button onclick="window.location.reload()" style="background: #059669; color: white; border: none; padding: 12px 24px; border-radius: 4px; cursor: pointer;">Neu laden</button></div>';
         }
       }, 5000);
     </script>

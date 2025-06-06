@@ -58,7 +58,7 @@ const App = () => {
         <TooltipProvider>
           <Toaster />
           <Sonner />
-          <BrowserRouter basename="/geo-studies-portal">
+          <BrowserRouter>
             <SEO />
             <div className="flex flex-col min-h-screen">
               <Header />
