@@ -1,3 +1,4 @@
+
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/context/LanguageContext';
 import { Linkedin } from 'lucide-react';
@@ -66,8 +67,8 @@ const Footer = () => {
             <Link to="/privacy" className="text-gray-400 hover:text-white text-sm transition-colors">
               {t('footer.privacy')}
             </Link>
-            <Link to="/terms" className="text-gray-400 hover:text-white text-sm transition-colors">
-              {t('footer.terms')}
+            <Link to="/contact" className="text-gray-400 hover:text-white text-sm transition-colors">
+              {t('contact')}
             </Link>
           </div>
         </div>

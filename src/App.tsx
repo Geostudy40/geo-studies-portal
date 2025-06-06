@@ -26,7 +26,6 @@ import ExtendedServices from "./pages/ExtendedServices";
 import CPTAnalysis from "./pages/CPTAnalysis";
 import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
-import Terms from "./pages/Terms";
 import Privacy from "./pages/Privacy";
 import NotFound from "./pages/NotFound";
 import Imprint from "./pages/Imprint";
@@ -80,7 +79,6 @@ const App = () => {
                     <Route path="/cpt-analysis" element={<CPTAnalysis />} />
                     <Route path="/projects" element={<Projects />} />
                     <Route path="/contact" element={<Contact />} />
-                    <Route path="/terms" element={<Terms />} />
                     <Route path="/privacy" element={<Privacy />} />
                     <Route path="/imprint" element={<Imprint />} />
                     <Route path="*" element={<NotFound />} />
