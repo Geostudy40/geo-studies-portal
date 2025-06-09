@@ -52,8 +52,8 @@ const App = () => {
   console.log("App Component wird gerendert");
   console.log("Current pathname:", window.location.pathname);
 
-  // Dynamisch den basename basierend auf der Umgebung bestimmen
-  const basename = window.location.hostname.includes('lovable') ? '' : '/geo-studies-portal';
+  // Vereinfachte basename-Logik nur für Lovable
+  const basename = '';
   console.log("Using basename:", basename);
 
   return (
